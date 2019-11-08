@@ -7,11 +7,9 @@ module.exports = async () => {
   if (authentication) {
     const nameUppercase =
       authentication.charAt(0).toUpperCase() + authentication.slice(1)
-    const outputFileProvider = `${projectRootDirectory}/.wapp/store/providers/auth.js`
     const providerName = `${nameUppercase}AuthProvider`
-    const fileContentProvider = `import { ${providerName} } from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'    
-
-export default ${providerName}
+    const outputFileProvider = `${projectRootDirectory}/.wapp/store/providers/${nameUppercase}Auth.js`
+    const fileContentProvider = `export { ${providerName} } from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'    
     `
     const outputFileState = `./defaults/account/store/auth.js`
     const fileContentState = `import state from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'    
