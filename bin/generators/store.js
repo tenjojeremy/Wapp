@@ -11,7 +11,7 @@ module.exports = async () => {
   const outputStoreFolder = `${projectRootDirectory}/.wapp/store/providers`
   const outputFile = `${projectRootDirectory}/.wapp/store/store.index.js`
 
-  fs.copySync(storeSrc, outputStoreFolder)
+  await fs.copySync(storeSrc, outputStoreFolder)
 
   files = await filehound
     .create()

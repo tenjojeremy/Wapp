@@ -24,28 +24,20 @@ export default state
     const stateUser = './defaults/account/store/user.js'
     const stateUserOutput = `${projectRootDirectory}/.wapp/store/providers/user.js`
 
-    // 1. copty authwrapper comp file to wapp
-    fs.copy(authWrapper, authWrapperOutput, (err) => {
-      if (err) throw err
-      // console.log('authenticaiton created')
-    })
+    try {
+      // 1. copty authwrapper comp file to wapp
+      await fs.copy(authWrapper, authWrapperOutput)
 
-    // 2. create provider file
-    fs.outputFile(outputFileProvider, fileContentProvider, (err) => {
-      if (err) throw err
-      // console.log('authenticaiton created')
-    })
+      // 2. create provider file
+      await fs.outputFile(outputFileProvider, fileContentProvider)
 
-    // 3. create auth helper function
-    fs.outputFile(outputFileState, fileContentState, (err) => {
-      if (err) throw err
-      // console.log('authenticaiton created')
-    })
+      // 3. create auth helper function
+      await fs.outputFile(outputFileState, fileContentState)
 
-    // 4. create user state
-    fs.copy(stateUser, stateUserOutput, (err) => {
-      if (err) throw err
-      // console.log('authenticaiton created')
-    })
+      // 4. create user state
+      await fs.copy(stateUser, stateUserOutput)
+    } catch (err) {
+      throw err
+    }
   }
 }

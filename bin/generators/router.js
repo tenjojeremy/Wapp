@@ -17,8 +17,8 @@ module.exports = async () => {
     .path(pagesSrc)
     .find()
 
-  fs.copySync(pagesSrc, outputPagesFolder)
-  fs.copySync(templatesSrc, outputTemplatesFolder)
+  await fs.copySync(pagesSrc, outputPagesFolder)
+  await fs.copySync(templatesSrc, outputTemplatesFolder)
 
   const {
     coreTemplateExclude,
