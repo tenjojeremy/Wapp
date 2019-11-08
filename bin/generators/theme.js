@@ -13,7 +13,7 @@ module.exports = async () => {
   // loop theme folder
   const directories = await filehound
     .create()
-    .path('_defaults/theme')
+    .path('defaults/theme')
     .find()
 
   directories.map((path) => {

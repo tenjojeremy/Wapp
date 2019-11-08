@@ -8,7 +8,7 @@ module.exports = {
       background: '#6200ee'
     },
     logo: {
-      path: './_defaults/images/logo/logo.png'
+      path: './defaults/images/logo/logo.png'
     }
   }
 }

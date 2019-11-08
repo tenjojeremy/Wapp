@@ -23,7 +23,7 @@ outupts css varibales
 
 ## How it works
 
-theme in src adds or overiddes default theme in \_defaultsfolder
+theme in src adds or overiddes default theme in \defaultsfolder
 
 ## manuifest options
 

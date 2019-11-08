@@ -1,6 +1,6 @@
 const localIp = require('get-my-local-ip')
 
-const colors = require('./_defaults/Theme/colors')
+const colors = require('./defaults/Theme/colors')
 
 const headCss = require('./generatedApp/theme')
 
@@ -15,7 +15,7 @@ const defaultManifest = {
     startUrl: '/',
     colors,
     logo: {
-      path: './_defaults/images/logo/logo.png'
+      path: './defaults/images/logo/logo.png'
     }
   },
   analytics: {
