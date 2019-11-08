@@ -8,8 +8,8 @@ module.exports = async () => {
   let stringImports = ''
   let stringProviders = ''
   const projectRootDirectory = process.cwd()
-  const outputStoreFolder = `./.wapp/store/providers`
-  const outputFile = `./.wapp/store/store.index.js`
+  const outputStoreFolder = `${projectRootDirectory}/.wapp/store/providers`
+  const outputFile = `${projectRootDirectory}/.wapp/store/store.index.js`
   const storeSrc = `${projectRootDirectory}/src/store`
   const files = await filehound
     .create()

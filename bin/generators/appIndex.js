@@ -19,7 +19,7 @@ module.exports = async () => {
   <Router />
 </Store>`
 
-  const outputFile = `./.wapp/index.js`
+  const outputFile = `${projectRootDirectory}/.wapp/index.js`
   let masterString = `import React from 'react'
 import ReactDOM from 'react-dom'
 import * as OfflinePluginRuntime from 'offline-plugin/runtime'

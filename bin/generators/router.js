@@ -9,10 +9,10 @@ module.exports = async () => {
   let stringRoutes = ''
   let noCoreRoutes = ''
   const projectRootDirectory = process.cwd()
-  const outputTemplatesFolder = `./.wapp/templates/`
+  const outputTemplatesFolder = `${projectRootDirectory}/.wapp/templates/`
   const templatesSrc = `${projectRootDirectory}/src/templates`
-  const outputPagesFolder = `./.wapp/router/pages/`
-  const outputFile = `./.wapp/router/router.index.js`
+  const outputPagesFolder = `${projectRootDirectory}/.wapp/router/pages/`
+  const outputFile = `${projectRootDirectory}/.wapp/router/router.index.js`
   const pagesSrc = `${projectRootDirectory}/src/pages`
   const files = await filehound
     .create()

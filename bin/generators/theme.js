@@ -6,6 +6,7 @@ const toCSSVariable = require('../converters/cssVariables')
 
 module.exports = async () => {
   const projectRootDirectory = process.cwd()
+  const outputFile = `${projectRootDirectory}/.wapp/theme.js`
 
   let cssString = `module.exports = ${'`'}
   <style type="text/css">
@@ -40,7 +41,7 @@ module.exports = async () => {
   cssString += `\n 
   </style>${'`'}`
 
-  fs.writeFile(`./.wapp/theme.js`, cssString, (err) => {
+  fs.writeFile(outputFile, cssString, (err) => {
     if (err) throw err
     // console.log(`Theme Created`)
   })
