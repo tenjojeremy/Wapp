@@ -1,14 +1,24 @@
-const fs = require('fs')
+const fs = require('fs-extra')
 
 const projectRootDirectory = process.cwd()
-const wappManifest = require(`${projectRootDirectory}/.wapp.manifest`)
+const { authentication } = require(`${projectRootDirectory}/.wapp.manifest`)
 
 module.exports = async () => {
-  const pagesSrc = `${projectRootDirectory}/src/authentication.js`
-  const outputPagesFolder = `${projectRootDirectory}/.wapp/authentication.js`
+  if (authentication) {
+    const nameUppercase =
+      authentication.charAt(0).toUpperCase() + authentication.slice(1)
+    const outputFile = `${projectRootDirectory}/.wapp/store/providers/authentication.js`
+    const providerName = `${nameUppercase}AuthProvider`
+    const fileContent = `import { ${providerName} } from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'
+    
 
-  fs.copyFile(pagesSrc, outputPagesFolder, (err) => {
-    if (err) throw err
-    // console.log('authenticaiton created')
-  })
+export default ${providerName}
+    `
+
+    // 1. create provider file
+    fs.outputFile(outputFile, fileContent, (err) => {
+      if (err) throw err
+      // console.log('authenticaiton created')
+    })
+  }
 }

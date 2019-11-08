@@ -1,3 +1,7 @@
+const projectRootDirectory = process.cwd()
+
+const firebaseConfig = `${projectRootDirectory}/src/firebase/firebase.config`
+
 module.exports = {
   projectInfo: {
     name: 'App',
@@ -11,5 +15,8 @@ module.exports = {
       path: './defaults/images/logo/logo.png'
     }
   },
-  authentication: 'firebase'
+  authentication: 'firebase',
+  firebase: {
+    config: firebaseConfig
+  }
 }

@@ -1,22 +1,23 @@
-const fs = require('fs')
-
-const fsExtra = require('fs-extra')
+const fs = require('fs-extra')
 const filehound = require('filehound')
 
 module.exports = async () => {
   let masterString = ''
   let stringImports = ''
   let stringProviders = ''
+  let files = []
   const projectRootDirectory = process.cwd()
   const outputStoreFolder = `${projectRootDirectory}/.wapp/store/providers`
   const outputFile = `${projectRootDirectory}/.wapp/store/store.index.js`
+  const wappStoreDir = `${projectRootDirectory}/.wapp/store/providers`
   const storeSrc = `${projectRootDirectory}/src/store`
-  const files = await filehound
-    .create()
-    .path(storeSrc)
-    .find()
 
-  fsExtra.copySync(storeSrc, outputStoreFolder)
+  fs.copySync(storeSrc, outputStoreFolder)
+
+  files = await filehound
+    .create()
+    .path(wappStoreDir)
+    .find()
 
   files.map(async (path, i) => {
     const index = i + 1
@@ -52,7 +53,7 @@ module.exports = async () => {
  
  export default ContextProvider`
 
-  fs.writeFile(outputFile, masterString, (err) => {
+  fs.outputFile(outputFile, masterString, (err) => {
     if (err) throw err
     // console.log(`Theme Created`)
   })

@@ -1,5 +1,4 @@
-const fs = require('fs')
-
+const fs = require('fs-extra')
 const filehound = require('filehound')
 
 const toCSSVariable = require('../converters/cssVariables')
@@ -41,7 +40,7 @@ module.exports = async () => {
   cssString += `\n 
   </style>${'`'}`
 
-  fs.writeFile(outputFile, cssString, (err) => {
+  fs.outputFile(outputFile, cssString, (err) => {
     if (err) throw err
     // console.log(`Theme Created`)
   })

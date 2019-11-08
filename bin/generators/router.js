@@ -1,6 +1,4 @@
-const fs = require('fs')
-
-const fsExtra = require('fs-extra')
+const fs = require('fs-extra')
 const filehound = require('filehound')
 
 module.exports = async () => {
@@ -19,8 +17,8 @@ module.exports = async () => {
     .path(pagesSrc)
     .find()
 
-  fsExtra.copySync(pagesSrc, outputPagesFolder)
-  fsExtra.copySync(templatesSrc, outputTemplatesFolder)
+  fs.copySync(pagesSrc, outputPagesFolder)
+  fs.copySync(templatesSrc, outputTemplatesFolder)
 
   const {
     coreTemplateExclude,
@@ -67,7 +65,7 @@ export default () => (
   </Core>
   \n  </BrowserRouter>\n)`
 
-  fs.writeFile(outputFile, masterString, (err) => {
+  fs.outputFile(outputFile, masterString, (err) => {
     if (err) throw err
     // console.log(`Theme Created`)
   })
