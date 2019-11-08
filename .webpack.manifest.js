@@ -2,9 +2,8 @@ const localIp = require('get-my-local-ip')
 
 const colors = require('./defaults/Theme/colors')
 
-const headCss = require('./.wapp/theme')
-
 const projectRootDirectory = process.cwd()
+const headCss = require(`${projectRootDirectory}/.wapp/theme`)
 const appManifest = require(`${projectRootDirectory}/.app.manifest.js`)
 
 const defaultManifest = {
@@ -28,7 +27,7 @@ const defaultManifest = {
       port: 3001,
       host: localIp.address
     },
-    entry: './.wapp/index.js',
+    entry: `${projectRootDirectory}/.wapp/index.js`,
     plugins: {
       html: {
         bodyHtmlSnippet: '',
