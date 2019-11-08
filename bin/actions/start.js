@@ -21,7 +21,7 @@ module.exports = async () => {
   generateTheme()
   generateRouter()
   generateStore()
-  // generateAuthentication()
+  generateAuthentication()
 
   chokidar.watch(themeDirPath).on('change', () => generateTheme())
   chokidar.watch(pagesDirPath).on('change', () => generateRouter())

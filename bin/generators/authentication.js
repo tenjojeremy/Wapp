@@ -7,16 +7,26 @@ module.exports = async () => {
   if (authentication) {
     const nameUppercase =
       authentication.charAt(0).toUpperCase() + authentication.slice(1)
-    const outputFile = `${projectRootDirectory}/.wapp/store/providers/authentication.js`
+    const outputFileProvider = `${projectRootDirectory}/.wapp/store/providers/authentication.js`
     const providerName = `${nameUppercase}AuthProvider`
-    const fileContent = `import { ${providerName} } from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'
-    
+    const fileContentProvider = `import { ${providerName} } from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'    
 
 export default ${providerName}
     `
+    const outputFileState = `./functions/store/auth.js`
+    const fileContentState = `import state from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'    
+
+export default state
+    `
 
     // 1. create provider file
-    fs.outputFile(outputFile, fileContent, (err) => {
+    fs.outputFile(outputFileProvider, fileContentProvider, (err) => {
+      if (err) throw err
+      // console.log('authenticaiton created')
+    })
+
+    // 2. create auth helper function
+    fs.outputFile(outputFileState, fileContentState, (err) => {
       if (err) throw err
       // console.log('authenticaiton created')
     })

@@ -35,6 +35,20 @@ theme in src adds or overiddes default theme in \defaultsfolder
 
 authentication: firebase |
 
+## Helper Functions
+
+Providers in store are accesswed by import
+
+```
+import auth from @tenjojeremy/wapp/functions/store/auth
+```
+
+`auth`
+
+```
+import auth from @tenjojeremy/wapp/functions/store/auth
+```
+
 ## License
 
 This project is licensed under the terms of the
