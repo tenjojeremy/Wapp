@@ -7,16 +7,15 @@ module.exports = async () => {
   let stringProviders = ''
   let files = []
   const projectRootDirectory = process.cwd()
+  const storeSrc = `${projectRootDirectory}/src/store`
   const outputStoreFolder = `${projectRootDirectory}/.wapp/store/providers`
   const outputFile = `${projectRootDirectory}/.wapp/store/store.index.js`
-  const wappStoreDir = `${projectRootDirectory}/.wapp/store/providers`
-  const storeSrc = `${projectRootDirectory}/src/store`
 
   fs.copySync(storeSrc, outputStoreFolder)
 
   files = await filehound
     .create()
-    .path(wappStoreDir)
+    .path(outputStoreFolder)
     .find()
 
   files.map(async (path, i) => {

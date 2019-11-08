@@ -1,6 +1,6 @@
 import React, { useEffect, memo } from 'react'
 
-import UserState from '../.wapp/store/providers/user'
+import UserState from './store/user'
 
 // import useAuth from './useAuth'
 
