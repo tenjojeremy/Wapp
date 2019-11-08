@@ -2,7 +2,7 @@ const localIp = require('get-my-local-ip')
 
 const colors = require('./_defaults/Theme/colors')
 
-const headCss = require('./_generatedApp/theme')
+const headCss = require('./generatedApp/theme')
 
 const projectRootDirectory = process.cwd()
 const appManifest = require(`${projectRootDirectory}/.app.manifest.js`)
@@ -28,7 +28,7 @@ const defaultManifest = {
       port: 3001,
       host: localIp.address
     },
-    entry: './_generatedApp/index.js',
+    entry: './generatedApp/index.js',
     plugins: {
       html: {
         bodyHtmlSnippet: '',

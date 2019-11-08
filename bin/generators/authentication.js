@@ -3,7 +3,7 @@ const fs = require('fs')
 module.exports = async () => {
   const projectRootDirectory = process.cwd()
   const pagesSrc = `${projectRootDirectory}/src/authentication.js`
-  const outputPagesFolder = `./_generatedApp/authentication.js`
+  const outputPagesFolder = `./generatedApp/authentication.js`
 
   fs.copyFile(pagesSrc, outputPagesFolder, (err) => {
     if (err) throw err

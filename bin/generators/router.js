@@ -11,12 +11,12 @@ module.exports = async () => {
   const {
     coreTemplateExclude,
     excludePages
-  } = require('../../_generatedApp/router/pages/pages.config')
+  } = require('../../generatedApp/router/pages/pages.config')
   const projectRootDirectory = process.cwd()
-  const outputTemplatesFolder = `./_generatedApp/templates/`
+  const outputTemplatesFolder = `./generatedApp/templates/`
   const templatesSrc = `${projectRootDirectory}/src/templates`
-  const outputPagesFolder = `./_generatedApp/router/pages/`
-  const outputFile = `./_generatedApp/router/router.index.js`
+  const outputPagesFolder = `./generatedApp/router/pages/`
+  const outputFile = `./generatedApp/router/router.index.js`
   const pagesSrc = `${projectRootDirectory}/src/pages`
   const files = await filehound
     .create()
