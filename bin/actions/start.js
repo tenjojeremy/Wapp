@@ -1,13 +1,10 @@
 const chokidar = require('chokidar')
-const shell = require('shelljs')
 
 const generateAppIndex = require('../generators/appIndex')
 const generateTheme = require('../generators/theme')
 const generateRouter = require('../generators/router')
 const generateStore = require('../generators/store')
 const generateAuthentication = require('../generators/authentication')
-
-const startCommand = `yarn webpack-scripts start`
 
 module.exports = () => {
   const projectRootDirectory = process.cwd()
@@ -22,12 +19,10 @@ module.exports = () => {
   generateStore()
   generateAuthentication()
 
-  // chokidar.watch(themeDirPath).on('change', () => generateTheme())
-  // chokidar.watch(pagesDirPath).on('change', () => generateRouter())
-  // chokidar.watch(storeDirPath).on('change', () => generateStore())
-  // chokidar
-  //   .watch(authenticationDirPath)
-  //   .on('change', () => generateAuthentication())
-
-  // shell.exec(startCommand)
+  chokidar.watch(themeDirPath).on('change', () => generateTheme())
+  chokidar.watch(pagesDirPath).on('change', () => generateRouter())
+  chokidar.watch(storeDirPath).on('change', () => generateStore())
+  chokidar
+    .watch(authenticationDirPath)
+    .on('change', () => generateAuthentication())
 }

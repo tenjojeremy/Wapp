@@ -9,10 +9,10 @@ module.exports = async () => {
   let stringRoutes = ''
   let noCoreRoutes = ''
   const projectRootDirectory = process.cwd()
-  const outputTemplatesFolder = `./generatedApp/templates/`
+  const outputTemplatesFolder = `./.wapp/templates/`
   const templatesSrc = `${projectRootDirectory}/src/templates`
-  const outputPagesFolder = `./generatedApp/router/pages/`
-  const outputFile = `./generatedApp/router/router.index.js`
+  const outputPagesFolder = `./.wapp/router/pages/`
+  const outputFile = `./.wapp/router/router.index.js`
   const pagesSrc = `${projectRootDirectory}/src/pages`
   const files = await filehound
     .create()
@@ -25,7 +25,7 @@ module.exports = async () => {
   const {
     coreTemplateExclude,
     excludePages
-  } = require('../../generatedApp/router/pages/pages.config')
+  } = require('../../.wapp/router/pages/pages.config')
 
   files.map(async (path) => {
     const pathSplit = path.split('\\')

@@ -40,7 +40,7 @@ module.exports = async () => {
   cssString += `\n 
   </style>${'`'}`
 
-  fs.writeFile(`./generatedApp/theme.js`, cssString, (err) => {
+  fs.writeFile(`./.wapp/theme.js`, cssString, (err) => {
     if (err) throw err
     // console.log(`Theme Created`)
   })
