@@ -7,7 +7,7 @@ const {
 
 module.exports = async () => {
   const importsString = authentication
-    ? `import Authentication from './authentication.index'`
+    ? `import Authentication from './authentication'`
     : ''
   const compString = authentication
     ? `<Store>

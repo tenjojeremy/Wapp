@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 
-import Authentication from './authentication.index'
+import Authentication from './authentication'
 import Router from './router/router.index'
 import Store from './store/store.index'
 
