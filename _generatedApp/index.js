@@ -10,9 +10,9 @@ OfflinePluginRuntime.install()
 
 const App = () => (
   <Store>
-   <Authentication>
-     <Router />
-   </Authentication>
+    <Authentication>
+      <Router />
+    </Authentication>
   </Store>
 )
 
