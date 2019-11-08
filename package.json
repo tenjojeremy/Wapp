@@ -1,0 +1,26 @@
+{
+  "name": "@tenjojeremy/wapp",
+  "version": "0.0.1",
+  "description": "",
+  "main": "bin/index.js",
+  "author": "Jeremy Tenjo <tenjojeremy@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn webpack-scripts start",
+    "build": "yarn webpack-scripts build"
+  },
+  "bin": {
+    "wapp": "./bin/index.js"
+  },
+  "dependencies": {
+    "@tenjojeremy/eslint-config": "^1.7.0",
+    "@tenjojeremy/webpack-config": "^1.12.0",
+    "chokidar": "^3.3.0",
+    "filehound": "^1.17.3",
+    "fs-extra": "^8.1.0",
+    "get-my-local-ip": "^0.1.16",
+    "pluralize": "^8.0.0",
+    "react-router-dom": "^5.1.2",
+    "yargs": "^14.2.0"
+  }
+}
