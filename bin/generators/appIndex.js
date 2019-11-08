@@ -3,7 +3,7 @@ const fs = require('fs-extra')
 const projectRootDirectory = process.cwd()
 const {
   authentication = true
-} = require(`${projectRootDirectory}/.app.manifest.js`)
+} = require(`${projectRootDirectory}/.wapp.manifest.js`)
 
 module.exports = async () => {
   const importsString = authentication

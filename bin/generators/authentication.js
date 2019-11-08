@@ -1,7 +1,9 @@
 const fs = require('fs')
 
+const projectRootDirectory = process.cwd()
+const wappManifest = require(`${projectRootDirectory}/.wapp.manifest`)
+
 module.exports = async () => {
-  const projectRootDirectory = process.cwd()
   const pagesSrc = `${projectRootDirectory}/src/authentication.js`
   const outputPagesFolder = `${projectRootDirectory}/.wapp/authentication.js`
 

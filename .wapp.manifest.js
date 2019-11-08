@@ -10,5 +10,6 @@ module.exports = {
     logo: {
       path: './defaults/images/logo/logo.png'
     }
-  }
+  },
+  authentication: 'firebase'
 }

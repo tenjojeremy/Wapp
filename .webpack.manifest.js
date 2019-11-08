@@ -4,7 +4,7 @@ const colors = require('./defaults/Theme/colors')
 
 const projectRootDirectory = process.cwd()
 const headCss = require(`${projectRootDirectory}/.wapp/theme`)
-const appManifest = require(`${projectRootDirectory}/.app.manifest.js`)
+const appManifest = require(`${projectRootDirectory}/.wapp.manifest.js`)
 
 const defaultManifest = {
   projectInfo: {
