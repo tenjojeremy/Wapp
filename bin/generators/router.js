@@ -8,10 +8,6 @@ module.exports = async () => {
   let stringImports = ''
   let stringRoutes = ''
   let noCoreRoutes = ''
-  const {
-    coreTemplateExclude,
-    excludePages
-  } = require('../../generatedApp/router/pages/pages.config')
   const projectRootDirectory = process.cwd()
   const outputTemplatesFolder = `./generatedApp/templates/`
   const templatesSrc = `${projectRootDirectory}/src/templates`
@@ -25,6 +21,11 @@ module.exports = async () => {
 
   fsExtra.copySync(pagesSrc, outputPagesFolder)
   fsExtra.copySync(templatesSrc, outputTemplatesFolder)
+
+  const {
+    coreTemplateExclude,
+    excludePages
+  } = require('../../generatedApp/router/pages/pages.config')
 
   files.map(async (path) => {
     const pathSplit = path.split('\\')

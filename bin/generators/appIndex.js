@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('fs-extra')
 
 const projectRootDirectory = process.cwd()
 const {
@@ -37,8 +37,5 @@ const App = () => (
 ReactDOM.render(<App />, document.getElementById('root'))
 `
 
-  fs.writeFile(outputFile, masterString, (err) => {
-    if (err) throw err
-    // console.log(`Theme Created`)
-  })
+  fs.outputFileSync(outputFile, masterString)
 }
