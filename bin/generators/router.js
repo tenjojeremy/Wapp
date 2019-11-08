@@ -25,7 +25,7 @@ module.exports = async () => {
   const {
     coreTemplateExclude,
     excludePages
-  } = require('../../.wapp/router/pages/pages.config')
+  } = require(`${projectRootDirectory}/.wapp/router/pages/pages.config`)
 
   files.map(async (path) => {
     const pathSplit = path.split('\\')
