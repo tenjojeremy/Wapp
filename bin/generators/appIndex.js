@@ -2,13 +2,12 @@ const fs = require('fs-extra')
 
 const projectRootDirectory = process.cwd()
 const {
-  authentication = true
+  authentication = true,
+  firebase
 } = require(`${projectRootDirectory}/.wapp.manifest.js`)
 
 module.exports = async () => {
-  const importsString = authentication
-    ? `import Authentication from './auth'`
-    : ''
+  let importsString = ''
   const compString = authentication
     ? `<Store>
      <Authentication>
@@ -18,6 +17,14 @@ module.exports = async () => {
     : `<Store>
     <Router />
   </Store>`
+
+  if (authentication) {
+    importsString += `import Authentication from './auth'\n`
+  }
+
+  if (firebase) {
+    importsString += `import './firebase'\n`
+  }
 
   const outputFile = `${projectRootDirectory}/.wapp/index.js`
   let masterString = `import React from 'react'

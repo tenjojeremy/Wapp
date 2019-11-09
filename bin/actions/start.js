@@ -2,6 +2,7 @@ const fs = require('fs-extra')
 const chokidar = require('chokidar')
 
 const generateAppIndex = require('../generators/appIndex')
+const generateFirebase = require('../generators/firebase')
 const generateTheme = require('../generators/theme')
 const generateRouter = require('../generators/router')
 const generateStore = require('../generators/store')
@@ -19,6 +20,7 @@ module.exports = async () => {
     await fs.emptyDir(wappDir)
 
     await generateAppIndex()
+    await generateFirebase()
     await generateTheme()
     await generateRouter()
     await generateAccount()

@@ -10,7 +10,7 @@ const UserAuthentication = ({ children }) => {
   const historyRouter = window.historyRouter
   // Global State
   const { updateUser } = useUser()
-  const { attemptSignIn } = useAuth({ redirectUrl })
+  const { attemptSignIn } = useAuth()
 
   // Effects
   useEffect(() => {
@@ -20,7 +20,9 @@ const UserAuthentication = ({ children }) => {
   // Functions
   const check = async () => {
     if (attemptSignIn) {
-      const { res = null, redirect = null } = await attemptSignIn()
+      const { res = null, redirect = null } = await attemptSignIn({
+        redirectUrl
+      })
 
       updateUser(res)
       redirect && historyRouter.push(redirect)
