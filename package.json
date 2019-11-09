@@ -1,13 +1,14 @@
 {
   "name": "@tenjojeremy/wapp",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "bin/index.js",
   "author": "Jeremy Tenjo <tenjojeremy@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "yarn webpack-scripts start",
-    "build": "yarn webpack-scripts build"
+    "build": "yarn webpack-scripts build",
+    "deploy": "yarn publish --minor"
   },
   "bin": {
     "wapp": "./bin/index.js"
