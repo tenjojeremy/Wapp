@@ -1,6 +1,7 @@
 const fs = require('fs-extra')
 const filehound = require('filehound')
-const wappRoot = require('app-root-path')
+
+const wappRoot = require('../utils/getModulePath')
 
 module.exports = async () => {
   let masterString = ''
@@ -11,7 +12,7 @@ module.exports = async () => {
   const storeSrc = `${projectRootDirectory}/src/store`
   const outputStoreFolder = `${projectRootDirectory}/.wapp/store/providers`
   const outputFile = `${projectRootDirectory}/.wapp/store/store.index.js`
-  const globalStoreDir = `${wappRoot}/helpers/store`
+  const globalStoreDir = `${wappRoot()}/helpers/store`
 
   try {
     await fs.copySync(storeSrc, outputStoreFolder)

@@ -1,14 +1,14 @@
-const wappRoot = require('app-root-path')
 const fs = require('fs-extra')
 const filehound = require('filehound')
 
+const wappRoot = require('../utils/getModulePath')
 const toCSSVariable = require('../converters/cssVariables')
 
 module.exports = async () => {
   let srcDefaultMerge = {}
   const projectRootDirectory = process.cwd()
   const outputFile = `${projectRootDirectory}/.wapp/theme.js`
-  const defaultDir = `${wappRoot}/defaults/theme`
+  const defaultDir = `${wappRoot()}/defaults/theme`
   const srcThemeDir = `${projectRootDirectory}/src/theme`
   let defaultStringsObject = {}
 
