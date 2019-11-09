@@ -9,6 +9,7 @@ module.exports = async () => {
   const outputFile = `${projectRootDirectory}/.wapp/theme.js`
   const defaultDir = 'defaults/theme'
   const srcThemeDir = `${projectRootDirectory}/src/theme`
+  let defaultStringsObject = {}
 
   let cssString = `module.exports = ${'`'}
   <style type="text/css">
@@ -40,6 +41,9 @@ module.exports = async () => {
     if (itemType === 'object') {
       Object.assign(totalObjectDefault, { [itemName]: itemContent })
     }
+    if (itemType === 'string') {
+      defaultStringsObject[itemName] = itemContent
+    }
   })
 
   // merge src objects
@@ -58,10 +62,17 @@ module.exports = async () => {
     if (itemType === 'object') {
       Object.assign(totalObjectSrc, { [itemName]: itemContent })
     }
+    if (itemType === 'string') {
+      defaultStringsObject[itemName] = itemContent
+    }
   })
 
-  // merge default and src
-  srcDefaultMerge = { ...totalObjectDefault, ...totalObjectSrc }
+  // merge default and src and defaultStringsObject
+  srcDefaultMerge = {
+    ...totalObjectDefault,
+    ...totalObjectSrc,
+    ...defaultStringsObject
+  }
 
   Object.entries(srcDefaultMerge).forEach(([key, value]) => {
     const itemType = typeof value
