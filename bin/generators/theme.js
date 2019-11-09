@@ -64,7 +64,6 @@ module.exports = async () => {
   srcDefaultMerge = { ...totalObjectDefault, ...totalObjectSrc }
 
   Object.entries(srcDefaultMerge).forEach(([key, value]) => {
-    console.log(`${key}:${value}`)
     const itemType = typeof value
 
     if (itemType === 'string') {
