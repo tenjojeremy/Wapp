@@ -9,6 +9,7 @@
     "build": "yarn webpack-scripts build",
     "deploy": "yarn publish --minor"
   },
+  "main": "./bin/index.js",
   "bin": {
     "wapp": "./bin/index.js"
   },
