@@ -21,9 +21,9 @@ module.exports = async () => {
   await fs.copySync(templatesSrc, outputTemplatesFolder)
 
   const {
-    coreTemplateExclude,
-    excludePages
-  } = require(`${projectRootDirectory}/.wapp/router/pages/pages.config`)
+    coreTemplateExclude = ['access'],
+    excludePages = ['access']
+  } = require(`${projectRootDirectory}/.wapp.manifest.js`)
 
   files.map(async (path) => {
     const pathSplit = path.split('\\')

@@ -13,6 +13,10 @@ module.exports = {
       path: './defaults/images/logo/logo.png'
     }
   },
+  pages: {
+    coreTemplateExclude: ['access'],
+    excludePages: ['access']
+  },
   authentication: 'firebase',
   firebase: {
     config: firebaseConfig

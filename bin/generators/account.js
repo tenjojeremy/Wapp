@@ -1,4 +1,5 @@
 const fs = require('fs-extra')
+const wappRoot = require('app-root-path')
 
 const projectRootDirectory = process.cwd()
 const { authentication } = require(`${projectRootDirectory}/.wapp.manifest`)
@@ -13,15 +14,15 @@ export default state
 
 export { ${providerName} }
     `
-    const outputFileState = `./defaults/account/store/auth.js`
+    const outputFileState = `${wappRoot}/defaults/account/store/auth.js`
     const fileContentState = `import state from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'    
 
 export default state
     `
-    const authWrapper = './defaults/account/auth.js'
+    const authWrapper = `${wappRoot}/defaults/account/auth.js`
     const authWrapperOutput = `${projectRootDirectory}/.wapp/auth.js`
 
-    const stateUser = './defaults/account/store/user.js'
+    const stateUser = `${wappRoot}/defaults/account/store/user.js`
     const stateUserOutput = `${projectRootDirectory}/.wapp/store/providers/user.js`
 
     try {
