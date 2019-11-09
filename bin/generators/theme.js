@@ -4,19 +4,30 @@ const filehound = require('filehound')
 const toCSSVariable = require('../converters/cssVariables')
 
 module.exports = async () => {
+  let srcDefaultMerge = {}
   const projectRootDirectory = process.cwd()
   const outputFile = `${projectRootDirectory}/.wapp/theme.js`
+  const defaultDir = 'defaults/theme'
+  const srcThemeDir = `${projectRootDirectory}/src/theme`
 
   let cssString = `module.exports = ${'`'}
   <style type="text/css">
   `
   // loop theme folder
-  const directories = await filehound
+  const directoriesDefault = await filehound
     .create()
-    .path('defaults/theme')
+    .path(defaultDir)
     .find()
 
-  directories.map((path) => {
+  const directoriesSrc = await filehound
+    .create()
+    .path(srcThemeDir)
+    .find()
+
+  // merge default objects
+  const totalObjectDefault = {}
+
+  directoriesDefault.map((path) => {
     const inputPath = `${projectRootDirectory}/${path}`
     const itemContent = require(inputPath)
     const itemType = typeof itemContent
@@ -26,13 +37,45 @@ module.exports = async () => {
       .split('.')
       .shift()
 
+    if (itemType === 'object') {
+      Object.assign(totalObjectDefault, { [itemName]: itemContent })
+    }
+  })
+
+  // merge src objects
+  const totalObjectSrc = {}
+
+  directoriesSrc.map((path) => {
+    const inputPath = `${path}`
+    const itemContent = require(inputPath)
+    const itemType = typeof itemContent
+    const itemName = path
+      .split('\\')
+      .pop()
+      .split('.')
+      .shift()
+
+    if (itemType === 'object') {
+      Object.assign(totalObjectSrc, { [itemName]: itemContent })
+    }
+  })
+
+  // merge default and src
+  srcDefaultMerge = { ...totalObjectDefault, ...totalObjectSrc }
+
+  Object.entries(srcDefaultMerge).forEach(([key, value]) => {
+    console.log(`${key}:${value}`)
+    const itemType = typeof value
+
     if (itemType === 'string') {
-      cssString += `\n/* ${itemName} */ 
-      ${itemContent}`
-    } else if (itemName === 'colors') {
-      cssString += toCSSVariable('color', itemContent)
-    } else if (itemName === 'typography') {
-      cssString += handleTypography(itemContent)
+      cssString += `\n/* ${key} */
+      ${value}`
+    } else if (key === 'colors') {
+      cssString += toCSSVariable('color', value)
+    } else if (key === 'typography') {
+      cssString += handleTypography(value)
+    } else if (itemType === 'object') {
+      cssString += toCSSVariable(key, value)
     }
   })
 
