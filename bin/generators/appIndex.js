@@ -14,7 +14,7 @@ module.exports = async () => {
      <Authentication>
        <Router />
      </Authentication>
-    </Store>`
+  </Store>`
     : `<Store>
     <Router />
   </Store>`
