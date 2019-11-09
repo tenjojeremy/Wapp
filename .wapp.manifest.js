@@ -1,6 +1,4 @@
-const projectRootDirectory = process.cwd()
-
-const firebaseConfig = require(`${projectRootDirectory}/src/firebase/firebase.config`)
+const firebaseConfig = require(`./src/firebase/firebase.config`)
 
 module.exports = {
   projectInfo: {
