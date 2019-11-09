@@ -1,3 +1,4 @@
+const wappRoot = require('app-root-path')
 const fs = require('fs-extra')
 const filehound = require('filehound')
 
@@ -7,7 +8,7 @@ module.exports = async () => {
   let srcDefaultMerge = {}
   const projectRootDirectory = process.cwd()
   const outputFile = `${projectRootDirectory}/.wapp/theme.js`
-  const defaultDir = 'defaults/theme'
+  const defaultDir = `${wappRoot}/defaults/theme`
   const srcThemeDir = `${projectRootDirectory}/src/theme`
   let defaultStringsObject = {}
 
@@ -29,8 +30,7 @@ module.exports = async () => {
   const totalObjectDefault = {}
 
   directoriesDefault.map((path) => {
-    const inputPath = `${projectRootDirectory}/${path}`
-    const itemContent = require(inputPath)
+    const itemContent = require(path)
     const itemType = typeof itemContent
     const itemName = path
       .split('\\')
@@ -50,8 +50,7 @@ module.exports = async () => {
   const totalObjectSrc = {}
 
   directoriesSrc.map((path) => {
-    const inputPath = `${path}`
-    const itemContent = require(inputPath)
+    const itemContent = require(path)
     const itemType = typeof itemContent
     const itemName = path
       .split('\\')
