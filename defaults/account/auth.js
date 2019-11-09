@@ -1,6 +1,7 @@
 import React, { useEffect, memo } from 'react'
 
-import UserState from './store/user'
+// eslint-disable-next-line import/no-unresolved
+import UserState from './store/providers/user'
 
 // import useAuth from './useAuth'
 

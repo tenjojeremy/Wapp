@@ -6,25 +6,18 @@ const {
 } = require(`${projectRootDirectory}/.wapp.manifest.js`)
 
 module.exports = async () => {
-  //   const importsString = authentication
-  //     ? `import Authentication from './auth'`
-  //     : ''
-  //   const compString = authentication
-  //     ? `<Store>
-  //    <Authentication>
-  //      <Router />
-  //    </Authentication>
-  //   </Store>`
-  //     : `<Store>
-  //   <Router />
-  // </Store>`
-
-  const importsString = ``
-  const compString = `
-<Store>
-   <Router />
- </Store>
-`
+  const importsString = authentication
+    ? `import Authentication from './auth'`
+    : ''
+  const compString = authentication
+    ? `<Store>
+     <Authentication>
+       <Router />
+     </Authentication>
+    </Store>`
+    : `<Store>
+    <Router />
+  </Store>`
 
   const outputFile = `${projectRootDirectory}/.wapp/index.js`
   let masterString = `import React from 'react'
