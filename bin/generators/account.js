@@ -8,7 +8,7 @@ const { authentication } = require(`${projectRootDirectory}/.wapp.manifest`)
 module.exports = async () => {
   if (authentication) {
     const providerName = `AuthProvider`
-    const outputFileProvider = `${projectRootDirectory}/src/store/_auth.js`
+    const outputFileProvider = `${projectRootDirectory}/src/store/auth.js`
     const fileContentProvider = `import state, { ${providerName} } from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'    
 
 export default state
@@ -24,7 +24,7 @@ export default state
     const authWrapperOutput = `${projectRootDirectory}/src/auth.js`
 
     const stateUser = `${wappRoot()}/defaults/account/store/user.js`
-    const stateUserOutput = `${projectRootDirectory}/src/store/_user.js`
+    const stateUserOutput = `${projectRootDirectory}/src/store/user.js`
 
     try {
       // 1. copty authwrapper comp file to wapp

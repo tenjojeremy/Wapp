@@ -17,14 +17,15 @@ module.exports = async () => {
       .find()
 
     files.map(async (path, i) => {
-      console.log({ path })
       const index = i + 1
       const pathSplit = path.split('\\')
       const fileName = pathSplit.pop().split('.')[0]
       const fileNameUppercase = fileName[0].toUpperCase() + fileName.slice(1)
       const providerName = `${fileNameUppercase}Provider`
 
-      stringImports += `\nimport { ${providerName} } from './providers/${fileName}'`
+      if (providerName === '_storeProvider') return null
+
+      stringImports += `\nimport { ${providerName} } from './${fileName}'`
 
       stringProviders += `<${providerName} key={${index}} />,`
     })
