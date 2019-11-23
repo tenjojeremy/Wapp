@@ -19,7 +19,7 @@ import ReactDOM from 'react-dom'
 import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 
 ${importsString}
-import Router from './pages/_router'
+import Router from './pages/router'
 import Store from './store/_store'
 
 OfflinePluginRuntime.install()

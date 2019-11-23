@@ -4,7 +4,7 @@ import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 
 import './firebase/_firebase'
 
-import Router from './pages/_router'
+import Router from './pages/router'
 import Store from './store/_store'
 
 OfflinePluginRuntime.install()
