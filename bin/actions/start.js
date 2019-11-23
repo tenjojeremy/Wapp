@@ -27,6 +27,8 @@ module.exports = async () => {
     chokidar.watch(pagesDirPath).on('change', () => generateRouter())
     chokidar.watch(storeDirPath).on('change', () => generateStore())
     chokidar.watch(accountDirPath).on('change', () => generateAccount())
+
+    console.log()
   } catch (err) {
     throw err
   }
