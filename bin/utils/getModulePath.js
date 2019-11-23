@@ -1,1 +1,3 @@
-module.exports = () => process.cwd()
+module.exports = (folder = 'defaults') => {
+  return __dirname.replace('bin\\utils', folder)
+}

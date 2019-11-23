@@ -1,9 +1,11 @@
 const fs = require('fs-extra')
 const filehound = require('filehound')
 
+const wappRoot = require('../utils/getModulePath')
+
 module.exports = async () => {
   const projectRootDirectory = process.cwd()
-  const defaultRouter = `${projectRootDirectory}/defaults/router/router.js`
+  const defaultRouter = `${wappRoot()}//router/router.js`
   const outputFile = `${projectRootDirectory}/src/pages/router.js`
   const pagesSrc = `${projectRootDirectory}/src/pages`
   const files = await filehound

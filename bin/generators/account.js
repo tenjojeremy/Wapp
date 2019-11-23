@@ -15,13 +15,13 @@ export default state
 
 export { ${providerName} }
     `
-    const outputFileState = `${wappRoot()}/defaults/account/store/auth.js`
+    const outputFileState = `${wappRoot()}//account/store/auth.js`
     const fileContentState = `import state from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'    
 
 export default state
     `
 
-    const stateUser = `${wappRoot()}/defaults/account/store/user.js`
+    const stateUser = `${wappRoot()}//account/store/user.js`
     const stateUserOutput = `${projectRootDirectory}/src/store/user.js`
 
     try {
