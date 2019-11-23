@@ -10,7 +10,6 @@ const generateAccount = require('../generators/account')
 
 module.exports = async () => {
   const projectRootDirectory = process.cwd()
-  const themeDirPath = `${projectRootDirectory}/src/theme`
   const storeDirPath = `${projectRootDirectory}/src/store`
 
   try {
