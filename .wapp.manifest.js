@@ -13,7 +13,7 @@ module.exports = {
       path: './defaults/images/logo/logo.png'
     }
   },
-  authentication: true,
+  authentication: 'firebase',
   firebase: {
     config: firebaseConfig
   }
