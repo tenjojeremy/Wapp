@@ -1,8 +1,6 @@
 const fs = require('fs-extra')
 const filehound = require('filehound')
 
-const wappRoot = require('../utils/getModulePath')
-
 module.exports = async () => {
   let masterString = ''
   let stringImports = ''
@@ -10,19 +8,16 @@ module.exports = async () => {
   let files = []
   const projectRootDirectory = process.cwd()
   const storeSrc = `${projectRootDirectory}/src/store`
-  const outputStoreFolder = `${projectRootDirectory}/.wapp/store/providers`
-  const outputFile = `${projectRootDirectory}/.wapp/store/store.index.js`
-  const globalStoreDir = `${wappRoot()}/helpers/store`
+  const outputFile = `${projectRootDirectory}/src/store/_store.js`
 
   try {
-    await fs.copySync(storeSrc, outputStoreFolder)
-
     files = await filehound
       .create()
-      .path(outputStoreFolder)
+      .path(storeSrc)
       .find()
 
     files.map(async (path, i) => {
+      console.log({ path })
       const index = i + 1
       const pathSplit = path.split('\\')
       const fileName = pathSplit.pop().split('.')[0]
@@ -57,18 +52,6 @@ module.exports = async () => {
  export default ContextProvider`
 
     await fs.outputFile(outputFile, masterString)
-
-    // create Store accessable from project dir
-    files.map(async (path) => {
-      const pathSplit = path.split('\\')
-      const fileName = pathSplit.pop().split('.')[0]
-      const filePath = `${globalStoreDir}/${fileName}.js`
-      const string = `const state = require('./.wapp/store/providers/${fileName}')    
-
-module.exports = state`
-
-      await fs.outputFile(filePath, string)
-    })
   } catch (err) {
     throw err
   }

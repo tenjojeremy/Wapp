@@ -7,7 +7,7 @@ module.exports = async () => {
   if (firebase) {
     const { config } = firebase
     const configString = JSON.stringify(config)
-    const outputFile = `${projectRootDirectory}/.wapp/firebase.js`
+    const outputFile = `${projectRootDirectory}/src/firebase/_firebase.js`
     const fileContent = `import firebase from 'firebase/app'
 import enablePersistance from '@tenjojeremy/web-toolkit/build/Database/Firestore/Utils/firestore.persistance'
 import enablePerfMonitoring from '@tenjojeremy/web-toolkit/build/Analytics/Firebase/analytics.index'

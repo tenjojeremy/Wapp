@@ -26,7 +26,7 @@ module.exports = async () => {
     importsString += `import './firebase'\n`
   }
 
-  const outputFile = `${projectRootDirectory}/.wapp/index.js`
+  const outputFile = `${projectRootDirectory}/src/_index.js`
   let masterString = `import React from 'react'
 import ReactDOM from 'react-dom'
 import * as OfflinePluginRuntime from 'offline-plugin/runtime'

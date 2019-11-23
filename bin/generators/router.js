@@ -7,18 +7,12 @@ module.exports = async () => {
   let stringRoutes = ''
   let noCoreRoutes = ''
   const projectRootDirectory = process.cwd()
-  const outputTemplatesFolder = `${projectRootDirectory}/.wapp/templates/`
-  const templatesSrc = `${projectRootDirectory}/src/templates`
-  const outputPagesFolder = `${projectRootDirectory}/.wapp/router/pages/`
-  const outputFile = `${projectRootDirectory}/.wapp/router/router.index.js`
+  const outputFile = `${projectRootDirectory}/src/pages/_router.js`
   const pagesSrc = `${projectRootDirectory}/src/pages`
   const files = await filehound
     .create()
     .path(pagesSrc)
     .find()
-
-  await fs.copySync(pagesSrc, outputPagesFolder)
-  await fs.copySync(templatesSrc, outputTemplatesFolder)
 
   const {
     coreTemplateExclude = ['access'],

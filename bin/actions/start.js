@@ -10,15 +10,12 @@ const generateAccount = require('../generators/account')
 
 module.exports = async () => {
   const projectRootDirectory = process.cwd()
-  const wappDir = `${projectRootDirectory}/.wapp`
   const themeDirPath = `${projectRootDirectory}/src/theme`
   const pagesDirPath = `${projectRootDirectory}/src/pages`
   const accountDirPath = `${projectRootDirectory}/src/account`
   const storeDirPath = `${projectRootDirectory}/src/store`
 
   try {
-    await fs.emptyDir(wappDir)
-
     await generateAppIndex()
     await generateFirebase()
     await generateTheme()
@@ -26,10 +23,10 @@ module.exports = async () => {
     await generateAccount()
     await generateStore()
 
-    chokidar.watch(themeDirPath).on('change', () => generateTheme())
-    chokidar.watch(pagesDirPath).on('change', () => generateRouter())
-    chokidar.watch(storeDirPath).on('change', () => generateStore())
-    chokidar.watch(accountDirPath).on('change', () => generateAccount())
+    // chokidar.watch(themeDirPath).on('change', () => generateTheme())
+    // chokidar.watch(pagesDirPath).on('change', () => generateRouter())
+    // chokidar.watch(storeDirPath).on('change', () => generateStore())
+    // chokidar.watch(accountDirPath).on('change', () => generateAccount())
 
     console.log('App generated')
   } catch (err) {

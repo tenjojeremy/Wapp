@@ -2,16 +2,7 @@ import React, { useState, createContext, useContext } from 'react'
 
 export const UserContext = createContext(null)
 
-const initUser = {
-  id: '',
-  displayName: '',
-  phone_number: '',
-  email: '',
-  location: '',
-  categories: [],
-  rating: 0,
-  photoURL: ''
-}
+const initUser = null
 
 export const UserProvider = ({ children }) => {
   // State
