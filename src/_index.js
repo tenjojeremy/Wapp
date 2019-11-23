@@ -2,19 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 
-import Authentication from './auth'
-import './firebase'
+import './firebase/_firebase'
 
-import Router from './router/router.index'
-import Store from './store/store.index'
+import Router from './pages/_router'
+import Store from './store/_store'
 
 OfflinePluginRuntime.install()
 
 const App = () => (
   <Store>
-     <Authentication>
-       <Router />
-     </Authentication>
+    <Router />
   </Store>
 )
 

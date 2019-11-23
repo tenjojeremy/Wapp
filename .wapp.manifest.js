@@ -17,7 +17,7 @@ module.exports = {
     coreTemplateExclude: ['access'],
     excludePages: ['access']
   },
-  authentication: 'firebase',
+  authentication: true,
   firebase: {
     config: firebaseConfig
   }

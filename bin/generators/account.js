@@ -20,23 +20,18 @@ export { ${providerName} }
 
 export default state
     `
-    const authWrapper = `${wappRoot()}/defaults/account/auth.js`
-    const authWrapperOutput = `${projectRootDirectory}/src/auth.js`
 
     const stateUser = `${wappRoot()}/defaults/account/store/user.js`
     const stateUserOutput = `${projectRootDirectory}/src/store/user.js`
 
     try {
-      // 1. copty authwrapper comp file to wapp
-      await fs.copy(authWrapper, authWrapperOutput)
-
-      // 2. create provider file
+      // 1. create provider file
       await fs.outputFile(outputFileProvider, fileContentProvider)
 
-      // 3. create auth helper function
+      // 2. create auth helper function
       await fs.outputFile(outputFileState, fileContentState)
 
-      // 4. create user state
+      // 3. create user state
       await fs.copy(stateUser, stateUserOutput)
     } catch (err) {
       throw err
