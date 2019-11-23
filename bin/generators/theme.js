@@ -10,7 +10,7 @@ module.exports = async () => {
   let srcDefaultMerge = {}
   const projectRootDirectory = process.cwd()
   const outputFile = `${projectRootDirectory}/src/theme/_theme.js`
-  const defaultDir = `${wappRoot()}//theme`
+  const defaultDir = `${wappRoot()}/theme`
   const srcThemeDir = `${projectRootDirectory}/src/theme`
   let defaultStringsObject = {}
 

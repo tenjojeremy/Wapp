@@ -5,7 +5,7 @@
   "author": "Jeremy Tenjo <tenjojeremy@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"wapp\" \"yarn webpack-scripts start\"",
+    "start": "wapp",
     "build": "yarn webpack-scripts build",
     "deploy": "yarn publish --minor"
   },

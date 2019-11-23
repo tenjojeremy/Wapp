@@ -1,5 +1,5 @@
-const fs = require('fs-extra')
 const chokidar = require('chokidar')
+const concurrently = require('concurrently')
 
 const generateAppIndex = require('../generators/appIndex')
 const generateFirebase = require('../generators/firebase')
@@ -11,8 +11,6 @@ const generateAccount = require('../generators/account')
 module.exports = async () => {
   const projectRootDirectory = process.cwd()
   const themeDirPath = `${projectRootDirectory}/src/theme`
-  const pagesDirPath = `${projectRootDirectory}/src/pages`
-  const accountDirPath = `${projectRootDirectory}/src/account`
   const storeDirPath = `${projectRootDirectory}/src/store`
 
   try {
@@ -23,12 +21,12 @@ module.exports = async () => {
     await generateAccount()
     await generateStore()
 
-    chokidar.watch(themeDirPath).on('change', () => generateTheme())
-    chokidar.watch(pagesDirPath).on('change', () => generateRouter())
-    chokidar.watch(storeDirPath).on('change', () => generateStore())
-    chokidar.watch(accountDirPath).on('change', () => generateAccount())
+    chokidar.watch(storeDirPath).on('add', async () => await generateStore())
+    chokidar.watch(storeDirPath).on('unlink', async () => await generateStore())
 
     console.log()
+
+    await concurrently(['yarn webpack-scripts start'])
   } catch (err) {
     throw err
   }
