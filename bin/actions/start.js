@@ -23,12 +23,10 @@ module.exports = async () => {
     await generateAccount()
     await generateStore()
 
-    // chokidar.watch(themeDirPath).on('change', () => generateTheme())
-    // chokidar.watch(pagesDirPath).on('change', () => generateRouter())
-    // chokidar.watch(storeDirPath).on('change', () => generateStore())
-    // chokidar.watch(accountDirPath).on('change', () => generateAccount())
-
-    console.log('App generated')
+    chokidar.watch(themeDirPath).on('change', () => generateTheme())
+    chokidar.watch(pagesDirPath).on('change', () => generateRouter())
+    chokidar.watch(storeDirPath).on('change', () => generateStore())
+    chokidar.watch(accountDirPath).on('change', () => generateAccount())
   } catch (err) {
     throw err
   }

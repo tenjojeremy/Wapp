@@ -1,7 +1,9 @@
 const fs = require('fs-extra')
 const filehound = require('filehound')
+const emoji = require('node-emoji')
 
 module.exports = async () => {
+  const successMessage = `${emoji.get('white_check_mark')}  Store generated`
   let masterString = ''
   let stringImports = ''
   let stringProviders = ''
@@ -53,6 +55,7 @@ module.exports = async () => {
  export default ContextProvider`
 
     await fs.outputFile(outputFile, masterString)
+    console.log(successMessage)
   } catch (err) {
     throw err
   }

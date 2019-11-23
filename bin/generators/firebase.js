@@ -1,9 +1,12 @@
 const fs = require('fs-extra')
+const emoji = require('node-emoji')
 
 const projectRootDirectory = process.cwd()
 const { firebase } = require(`${projectRootDirectory}/.wapp.manifest`)
 
 module.exports = async () => {
+  const successMessage = `${emoji.get('white_check_mark')}  Firebase generated`
+
   if (firebase) {
     const { config } = firebase
     const configString = JSON.stringify(config)
@@ -19,6 +22,7 @@ enablePersistance(firebase)
     `
     try {
       await fs.outputFile(outputFile, fileContent)
+      console.log(successMessage)
     } catch (err) {
       throw err
     }

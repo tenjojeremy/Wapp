@@ -1,9 +1,12 @@
 const fs = require('fs-extra')
+const emoji = require('node-emoji')
 
 const wappRoot = require('../utils/getModulePath')
 
 const projectRootDirectory = process.cwd()
 const { authentication } = require(`${projectRootDirectory}/.wapp.manifest`)
+
+const successMessage = `${emoji.get('white_check_mark')}  Account generated `
 
 module.exports = async () => {
   if (authentication) {
@@ -33,6 +36,7 @@ export default state
 
       // 3. create user state
       await fs.copy(stateUser, stateUserOutput)
+      console.log(successMessage)
     } catch (err) {
       throw err
     }

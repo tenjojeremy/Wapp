@@ -1,9 +1,11 @@
 const fs = require('fs-extra')
+const emoji = require('node-emoji')
 
 const projectRootDirectory = process.cwd()
 const { firebase } = require(`${projectRootDirectory}/.wapp.manifest.js`)
 
 module.exports = async () => {
+  const successMessage = `${emoji.get('white_check_mark')}  Index generated`
   let importsString = ''
   const compString = `<Store>
     <Router />
@@ -38,4 +40,6 @@ ReactDOM.render(<App />, document.getElementById('root'))
 `
 
   fs.outputFileSync(outputFile, masterString)
+
+  console.log(successMessage)
 }
