@@ -1,6 +1,7 @@
 const chokidar = require('chokidar')
 const concurrently = require('concurrently')
 
+const wappRoot = require('../utils/getModulePath')
 const generateAppIndex = require('../generators/appIndex')
 const generateFirebase = require('../generators/firebase')
 const generateTheme = require('../generators/theme')
@@ -11,6 +12,7 @@ const generateAccount = require('../generators/account')
 module.exports = async () => {
   const projectRootDirectory = process.cwd()
   const storeDirPath = `${projectRootDirectory}/src/store`
+  const wappWebpackManifest = `${wappRoot('')}.webpack.manifest.js`
 
   try {
     await generateAppIndex()
@@ -25,7 +27,7 @@ module.exports = async () => {
 
     console.log()
 
-    await concurrently(['yarn webpack-scripts start'])
+    await concurrently([`yarn webpack-scripts start ${wappWebpackManifest}`])
   } catch (err) {
     throw err
   }
