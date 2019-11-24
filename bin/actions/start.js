@@ -25,7 +25,7 @@ module.exports = async () => {
 
     console.log()
 
-    await concurrently(['yarn webpack-scripts start'])
+    // await concurrently(['yarn webpack-scripts start'])
   } catch (err) {
     throw err
   }

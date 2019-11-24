@@ -14,6 +14,11 @@ module.exports = async () => {
   const srcThemeDir = `${projectRootDirectory}/src/theme`
   let defaultStringsObject = {}
 
+  // reset file
+  fs.outputFile(outputFile, '', (err) => {
+    if (err) throw err
+  })
+
   let cssString = `module.exports = ${'`'}
   <style type="text/css">
   `
@@ -78,7 +83,9 @@ module.exports = async () => {
   Object.entries(srcDefaultMerge).forEach(([key, value]) => {
     const itemType = typeof value
 
-    if (itemType === 'string') {
+    if (key === '_theme') {
+      return null
+    } else if (itemType === 'string') {
       cssString += `\n/* ${key} */
       ${value}`
     } else if (key === 'colors') {
@@ -94,12 +101,11 @@ module.exports = async () => {
   cssString += `\n 
   </style>${'`'}`
 
+  // write to  file
   fs.outputFile(outputFile, cssString, (err) => {
     if (err) throw err
-    // console.log(`Theme Created`)
+    console.log(successMessage)
   })
-
-  console.log(successMessage)
 }
 
 const handleTypography = (object) => {
