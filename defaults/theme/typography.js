@@ -5,7 +5,7 @@ module.exports = {
     secondary: 'Roboto'
   },
   types: `
-  span[variant="h1"] {
+  .typography-h1 {
     font-family:  var(--font-primary);
     font-style: normal;
     font-weight: 300;
@@ -13,7 +13,7 @@ module.exports = {
     letter-spacing: -1.5px;
     color: var(--color-black)
   }
-  span[variant="h2"] {
+  .typography-h2 {
     font-family:  var(--font-primary);
     font-style: normal;
     font-weight: 300;
@@ -21,14 +21,14 @@ module.exports = {
     letter-spacing: -0.5px;
     color: var(--color-black)
   }
-  span[variant="h3"] {
+  .typography-h3 {
     font-family:  var(--font-primary);
   font-style: normal;
   font-weight: normal;
   font-size: 48px;
   color: var(--color-black)
   }
-  span[variant="h4"] {
+  .typography-h4 {
     font-family:  var(--font-primary);
     font-style: normal;
     font-weight: normal;
@@ -37,7 +37,7 @@ module.exports = {
     color: var(--color-black)
   }
   
-  span[variant="h5"] {
+  .typography-h5 {
     font-family:  var(--font-primary);
     font-style: normal;
     font-weight: normal;
@@ -45,7 +45,7 @@ module.exports = {
     color: var(--color-black)
   }
   
-  span[variant="h6"] {
+  .typography-h6 {
     font-family:  var(--font-primary);
     font-style: normal;
     font-weight: 500;
@@ -54,7 +54,7 @@ module.exports = {
     color: var(--color-black)
   }
   
-  p[variant="body1"] {
+  .typography-body1 {
     font-family:  var(--font-primary);
     font-style: normal;
     font-weight: normal;
@@ -63,7 +63,7 @@ module.exports = {
     color: var(--color-black)
   }
   
-  p[variant="body2"] {
+  .typography-body2 {
     font-family:  var(--font-primary);
   font-style: normal;
   font-weight: normal;
@@ -72,7 +72,7 @@ module.exports = {
   color: var(--color-black)
   }
   
-  span[variant="subtitle1"] {
+  .typography-subtitle1 {
     font-family:  var(--font-primary);
   font-style: normal;
   font-weight: normal;
@@ -81,14 +81,14 @@ module.exports = {
   color: var(--color-black)
   }
   
-  span[variant="subtitle2"] {
+  .typography-subtitle2 {
     font-family:  var(--font-primary);
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     color: var(--color-black)
   }
-  span[variant="button"] {
+  .typography-button {
     font-family:  var(--font-primary);
     font-style: normal;
     font-weight: bold;
@@ -97,7 +97,7 @@ module.exports = {
     text-transform: uppercase;
     color: var(--color-black)
   }
-  span[variant="caption"] {
+  .typography-caption {
     font-family:  var(--font-primary);
   font-style: normal;
   font-weight: normal;
@@ -105,7 +105,7 @@ module.exports = {
   letter-spacing: 0.4px;
   color: var(--color-black)
   }
-  span[variant="overline"] {
+  .typography-overline {
     font-family:  var(--font-primary);
     font-style: normal;
     font-weight: 500;
