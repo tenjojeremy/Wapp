@@ -8,7 +8,7 @@
     "start": "wapp",
     "build": "wapp build",
     "analyze": "wapp analyze",
-    "deploy": "yarn publish --minor"
+    "deploy": "yarn publish --minor && gpush"
   },
   "main": "./bin/index.js",
   "bin": {
