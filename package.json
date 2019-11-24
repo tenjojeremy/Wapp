@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "wapp",
-    "build": "yarn webpack-scripts build",
+    "build": "wapp build",
     "deploy": "yarn publish --minor"
   },
   "main": "./bin/index.js",
@@ -26,6 +26,6 @@
     "node-emoji": "^1.10.0",
     "pluralize": "^8.0.0",
     "react-router-dom": "^5.1.2",
-    "yargs": "^14.2.0"
+    "shelljs": "^0.8.3"
   }
 }
