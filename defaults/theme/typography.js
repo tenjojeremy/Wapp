@@ -6,7 +6,7 @@ module.exports = {
   },
   types: `
   .typography-h1 {
-    font-family:  var(--font-primary);
+    font-family:  var(--typography-primary);
     font-style: normal;
     font-weight: 300;
     font-size: 96px;
@@ -14,7 +14,7 @@ module.exports = {
     color: var(--color-black)
   }
   .typography-h2 {
-    font-family:  var(--font-primary);
+    font-family:  var(--typography-primary);
     font-style: normal;
     font-weight: 300;
     font-size: 60px;
@@ -22,14 +22,14 @@ module.exports = {
     color: var(--color-black)
   }
   .typography-h3 {
-    font-family:  var(--font-primary);
+    font-family:  var(--typography-primary);
   font-style: normal;
   font-weight: normal;
   font-size: 48px;
   color: var(--color-black)
   }
   .typography-h4 {
-    font-family:  var(--font-primary);
+    font-family:  var(--typography-primary);
     font-style: normal;
     font-weight: normal;
     font-size: 34px;
@@ -38,7 +38,7 @@ module.exports = {
   }
   
   .typography-h5 {
-    font-family:  var(--font-primary);
+    font-family:  var(--typography-primary);
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -46,7 +46,7 @@ module.exports = {
   }
   
   .typography-h6 {
-    font-family:  var(--font-primary);
+    font-family:  var(--typography-primary);
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -55,7 +55,7 @@ module.exports = {
   }
   
   .typography-body1 {
-    font-family:  var(--font-primary);
+    font-family:  var(--typography-primary);
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -64,7 +64,7 @@ module.exports = {
   }
   
   .typography-body2 {
-    font-family:  var(--font-primary);
+    font-family:  var(--typography-primary);
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -73,7 +73,7 @@ module.exports = {
   }
   
   .typography-subtitle1 {
-    font-family:  var(--font-primary);
+    font-family:  var(--typography-primary);
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -82,14 +82,14 @@ module.exports = {
   }
   
   .typography-subtitle2 {
-    font-family:  var(--font-primary);
+    font-family:  var(--typography-primary);
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     color: var(--color-black)
   }
   .typography-button {
-    font-family:  var(--font-primary);
+    font-family:  var(--typography-primary);
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
@@ -98,7 +98,7 @@ module.exports = {
     color: var(--color-black)
   }
   .typography-caption {
-    font-family:  var(--font-primary);
+    font-family:  var(--typography-primary);
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -106,7 +106,7 @@ module.exports = {
   color: var(--color-black)
   }
   .typography-overline {
-    font-family:  var(--font-primary);
+    font-family:  var(--typography-primary);
     font-style: normal;
     font-weight: 500;
     font-size: 10px;
