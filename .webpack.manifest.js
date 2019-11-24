@@ -17,11 +17,6 @@ const defaultManifest = {
       path: './defaults/images/logo/logo.png'
     }
   },
-  analytics: {
-    google: {
-      analytics: { gAnalyticFunctions: { onlyViewsScript: '' } }
-    }
-  },
   webpack: {
     devServer: {
       port: 3001,
