@@ -7,6 +7,7 @@
   "scripts": {
     "start": "wapp",
     "build": "wapp build",
+    "analyze": "wapp analyze",
     "deploy": "yarn publish --minor"
   },
   "main": "./bin/index.js",
