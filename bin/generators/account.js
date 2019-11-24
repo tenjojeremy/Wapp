@@ -26,6 +26,7 @@ export default state
 
     const stateUser = `${wappRoot()}/account/store/user.js`
     const stateUserOutput = `${projectRootDirectory}/src/store/user.js`
+    let hasUserState = fs.existsSync(stateUserOutput)
 
     try {
       // 1. create provider file
@@ -35,10 +36,11 @@ export default state
       await fs.outputFile(outputFileState, fileContentState)
 
       // 3. create user state
-      await fs.copy(stateUser, stateUserOutput)
-      console.log(successMessage)
+      !hasUserState && (await fs.copy(stateUser, stateUserOutput))
     } catch (err) {
       throw err
+    } finally {
+      console.log(successMessage)
     }
   }
 }
