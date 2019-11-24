@@ -1,13 +1,8 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
-const RouterWrapper = ({ children }) => {
-  return (
-    <BrowserRouter>
-      Add pages in ./src/pages
-      {children}
-    </BrowserRouter>
-  )
+const RouterWrapper = () => {
+  return <BrowserRouter>Add pages routes in ./src/pages/_router</BrowserRouter>
 }
 
 export default RouterWrapper
