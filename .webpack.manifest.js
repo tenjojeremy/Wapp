@@ -1,10 +1,12 @@
 const localIp = require('get-my-local-ip')
 
-const colors = require('./defaults/Theme/colors')
+const colors = require('./defaults/theme/colors')
 
 const projectRootDirectory = process.cwd()
-const headCss = require(`${projectRootDirectory}/src/theme/_theme`)
+const fonts = require(`${projectRootDirectory}/src/.wapp/_fonts`)
+const headCss = require(`${projectRootDirectory}/src/.wapp/_theme`)
 const appManifest = require(`${projectRootDirectory}/.wapp.manifest.js`)
+const headTags = `${fonts}`
 
 const defaultManifest = {
   projectInfo: {
@@ -26,6 +28,7 @@ const defaultManifest = {
     plugins: {
       html: {
         bodyHtmlSnippet: '',
+        headTags,
         headCss
       }
     }

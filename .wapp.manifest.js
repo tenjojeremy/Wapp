@@ -2,7 +2,7 @@ const firebaseConfig = require(`./src/firebase/firebase.config`)
 
 module.exports = {
   typogrpahy: {
-    fonts: ['roboto', 'montserrat']
+    fonts: ['roboto', { name: 'montserrat', weights: [500] }]
   },
   authentication: 'firebase',
   firebase: {

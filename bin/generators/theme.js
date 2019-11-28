@@ -2,6 +2,7 @@ const fs = require('fs-extra')
 const filehound = require('filehound')
 const emoji = require('node-emoji')
 
+const { wappDir } = require('../constants')
 const wappRoot = require('../utils/getModulePath')
 const toCSSVariable = require('../converters/cssVariables')
 
@@ -9,7 +10,7 @@ module.exports = async () => {
   const successMessage = `${emoji.get('white_check_mark')}  Theme generated `
   let srcDefaultMerge = {}
   const projectRootDirectory = process.cwd()
-  const outputFile = `${projectRootDirectory}/src/theme/_theme.js`
+  const outputFile = `${wappDir}_theme.js`
   const defaultDir = `${wappRoot()}/theme`
   const srcThemeDir = `${projectRootDirectory}/src/theme`
   let defaultStringsObject = {}

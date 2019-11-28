@@ -8,6 +8,7 @@ const generateTheme = require('../generators/theme')
 const generateRouter = require('../generators/router')
 const generateStore = require('../generators/store')
 const generateAccount = require('../generators/account')
+const generateFonts = require('../generators/fonts')
 
 module.exports = async () => {
   const projectRootDirectory = process.cwd()
@@ -21,6 +22,7 @@ module.exports = async () => {
     await generateRouter()
     await generateAccount()
     await generateStore()
+    await generateFonts()
 
     chokidar.watch(storeDirPath).on('add', async () => await generateStore())
     chokidar.watch(storeDirPath).on('unlink', async () => await generateStore())

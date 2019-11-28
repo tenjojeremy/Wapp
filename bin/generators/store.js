@@ -2,6 +2,8 @@ const fs = require('fs-extra')
 const filehound = require('filehound')
 const emoji = require('node-emoji')
 
+const { wappDir } = require('../constants')
+
 module.exports = async () => {
   const successMessage = `${emoji.get('white_check_mark')}  Store generated`
   let masterString = ''
@@ -9,8 +11,9 @@ module.exports = async () => {
   let stringProviders = ''
   let files = []
   const projectRootDirectory = process.cwd()
+
   const storeSrc = `${projectRootDirectory}/src/store`
-  const outputFile = `${projectRootDirectory}/src/store/_store.js`
+  const outputFile = `${wappDir}_store.js`
 
   try {
     files = await filehound
@@ -27,7 +30,7 @@ module.exports = async () => {
 
       if (providerName === '_storeProvider') return null
 
-      stringImports += `\nimport { ${providerName} } from './${fileName}'`
+      stringImports += `\nimport { ${providerName} } from '../store/${fileName}'`
 
       stringProviders += `<${providerName} key={${index}} />,`
     })

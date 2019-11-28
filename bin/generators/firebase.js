@@ -1,6 +1,8 @@
 const fs = require('fs-extra')
 const emoji = require('node-emoji')
 
+const { wappDir } = require('../constants')
+
 const projectRootDirectory = process.cwd()
 const { firebase } = require(`${projectRootDirectory}/.wapp.manifest`)
 
@@ -10,7 +12,7 @@ module.exports = async () => {
   if (firebase) {
     const { config } = firebase
     const configString = JSON.stringify(config)
-    const outputFile = `${projectRootDirectory}/src/firebase/_firebase.js`
+    const outputFile = `${wappDir}_firebase.js`
     const fileContent = `import firebase from 'firebase/app'
 import enablePersistance from '@tenjojeremy/web-toolkit/build/Database/Firestore/Utils/firestore.persistance'
 import enablePerfMonitoring from '@tenjojeremy/web-toolkit/build/Analytics/Firebase/analytics.index'

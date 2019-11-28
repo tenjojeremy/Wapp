@@ -12,7 +12,7 @@ module.exports = async () => {
   </Store>`
 
   if (firebase) {
-    importsString += `import './firebase/_firebase'\n`
+    importsString += `import './.wapp/_firebase'\n`
   }
 
   const outputFile = `${projectRootDirectory}/src/_index.js`

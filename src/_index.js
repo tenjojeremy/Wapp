@@ -5,7 +5,7 @@ import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 import { catchAddToHomeScreenPrompt } from '@tenjojeremy/web-toolkit/build/Misc-Utils/AddToHomeScreen/addToHomeScreen.index'
 
 
-import './firebase/_firebase'
+import './.wapp/_firebase'
 
 import Router from './pages/router'
 import Store from './store/_store'
