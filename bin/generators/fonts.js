@@ -10,9 +10,8 @@ module.exports = async () => {
   const { typogrpahy } = require(`${projectRootDirectory}/.wapp.manifest.js`)
 
   if (typogrpahy) {
-    const { fonts } = typogrpahy
+    const { fonts, source = 'googleFonts' } = typogrpahy
     if (fonts) {
-      const { source = 'googleFonts' } = fonts
       const stringArray = fonts.map((font) => {
         return functions[source]({ font })
       })

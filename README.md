@@ -26,8 +26,11 @@ config: firebaseConfig,
 
 ### Fonts
 
+defaults: source: 'google'
+
 ```md
 typogrpahy: {
+source = 'firebase
 fonts: ['roboto', { name: 'montserrat', weights: [500] }],
 },
 ```
