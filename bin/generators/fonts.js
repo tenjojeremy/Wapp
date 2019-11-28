@@ -8,6 +8,7 @@ module.exports = async () => {
   const projectRootDirectory = process.cwd()
   const outputFile = `${wappDir}_fonts.js`
   const { typogrpahy } = require(`${projectRootDirectory}/.wapp.manifest.js`)
+  const googleFontsBase = '<link href="https://fonts.googleapis.com/css?family='
 
   if (typogrpahy) {
     const { fonts } = typogrpahy
@@ -16,19 +17,17 @@ module.exports = async () => {
         const type = typeof font
         if (type === 'string') {
           const nameUpper = font.charAt(0).toUpperCase() + font.slice(1)
-          return `<link href="https://fonts.googleapis.com/css?family=${nameUpper}&display=swap" rel="stylesheet">`
+          return `${googleFontsBase}${nameUpper}&display=swap" rel="stylesheet">`
         } else {
           const { name, weights } = font
           const nameUpper = name.charAt(0).toUpperCase() + name.slice(1)
-
-          console.log({ nameUpper })
-          return ''
+          const weightsString = weights.join(',')
+          return `${googleFontsBase}${nameUpper}:${weightsString}&display=swap" rel="stylesheet">`
         }
       })
       const stringJoin = stringArray.join(' ')
       const masterString = `module.exports = ${'`'}${stringJoin}${'`'}`
 
-      console.log({ stringJoin })
       fs.outputFile(outputFile, masterString, (err) => {
         if (err) throw err
         console.log(successMessage)
