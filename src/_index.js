@@ -8,7 +8,7 @@ import { catchAddToHomeScreenPrompt } from '@tenjojeremy/web-toolkit/build/Misc-
 import './.wapp/_firebase'
 
 import Router from './pages/router'
-import Store from './store/_store'
+import Store from './.wapp/_store'
 
 OfflinePluginRuntime.install()
 
