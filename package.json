@@ -5,9 +5,9 @@
   "author": "Jeremy Tenjo <tenjojeremy@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "wapp",
-    "build": "wapp build",
-    "analyze": "wapp analyze",
+    "start": "node ./bin/index",
+    "build": "node ./bin/index build",
+    "analyze": "node ./bin/index analyze",
     "deploy": "yarn publish --minor && gpush"
   },
   "main": "./bin/index.js",
