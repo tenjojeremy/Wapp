@@ -4,6 +4,16 @@
 yarn add @tenjojeremy/wapp
 ```
 
+Add scripts to package json
+
+```json
+  "scripts": {
+    "start": "wapp",
+    "build": "wapp build",
+    "build:analyze": "wapp build && wapp analyze",
+  }
+```
+
 ## .wapp.manifest.js
 
 ### authentication
