@@ -14,6 +14,11 @@ Add scripts to package json
   }
 ```
 
+## Global state
+
+Files with extenstion `.state.js` in their name ie: `movies.state.js` will be added to global state
+ensure name of exported provider is the same name of the file ei: `export { MoviesProvider } from...`
+
 ## .wapp.manifest.js
 
 ### authentication

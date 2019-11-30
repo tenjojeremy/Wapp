@@ -13,25 +13,27 @@ module.exports = async () => {
   let files = []
   const projectRootDirectory = process.cwd()
 
-  const storeSrc = `${projectRootDirectory}/src/store`
+  const srcPath = `${projectRootDirectory}/src`
   const outputFile = `${wappDir}_store.js`
 
   try {
     files = await filehound
       .create()
-      .path(storeSrc)
+      .path(srcPath)
+      .glob(['*state*'])
       .find()
 
     files.map(async (path, i) => {
       const index = i + 1
       const pathSplit = path.split('\\')
+      const fileNameFull = pathSplit[pathSplit.length - 1]
       const fileName = pathSplit.pop().split('.')[0]
       const fileNameUppercase = fileName[0].toUpperCase() + fileName.slice(1)
       const providerName = `${fileNameUppercase}Provider`
+      const srcIndex = pathSplit.findIndex((item) => item === 'src') + 1
+      const statePath = `../${pathSplit.slice(srcIndex).join('/')}/${fileNameFull}`
 
-      if (providerName === '_storeProvider') return null
-
-      stringImports += `\nimport { ${providerName} } from '../store/${fileName}'`
+      stringImports += `\nimport { ${providerName} } from '${statePath}'`
 
       stringProviders += `<${providerName} key={${index}} />,`
     })
