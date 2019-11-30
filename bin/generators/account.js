@@ -4,11 +4,10 @@ const emoji = require('node-emoji')
 const wappRoot = require('../utils/getModulePath')
 
 const projectRootDirectory = process.cwd()
-const { authentication } = require(`${projectRootDirectory}/.wapp.manifest`)
 
 const successMessage = `${emoji.get('white_check_mark')}  Account generated `
 
-module.exports = async () => {
+module.exports = async ({ wappManifest: { authentication } }) => {
   if (authentication) {
     const providerName = `AuthProvider`
     const outputFileProvider = `${projectRootDirectory}/src/store/auth.js`

@@ -5,7 +5,7 @@ const colors = require('./defaults/theme/colors')
 const projectRootDirectory = process.cwd()
 const fonts = require(`${projectRootDirectory}/src/.wapp/_fonts`)
 const headCss = require(`${projectRootDirectory}/src/.wapp/_theme`)
-const appManifest = require(`${projectRootDirectory}/.wapp.manifest.js`)
+const wappManifest = require(`${projectRootDirectory}/.wapp.manifest.js`)
 const headTags = `${fonts}`
 
 const defaultManifest = {
@@ -35,4 +35,4 @@ const defaultManifest = {
   }
 }
 
-module.exports = { ...defaultManifest, ...appManifest }
+module.exports = { ...defaultManifest, ...wappManifest }

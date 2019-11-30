@@ -14,23 +14,23 @@ module.exports = async () => {
   const projectRootDirectory = process.cwd()
   const storeDirPath = `${projectRootDirectory}/src/store`
   const webpackManifest = wappRoot('.webpack.manifest.js')
-  const appManifest = wappRoot('.wapp.manifest.js')
+  const wappManifest = wappRoot('.wapp.manifest.js')
 
   try {
-    await generateAppIndex({ appManifest })
-    await generateFirebase({ appManifest })
-    await generateTheme({ appManifest })
-    await generateRouter({ appManifest })
-    await generateAccount({ appManifest })
-    await generateStore({ appManifest })
-    await generateFonts({ appManifest })
+    await generateAppIndex({ wappManifest })
+    await generateFirebase({ wappManifest })
+    await generateTheme({ wappManifest })
+    await generateRouter({ wappManifest })
+    await generateAccount({ wappManifest })
+    await generateStore({ wappManifest })
+    await generateFonts({ wappManifest })
 
     chokidar
       .watch(storeDirPath)
-      .on('add', async () => await generateStore({ appManifest }))
+      .on('add', async () => await generateStore({ wappManifest }))
     chokidar
       .watch(storeDirPath)
-      .on('unlink', async () => await generateStore({ appManifest }))
+      .on('unlink', async () => await generateStore({ wappManifest }))
 
     console.log()
 

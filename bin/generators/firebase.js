@@ -3,10 +3,7 @@ const emoji = require('node-emoji')
 
 const { wappDir } = require('../constants')
 
-const projectRootDirectory = process.cwd()
-const { firebase } = require(`${projectRootDirectory}/.wapp.manifest`)
-
-module.exports = async () => {
+module.exports = async ({ wappManifest: { firebase } }) => {
   const successMessage = `${emoji.get('white_check_mark')}  Firebase generated`
 
   if (firebase) {
