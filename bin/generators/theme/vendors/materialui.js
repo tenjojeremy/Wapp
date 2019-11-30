@@ -4,7 +4,7 @@ const emoji = require('node-emoji')
 const { wappDir } = require('../../../constants')
 const addToIndex = require('../../../utils/addToIndex')
 
-module.exports = ({ primary = 'black', secondary = 'black' }) => {
+module.exports = () => {
   const successMessage = `${emoji.get(
     'white_check_mark'
   )}  Material Ui generated `
@@ -12,15 +12,15 @@ module.exports = ({ primary = 'black', secondary = 'black' }) => {
   const string = `import React from 'react'
   import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
-  import colors from '../theme/colors'
+  import { primary, secondary } from '../theme/colors'
 
   const theme = createMuiTheme({
     palette: {
       primary: {
-        main: ${primary},
+        main: primary,
       },
       secondary: {
-        main: ${secondary},
+        main: secondary,
       },
     },
     typography: {
