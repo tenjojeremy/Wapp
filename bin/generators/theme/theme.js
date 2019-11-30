@@ -123,7 +123,7 @@ const handleTypography = (object) => {
   let string = ''
 
   // Variables
-  string += toCSSVariable('typography', object.variables)
+  string += toCSSVariable('fonts', object.variables)
 
   // Types
   string += object.types
