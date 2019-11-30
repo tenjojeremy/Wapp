@@ -15,7 +15,7 @@ export const UserProvider = ({ children }) => {
     <UserContext.Provider
       value={{
         user,
-        updateUser
+        updateUser,
       }}
     >
       {children}

@@ -8,7 +8,8 @@
     "start": "node ./bin/index",
     "build": "node ./bin/index build",
     "analyze": "node ./bin/index analyze",
-    "deploy": "yarn publish --minor && gpush"
+    "deploy": "yarn publish --minor && gpush",
+    "pretty": "prettier \"**/*.js\" --write"
   },
   "main": "./bin/index.js",
   "bin": {
@@ -30,7 +31,6 @@
   "devDependencies": {
     "@material-ui/core": "^4.7.0",
     "@tenjojeremy/eslint-config": "^1.7.0",
-    "@tenjojeremy/perttier-config": "^0.1.0",
     "@tenjojeremy/web-toolkit": "^4.85.0",
     "prettier": "1.19.1",
     "react-router-dom": "^5.1.2"

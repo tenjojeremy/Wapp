@@ -5,9 +5,7 @@ const { wappDir } = require('../../../constants')
 const addToIndex = require('../../../utils/addToIndex')
 
 module.exports = () => {
-  const successMessage = `${emoji.get(
-    'white_check_mark'
-  )}  Material Ui generated `
+  const successMessage = `${emoji.get('white_check_mark')}  Material Ui generated `
   const outputFile = `${wappDir}_materialui.js`
   const string = `import React from 'react'
   import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'

@@ -6,5 +6,5 @@ module.exports = {
   m: 'calc(1.25 * var(--spacing-unit))',
   l: 'calc(2 * var(--spacing-unit))',
   xl: 'calc(3.25 * var(--spacing-unit))',
-  xxl: 'calc(5.25 * var(--spacing-unit))'
+  xxl: 'calc(5.25 * var(--spacing-unit))',
 }

@@ -1,20 +1,18 @@
 import React, { lazy, Suspense } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
-const Explore = lazy(() =>
-  import(/* webpackChunkName: 'Explore' */ './home.index')
-)
+const Explore = lazy(() => import(/* webpackChunkName: 'Explore' */ './home.index'))
 
 export default () => (
   <Switch>
-    <Route exact path="/" render={() => <Redirect to="/explore" />} />
+    <Route exact path='/' render={() => <Redirect to='/explore' />} />
     <Route
-      path="/explore"
+      path='/explore'
       render={() => (
         <>
           <Suspense fallback={null}>
             <Switch>
-              <Route exact path="/explore" render={() => <Explore />} />
+              <Route exact path='/explore' render={() => <Explore />} />
             </Switch>
           </Suspense>
         </>

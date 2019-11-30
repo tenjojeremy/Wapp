@@ -10,7 +10,7 @@ const initState = {
   location: '',
   categories: [],
   rating: 0,
-  photoURL: ''
+  photoURL: '',
 }
 
 export const ExampleProvider = ({ children }) => {
@@ -24,7 +24,7 @@ export const ExampleProvider = ({ children }) => {
     <ExampleContext.Provider
       value={{
         user,
-        updateExample
+        updateExample,
       }}
     >
       {children}

@@ -41,5 +41,5 @@ const functions = {
     }
 
     return `<link href="https://fonts.googleapis.com/css?family=${fontInfo}&display=swap" rel="stylesheet">`
-  }
+  },
 }

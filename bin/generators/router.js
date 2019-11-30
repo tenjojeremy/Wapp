@@ -19,7 +19,7 @@ module.exports = async () => {
       .split('\\')
       .pop()
       .split('.')
-      .shift()
+      .shift(),
   )
   const hasRouter = splitFiles.includes('router')
 

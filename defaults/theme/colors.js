@@ -29,5 +29,5 @@ module.exports = {
   successForeground: '#005a34',
 
   error: '#FE4848',
-  errorForeground: 'white'
+  errorForeground: 'white',
 }

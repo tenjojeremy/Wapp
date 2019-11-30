@@ -2,7 +2,7 @@ module.exports = {
   fonts: ['montserrat', 'roboto'],
   variables: {
     primary: 'Montserrat',
-    secondary: 'Roboto'
+    secondary: 'Roboto',
   },
   types: `
   .typography-h1 {
@@ -125,5 +125,5 @@ h6 {
   padding: 0;
 }
 p{margin:0}
-  `
+  `,
 }

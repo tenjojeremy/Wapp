@@ -16,23 +16,23 @@ const defaultManifest = {
     startUrl: '/',
     colors,
     logo: {
-      path: './defaults/images/logo/logo.png'
-    }
+      path: './defaults/images/logo/logo.png',
+    },
   },
   webpack: {
     devServer: {
       port: 3001,
-      host: localIp.address
+      host: localIp.address,
     },
     entry: `${projectRootDirectory}/src/_index.js`,
     plugins: {
       html: {
         bodyHtmlSnippet: '',
         headTags,
-        headCss
-      }
-    }
-  }
+        headCss,
+      },
+    },
+  },
 }
 
 module.exports = { ...defaultManifest, ...wappManifest }

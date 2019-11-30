@@ -8,7 +8,7 @@ const toCSSVariable = require('../../converters/cssVariables')
 
 module.exports = async ({ wappManifest }) => {
   const {
-    theme: { vendors }
+    theme: { vendors },
   } = wappManifest
   const successMessage = `${emoji.get('white_check_mark')}  Theme generated `
   let srcDefaultMerge = {}
@@ -82,7 +82,7 @@ module.exports = async ({ wappManifest }) => {
   srcDefaultMerge = {
     ...totalObjectDefault,
     ...totalObjectSrc,
-    ...defaultStringsObject
+    ...defaultStringsObject,
   }
 
   Object.entries(srcDefaultMerge).forEach(([key, value]) => {

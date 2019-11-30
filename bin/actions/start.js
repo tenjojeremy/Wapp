@@ -26,12 +26,8 @@ module.exports = async () => {
     await generateFonts({ wappManifest })
     await generateAppIndex({ wappManifest })
 
-    chokidar
-      .watch(storeDirPath)
-      .on('add', async () => await generateStore({ wappManifest }))
-    chokidar
-      .watch(storeDirPath)
-      .on('unlink', async () => await generateStore({ wappManifest }))
+    chokidar.watch(storeDirPath).on('add', async () => await generateStore({ wappManifest }))
+    chokidar.watch(storeDirPath).on('unlink', async () => await generateStore({ wappManifest }))
 
     console.log()
 
