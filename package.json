@@ -14,6 +14,7 @@
   "bin": {
     "wapp": "./bin/index.js"
   },
+  "prettier": "@tenjojeremy/prettier-config",
   "dependencies": {
     "@tenjojeremy/webpack-config": "^1.16.0",
     "chokidar": "^3.3.0",
@@ -30,6 +31,8 @@
     "@material-ui/core": "^4.7.0",
     "@tenjojeremy/eslint-config": "^1.7.0",
     "@tenjojeremy/web-toolkit": "^4.85.0",
+    "@tenjojeremy/perttier-config": "^0.1.0",
+    "prettier": "1.19.1",
     "react-router-dom": "^5.1.2"
   }
 }
