@@ -1,3 +1,4 @@
 module.exports = {
-  primary: 'yellow'
+  primary: '#26C6DA',
+  secondary: '#FF6F00'
 }
