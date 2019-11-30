@@ -26,16 +26,16 @@ module.exports = async () => {
     await generateFonts({ wappManifest })
     await generateAppIndex({ wappManifest })
 
-    // chokidar
-    //   .watch(storeDirPath)
-    //   .on('add', async () => await generateStore({ wappManifest }))
-    // chokidar
-    //   .watch(storeDirPath)
-    //   .on('unlink', async () => await generateStore({ wappManifest }))
+    chokidar
+      .watch(storeDirPath)
+      .on('add', async () => await generateStore({ wappManifest }))
+    chokidar
+      .watch(storeDirPath)
+      .on('unlink', async () => await generateStore({ wappManifest }))
 
-    // console.log()
+    console.log()
 
-    // await concurrently([`yarn webpack-scripts start ${webpackManifest}`])
+    await concurrently([`yarn webpack-scripts start ${webpackManifest}`])
   } catch (err) {
     throw err
   }
