@@ -2,6 +2,7 @@ const chokidar = require('chokidar')
 const concurrently = require('concurrently')
 
 const wappRoot = require('../utils/getModulePath')
+const generateBabel = require('../generators/babel')
 const generateAppIndex = require('../generators/appIndex')
 const generateFirebase = require('../generators/firebase')
 const generateTheme = require('../generators/theme/theme')
@@ -18,6 +19,7 @@ module.exports = async () => {
   const wappManifest = require(wappRoot('.wapp.manifest.js'))
 
   try {
+    await generateBabel({ wappManifest })
     await generateFirebase({ wappManifest })
     await generateTheme({ wappManifest })
     await generateRouter({ wappManifest })

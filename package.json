@@ -16,9 +16,6 @@
     "wapp": "./bin/index.js"
   },
   "prettier": "@tenjojeremy/prettier-config",
-  "babel": {
-    "extends": "./node_modules/@tenjojeremy/webpack-config/.babelrc"
-  },
   "eslintConfig": {
     "extends": "@tenjojeremy/eslint-config"
   },
