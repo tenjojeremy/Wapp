@@ -16,7 +16,7 @@ module.exports = async () => {
   const projectRootDirectory = process.cwd()
   const storeDirPath = `${projectRootDirectory}/src/store`
   const webpackManifest = wappRoot('.webpack.manifest.js')
-  const wappManifest = require(wappRoot('.wapp.manifest.js'))
+  const wappManifest = require(`${projectRootDirectory}/.wapp.manifest.js`)
 
   try {
     await generateBabel({ wappManifest })
