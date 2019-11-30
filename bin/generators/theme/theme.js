@@ -1,10 +1,10 @@
-const fs = require('fs-extra')
 const filehound = require('filehound')
 const emoji = require('node-emoji')
 
 const { wappDir } = require('../../constants')
 const wappRoot = require('../../utils/getModulePath')
 const toCSSVariable = require('../../converters/cssVariables')
+const createFile = require('../../utils/createFile')
 
 module.exports = async ({ wappManifest }) => {
   const {
@@ -20,9 +20,7 @@ module.exports = async ({ wappManifest }) => {
   let defaultStringsObject = {}
 
   // reset file
-  fs.outputFile(outputFile, '', (err) => {
-    if (err) throw err
-  })
+  createFile(outputFile, '')
 
   let cssString = `module.exports = ${'`'}
   <style type="text/css">
@@ -107,10 +105,8 @@ module.exports = async ({ wappManifest }) => {
   </style>${'`'}`
 
   // write to  file
-  fs.outputFile(outputFile, cssString, (err) => {
-    if (err) throw err
-    console.log(successMessage)
-  })
+  createFile(outputFile, cssString)
+  console.log(successMessage)
 
   // handle vendors
   if (vendors) {

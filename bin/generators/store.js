@@ -1,9 +1,9 @@
-const fs = require('fs-extra')
 const filehound = require('filehound')
 const emoji = require('node-emoji')
 
 const { wappDir } = require('../constants')
 const addToIndex = require('../utils/addToIndex')
+const createFile = require('../utils/createFile')
 
 module.exports = async () => {
   const successMessage = `${emoji.get('white_check_mark')}  Store generated`
@@ -60,7 +60,7 @@ module.exports = async () => {
  
  export default ContextProvider`
 
-    await fs.outputFile(outputFile, masterString)
+    await createFile(outputFile, masterString)
     addToIndex({ name: 'Store', position: 1 })
     console.log(successMessage)
   } catch (err) {

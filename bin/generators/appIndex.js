@@ -1,5 +1,6 @@
-const fs = require('fs-extra')
 const emoji = require('node-emoji')
+
+const createFile = require('../utils/createFile')
 
 const projectRootDirectory = process.cwd()
 
@@ -58,7 +59,7 @@ catchAddToHomeScreenPrompt()
 ReactDOM.render(<App />, document.getElementById('root'))
 `
 
-  fs.outputFileSync(outputFile, masterString)
+  createFile(outputFile, masterString)
 
   console.log(successMessage)
 }

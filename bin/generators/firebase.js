@@ -1,8 +1,8 @@
-const fs = require('fs-extra')
 const emoji = require('node-emoji')
 
 const { wappDir } = require('../constants')
 const addToIndex = require('../utils/addToIndex')
+const createFile = require('../utils/createFile')
 
 module.exports = async ({ wappManifest: { firebase } }) => {
   const successMessage = `${emoji.get('white_check_mark')}  Firebase generated`
@@ -21,7 +21,7 @@ enablePerfMonitoring(firebase)
 enablePersistance(firebase)    
     `
     try {
-      await fs.outputFile(outputFile, fileContent)
+      await createFile(outputFile, fileContent)
       addToIndex({ name: 'Firebase', onlyImport: true })
       console.log(successMessage)
     } catch (err) {

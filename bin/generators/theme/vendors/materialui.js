@@ -1,8 +1,8 @@
-const fs = require('fs-extra')
 const emoji = require('node-emoji')
 
 const { wappDir } = require('../../../constants')
 const addToIndex = require('../../../utils/addToIndex')
+const createFile = require('../../../utils/createFile')
 
 module.exports = () => {
   const successMessage = `${emoji.get('white_check_mark')}  Material Ui generated `
@@ -31,8 +31,6 @@ module.exports = () => {
 
   addToIndex({ name: 'materialui' })
 
-  fs.outputFile(outputFile, string, (err) => {
-    if (err) throw err
-    console.log(successMessage)
-  })
+  createFile(outputFile, string)
+  console.log(successMessage)
 }

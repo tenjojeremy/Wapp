@@ -2,6 +2,7 @@ const fs = require('fs-extra')
 const emoji = require('node-emoji')
 
 const wappRoot = require('../utils/getModulePath')
+const createFile = require('../utils/createFile')
 
 const projectRootDirectory = process.cwd()
 
@@ -29,10 +30,10 @@ export default state
 
     try {
       // 1. create provider file
-      await fs.outputFile(outputFileProvider, fileContentProvider)
+      await createFile(outputFileProvider, fileContentProvider)
 
       // 2. create auth helper function
-      await fs.outputFile(outputFileState, fileContentState)
+      await createFile(outputFileState, fileContentState)
 
       // 3. create user state
       !hasUserState && (await fs.copy(stateUser, stateUserOutput))

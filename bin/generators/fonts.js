@@ -1,7 +1,7 @@
-const fs = require('fs-extra')
 const emoji = require('node-emoji')
 
 const { wappDir } = require('../constants')
+const createFile = require('../utils/createFile')
 
 module.exports = async ({ wappManifest: { typogrpahy } }) => {
   const successMessage = `${emoji.get('white_check_mark')}  Fonts generated `
@@ -17,10 +17,8 @@ module.exports = async ({ wappManifest: { typogrpahy } }) => {
       const stringJoin = stringArray.join(' ')
       const masterString = `module.exports = ${'`'}${stringJoin}${'`'}`
 
-      fs.outputFile(outputFile, masterString, (err) => {
-        if (err) throw err
-        console.log(successMessage)
-      })
+      createFile(outputFile, masterString)
+      console.log(successMessage)
     }
   }
 }
