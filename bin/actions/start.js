@@ -17,16 +17,20 @@ module.exports = async () => {
   const appManifest = wappRoot('.wapp.manifest.js')
 
   try {
-    await generateAppIndex(appManifest)
-    await generateFirebase(appManifest)
-    await generateTheme(appManifest)
-    await generateRouter(appManifest)
-    await generateAccount(appManifest)
-    await generateStore(appManifest)
-    await generateFonts(appManifest)
+    await generateAppIndex({ appManifest })
+    await generateFirebase({ appManifest })
+    await generateTheme({ appManifest })
+    await generateRouter({ appManifest })
+    await generateAccount({ appManifest })
+    await generateStore({ appManifest })
+    await generateFonts({ appManifest })
 
-    chokidar.watch(storeDirPath).on('add', async () => await generateStore())
-    chokidar.watch(storeDirPath).on('unlink', async () => await generateStore())
+    chokidar
+      .watch(storeDirPath)
+      .on('add', async () => await generateStore({ appManifest }))
+    chokidar
+      .watch(storeDirPath)
+      .on('unlink', async () => await generateStore({ appManifest }))
 
     console.log()
 
