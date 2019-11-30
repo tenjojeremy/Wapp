@@ -13,23 +13,24 @@ const generateFonts = require('../generators/fonts')
 module.exports = async () => {
   const projectRootDirectory = process.cwd()
   const storeDirPath = `${projectRootDirectory}/src/store`
-  const wappWebpackManifest = `${wappRoot('')}.webpack.manifest.js`
+  const webpackManifest = wappRoot('.webpack.manifest.js')
+  const appManifest = wappRoot('.wapp.manifest.js')
 
   try {
-    await generateAppIndex()
-    await generateFirebase()
-    await generateTheme()
-    await generateRouter()
-    await generateAccount()
-    await generateStore()
-    await generateFonts()
+    await generateAppIndex(appManifest)
+    await generateFirebase(appManifest)
+    await generateTheme(appManifest)
+    await generateRouter(appManifest)
+    await generateAccount(appManifest)
+    await generateStore(appManifest)
+    await generateFonts(appManifest)
 
     chokidar.watch(storeDirPath).on('add', async () => await generateStore())
     chokidar.watch(storeDirPath).on('unlink', async () => await generateStore())
 
     console.log()
 
-    await concurrently([`yarn webpack-scripts start ${wappWebpackManifest}`])
+    await concurrently([`yarn webpack-scripts start ${webpackManifest}`])
   } catch (err) {
     throw err
   }
