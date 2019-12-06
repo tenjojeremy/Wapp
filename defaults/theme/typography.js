@@ -98,7 +98,7 @@ module.exports = {
   color: var(--color-black)
   }
   .typography-navbar {
-    font-family:  var(--fontPrimary);
+    font-family:  var(--font-primary);
     font-size: 10px;
   }
   .typography-overline {
