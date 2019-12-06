@@ -97,6 +97,10 @@ module.exports = {
   letter-spacing: 0.4px;
   color: var(--color-black)
   }
+  .typography-navbar {
+    font-family:  var(--fontPrimary);
+    font-size: 10px;
+  }
   .typography-overline {
     font-family:  var(--font-primary);
     font-style: normal;
