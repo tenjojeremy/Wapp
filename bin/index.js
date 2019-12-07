@@ -3,6 +3,7 @@
 const start = require('./actions/start')
 const build = require('./actions/build')
 const analyze = require('./actions/analyze')
+const docs = require('./actions/docs/index')
 
 const action = process.argv[2]
 
@@ -17,6 +18,10 @@ switch (action) {
 
   case 'analyze':
     analyze()
+    break
+
+  case 'docs':
+    docs()
     break
 
   default:

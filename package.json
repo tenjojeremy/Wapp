@@ -8,6 +8,8 @@
     "start": "node ./bin/index",
     "build": "node ./bin/index build",
     "analyze": "node ./bin/index analyze",
+    "docs": "node ./bin/index docs",
+    "docs:build": "node ./bin/index docs build",
     "deploy": "yarn publish --minor && gpush",
     "pretty": "prettier \"**/*.js\" --write"
   },
@@ -32,10 +34,16 @@
     "shelljs": "^0.8.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.5",
     "@material-ui/core": "^4.7.0",
+    "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-links": "^5.2.8",
+    "@storybook/addons": "^5.2.8",
+    "@storybook/react": "^5.2.8",
     "@tenjojeremy/eslint-config": "^1.7.0",
     "@tenjojeremy/prettier-config": "^0.3.0",
     "@tenjojeremy/web-toolkit": "^4.85.0",
+    "babel-loader": "^8.0.6",
     "prettier": "1.19.1",
     "react-router-dom": "^5.1.2"
   }
