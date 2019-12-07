@@ -1,6 +1,6 @@
 {
   "name": "@tenjojeremy/wapp",
-  "version": "0.33.0",
+  "version": "0.34.0",
   "description": "Wapp - React Framework",
   "author": "Jeremy Tenjo <tenjojeremy@gmail.com>",
   "license": "MIT",
@@ -22,11 +22,11 @@
     "extends": "@tenjojeremy/eslint-config"
   },
   "dependencies": {
-    "@storybook/addon-docs": "^5.2.8",
-    "@tenjojeremy/webpack-config": "^1.17.0",
     "@babel/core": "^7.7.5",
+    "@storybook/addon-docs": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
+    "@tenjojeremy/webpack-config": "^1.17.0",
     "chokidar": "^3.3.0",
     "concurrently": "^5.0.0",
     "filehound": "^1.17.3",
