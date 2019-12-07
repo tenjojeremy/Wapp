@@ -1,18 +1,37 @@
 const filehound = require('filehound')
 const emoji = require('node-emoji')
+const { watch } = require('chokidar')
 
 const { wappDir } = require('../constants')
 const addToIndex = require('../utils/addToIndex')
 const createFile = require('../utils/createFile')
 
-module.exports = async () => {
+exports.generateStoreAndListen = async () => {
+  const projectRootDirectory = process.cwd()
+  const srcDirPath = `${projectRootDirectory}/src`
+  const glob = `${srcDirPath}/**/*.state.js`
+  const options = {
+    ignoreInitial: true,
+  }
+  const watcher = watch(glob, options)
+
+  watcher.on('add', async () => {
+    await generateStore()
+  })
+  watcher.on('unlink', async () => {
+    await generateStore()
+  })
+
+  await generateStore()
+}
+
+const generateStore = async () => {
   const successMessage = `${emoji.get('white_check_mark')}  Store generated`
   let masterString = ''
   let stringImports = ''
   let stringProviders = ''
   let files = []
   const projectRootDirectory = process.cwd()
-
   const srcPath = `${projectRootDirectory}/src`
   const outputFile = `${wappDir}_store.js`
 
