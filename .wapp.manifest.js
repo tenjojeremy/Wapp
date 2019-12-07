@@ -9,7 +9,7 @@ module.exports = {
     startUrl: '/',
     colors,
     logo: {
-      path: 'src/Images/Logo/logo.png',
+      path: 'defaults/images/Logo/logo.png',
     },
   },
   typogrpahy: {

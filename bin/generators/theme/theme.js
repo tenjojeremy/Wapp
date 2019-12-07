@@ -5,13 +5,14 @@ const { wappRoot, projectRoot, wappDir } = require('../../utils/getModulePath')
 const toCSSVariable = require('../../converters/cssVariables')
 const createFile = require('../../utils/createFile')
 
+const genDoc = require('./story')
+
 module.exports = async ({ wappManifest }) => {
   const {
     theme: { vendors },
   } = wappManifest
   const successMessage = `${emoji.get('white_check_mark')}  Theme generated `
   let srcDefaultMerge = {}
-
   const outputFile = wappDir('_theme.js')
   const defaultDir = wappRoot('defaults/theme')
   const srcThemeDir = projectRoot('src/theme')
@@ -28,11 +29,13 @@ module.exports = async ({ wappManifest }) => {
   const directoriesDefault = await filehound
     .create()
     .path(defaultDir)
+    .ext('js')
     .find()
 
   const directoriesSrc = await filehound
     .create()
     .path(srcThemeDir)
+    .ext('js')
     .find()
 
   // merge default objects
@@ -104,7 +107,7 @@ module.exports = async ({ wappManifest }) => {
   </style>${'`'}`
 
   // write to  file
-  createFile(outputFile, cssString)
+  await createFile(outputFile, cssString)
   console.log(successMessage)
 
   // handle vendors
@@ -112,6 +115,9 @@ module.exports = async ({ wappManifest }) => {
     const addVendor = require(`./vendors/${vendors}`)
     addVendor({ colors })
   }
+
+  // write storybook file
+  genDoc(cssString)
 }
 
 const handleTypography = (object) => {
