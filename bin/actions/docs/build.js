@@ -1,6 +1,6 @@
 const shell = require('shelljs')
 
-const wappRoot = require('../../utils/getModulePath')
+const { wappRoot } = require('../../utils/getModulePath')
 
 module.exports = async () => {
   const wappWebpackManifest = wappRoot('.webpack.manifest.js')

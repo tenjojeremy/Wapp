@@ -1,6 +1,6 @@
 const concurrently = require('concurrently')
 
-const wappRoot = require('../utils/getModulePath')
+const { wappRoot } = require('../utils/getModulePath')
 const generateBabel = require('../generators/babel')
 const generateAppIndex = require('../generators/appIndex')
 const generateFirebase = require('../generators/firebase')

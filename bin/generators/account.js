@@ -1,7 +1,7 @@
 const fs = require('fs-extra')
 const emoji = require('node-emoji')
 
-const wappRoot = require('../utils/getModulePath')
+const { wappRoot } = require('../utils/getModulePath')
 const createFile = require('../utils/createFile')
 
 const projectRootDirectory = process.cwd()
@@ -18,13 +18,13 @@ export default state
 
 export { ${providerName} }
     `
-    const outputFileState = `${wappRoot()}/account/store/auth.js`
+    const outputFileState = wappRoot('/account/store/auth.js')
     const fileContentState = `import state from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'    
 
 export default state
     `
 
-    const stateUser = `${wappRoot()}/account/store/user.js`
+    const stateUser = wappRoot('/account/store/user.js')
     const stateUserOutput = `${projectRootDirectory}/src/user/user.state.js`
     let hasUserState = fs.existsSync(stateUserOutput)
 
