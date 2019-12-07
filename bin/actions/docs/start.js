@@ -1,12 +1,22 @@
 const shell = require('shelljs')
 
-const { wappRoot } = require('../../utils/getModulePath')
+const { wappRoot, projectRoot } = require('../../utils/getModulePath')
+const generateConfig = require('../../generators/docs/config')
 
 module.exports = async () => {
-  const wappWebpackManifest = wappRoot('.webpack.manifest.js')
-  const configPath = './src/.wapp/storybook'
-  const port = 6006
+  const {
+    projectInfo: { name },
+    docs: {
+      config: { port = 6006, configPath = projectRoot('./src/.wapp/storybook'), ...restConfig },
+    },
+  } = require(wappRoot('.webpack.manifest.js'))
   const command = `yarn start-storybook -p ${port} -c ${configPath}`
 
-  shell.exec(command)
+  try {
+    await generateConfig({ name, restConfig })
+
+    shell.exec(command)
+  } catch (err) {
+    throw err
+  }
 }
