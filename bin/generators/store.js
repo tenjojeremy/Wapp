@@ -2,8 +2,7 @@ const filehound = require('filehound')
 const emoji = require('node-emoji')
 const { watch } = require('chokidar')
 
-const { wappDir } = require('../constants')
-const { projectRoot } = require('../utils/getModulePath')
+const { projectRoot, wappDir } = require('../utils/getModulePath')
 const addToIndex = require('../utils/addToIndex')
 const createFile = require('../utils/createFile')
 
@@ -32,7 +31,7 @@ const generateStore = async () => {
   let stringProviders = ''
   let files = []
   const srcPath = projectRoot('/src')
-  const outputFile = `${wappDir}_store.js`
+  const outputFile = wappDir('_store.js')
 
   try {
     files = await filehound
