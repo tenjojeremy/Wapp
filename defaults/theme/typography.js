@@ -100,6 +100,7 @@ module.exports = {
   .typography-navbar {
     font-family:  var(--font-primary);
     font-size: 10px;
+    font-weight: bold;
   }
   .typography-overline {
     font-family:  var(--font-primary);
