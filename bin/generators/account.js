@@ -1,17 +1,15 @@
 const fs = require('fs-extra')
 const emoji = require('node-emoji')
 
-const { wappRoot } = require('../utils/getModulePath')
+const { wappRoot, projectRoot } = require('../utils/getModulePath')
 const createFile = require('../utils/createFile')
-
-const projectRootDirectory = process.cwd()
 
 const successMessage = `${emoji.get('white_check_mark')}  Account generated `
 
 module.exports = async ({ wappManifest: { authentication } }) => {
   if (authentication) {
     const providerName = `AuthProvider`
-    const outputFileProvider = `${projectRootDirectory}/src/user/auth.state.js`
+    const outputFileProvider = projectRoot('src/user/auth.state.js')
     const fileContentProvider = `import state, { ${providerName} } from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'    
 
 export default state
@@ -25,7 +23,7 @@ export default state
     `
 
     const stateUser = wappRoot('/account/store/user.js')
-    const stateUserOutput = `${projectRootDirectory}/src/user/user.state.js`
+    const stateUserOutput = projectRoot('src/user/user.state.js')
     let hasUserState = fs.existsSync(stateUserOutput)
 
     try {

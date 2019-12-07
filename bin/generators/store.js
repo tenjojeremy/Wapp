@@ -3,12 +3,12 @@ const emoji = require('node-emoji')
 const { watch } = require('chokidar')
 
 const { wappDir } = require('../constants')
+const { projectRoot } = require('../utils/getModulePath')
 const addToIndex = require('../utils/addToIndex')
 const createFile = require('../utils/createFile')
 
 exports.generateStoreAndListen = async () => {
-  const projectRootDirectory = process.cwd()
-  const srcDirPath = `${projectRootDirectory}/src`
+  const srcDirPath = projectRoot('src')
   const glob = `${srcDirPath}/**/*.state.js`
   const options = {
     ignoreInitial: true,
@@ -31,8 +31,7 @@ const generateStore = async () => {
   let stringImports = ''
   let stringProviders = ''
   let files = []
-  const projectRootDirectory = process.cwd()
-  const srcPath = `${projectRootDirectory}/src`
+  const srcPath = projectRoot('/src')
   const outputFile = `${wappDir}_store.js`
 
   try {

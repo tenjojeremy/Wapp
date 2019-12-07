@@ -1,11 +1,10 @@
 const emoji = require('node-emoji')
 
 const createFile = require('../utils/createFile')
-
-const projectRootDirectory = process.cwd()
+const { projectRoot } = require('../utils/getModulePath')
 
 module.exports = async () => {
-  const outputFile = `${projectRootDirectory}/src/_index.js`
+  const outputFile = projectRoot('src/_index.js')
 
   const { indexModules } = global
   indexModules.sort((a, b) => {

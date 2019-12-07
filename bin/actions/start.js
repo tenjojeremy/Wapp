@@ -1,6 +1,6 @@
 const concurrently = require('concurrently')
 
-const { wappRoot } = require('../utils/getModulePath')
+const { wappRoot, projectRoot } = require('../utils/getModulePath')
 const generateBabel = require('../generators/babel')
 const generateAppIndex = require('../generators/appIndex')
 const generateFirebase = require('../generators/firebase')
@@ -12,9 +12,8 @@ const generateFonts = require('../generators/fonts')
 
 module.exports = async () => {
   global.indexModules = []
-  const projectRootDirectory = process.cwd()
   const webpackManifest = wappRoot('.webpack.manifest.js')
-  const wappManifest = require(`${projectRootDirectory}/.wapp.manifest.js`)
+  const wappManifest = require(projectRoot('.wapp.manifest.js'))
 
   try {
     await generateBabel({ wappManifest })

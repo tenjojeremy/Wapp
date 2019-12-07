@@ -1,11 +1,11 @@
 const localIp = require('get-my-local-ip')
 
 const colors = require('./defaults/theme/colors')
+const { projectRoot } = require('./bin/utils/getModulePath')
 
-const projectRootDirectory = process.cwd()
-const fonts = require(`${projectRootDirectory}/src/.wapp/_fonts`)
-const headCss = require(`${projectRootDirectory}/src/.wapp/_theme`)
-const wappManifest = require(`${projectRootDirectory}/.wapp.manifest.js`)
+const fonts = require(projectRoot('src/.wapp/_fonts'))
+const headCss = require(projectRoot('src/.wapp/_theme'))
+const wappManifest = require(projectRoot('.wapp.manifest.js'))
 const headTags = `${fonts}`
 
 const defaultManifest = {
@@ -24,7 +24,7 @@ const defaultManifest = {
       port: 3001,
       host: localIp.address,
     },
-    entry: `${projectRootDirectory}/src/_index.js`,
+    entry: projectRoot('src/_index.js'),
     plugins: {
       html: {
         bodyHtmlSnippet: '',

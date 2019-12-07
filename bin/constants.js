@@ -1,3 +1,3 @@
-const projectRootDirectory = process.cwd()
+const { projectRoot } = require('./utils/getModulePath')
 
-exports.wappDir = `${projectRootDirectory}/src/.wapp/`
+exports.wappDir = projectRoot('src/.wapp/')
