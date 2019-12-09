@@ -1,44 +1,40 @@
-const fs = require('fs-extra')
 const emoji = require('node-emoji')
 
-const { wappRoot, projectRoot } = require('../utils/getModulePath')
+const { projectRoot } = require('../utils/getModulePath')
 const createFile = require('../utils/createFile')
 
-const successMessage = `${emoji.get('white_check_mark')}  Account generated `
+const successMessage = `${emoji.get('white_check_mark')}  Account generated`
 
 module.exports = async ({ wappManifest: { authentication } }) => {
   if (authentication) {
     const providerName = `AuthProvider`
+    const authImport = `@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js`
     const outputFileProvider = projectRoot('src/user/auth.state.js')
-    const fileContentProvider = `import state, { ${providerName} } from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'    
+    const fileContentProvider = `import state, { ${providerName} } from '${authImport}'    
 
 export default state
 
 export { ${providerName} }
     `
-    const outputFileState = wappRoot('/account/store/auth.js')
-    const fileContentState = `import state from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js'    
 
-export default state
+    const outputFileRouter = projectRoot('src/components/routing/_route.js')
+    const fileContentRouter = `
+    import React from 'react'
+    import useAuth from '${authImport}'
+    import Route from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/Router/route.js'
+
+    export default (props) => <Route authState={useAuth} {...props}/>
     `
-
-    const stateUser = wappRoot('/account/store/user.js')
-    const stateUserOutput = projectRoot('src/user/user.state.js')
-    let hasUserState = fs.existsSync(stateUserOutput)
 
     try {
       // 1. create provider file
       await createFile(outputFileProvider, fileContentProvider)
 
-      // 2. create auth helper function
-      await createFile(outputFileState, fileContentState)
-
-      // 3. create user state
-      !hasUserState && (await fs.copy(stateUser, stateUserOutput))
+      // 2. create Route component with private ability
+      await createFile(outputFileRouter, fileContentRouter)
+      console.log(successMessage)
     } catch (err) {
       throw err
-    } finally {
-      console.log(successMessage)
     }
   }
 }
