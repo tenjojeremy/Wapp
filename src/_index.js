@@ -4,9 +4,9 @@ import { hot } from 'react-hot-loader/root'
 import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 import { catchAddToHomeScreenPrompt } from '@tenjojeremy/web-toolkit/build/Misc-Utils/AddToHomeScreen/addToHomeScreen.index'
 
+import './.wapp/_firebase'
 import Router from './pages/router'
 import Store from './.wapp/_store'
-import './.wapp/_firebase'
 import Materialui from './.wapp/_materialui'
 
 OfflinePluginRuntime.install()

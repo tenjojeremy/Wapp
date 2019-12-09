@@ -14,6 +14,7 @@ module.exports = async () => {
   })
   const successMessage = `${emoji.get('white_check_mark')}  Index generated`
   let masterString = ''
+  let onlyImportsString = []
   let importsString = []
   let openingTags = []
   let closingTags = []
@@ -23,13 +24,14 @@ module.exports = async () => {
     const _path = path || `./.wapp/_${nameLower}`
     const nameUpper = name.charAt(0).toUpperCase() + name.slice(1)
     if (onlyImport) {
-      importsString.push(`import '${_path}'`)
+      onlyImportsString.push(`import '${_path}'`)
     } else {
       importsString.push(`import ${nameUpper} from '${_path}'`)
       openingTags.push(`<${nameUpper}>`)
       closingTags.unshift(`</${nameUpper}>`)
     }
   })
+  onlyImportsString = onlyImportsString.join('\n')
   importsString = importsString.join('\n')
   openingTags = openingTags.join('\n')
   closingTags = closingTags.join('\n')
@@ -41,6 +43,7 @@ import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 import { catchAddToHomeScreenPrompt } from '@tenjojeremy/web-toolkit/build/Misc-Utils/AddToHomeScreen/addToHomeScreen.index'
 
 
+${onlyImportsString}
 import Router from './pages/router'
 ${importsString}
 
