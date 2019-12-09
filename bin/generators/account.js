@@ -10,11 +10,12 @@ module.exports = async ({ wappManifest: { authentication } }) => {
     const providerName = `AuthProvider`
     const authImport = `@tenjojeremy/web-toolkit/build/Authentication/Ui/React/UseAuth/${authentication}.index.js`
     const outputFileProvider = projectRoot('src/user/auth.state.js')
-    const fileContentProvider = `import state, { ${providerName} } from '${authImport}'    
+    const fileContentProvider = `
+    import state, { ${providerName} } from '${authImport}'    
 
-export default state
+    export default state
 
-export { ${providerName} }
+    export { ${providerName} }
     `
 
     const outputFileRouter = projectRoot('src/components/routing/_route.js')
