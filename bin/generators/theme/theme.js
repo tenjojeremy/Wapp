@@ -1,5 +1,6 @@
 const filehound = require('filehound')
 const emoji = require('node-emoji')
+const fs = require('fs-extra')
 
 const { wappRoot, projectRoot, wappDir } = require('../../utils/getModulePath')
 const toCSSVariable = require('../../converters/cssVariables')
@@ -18,48 +19,20 @@ module.exports = async ({ wappManifest }) => {
   const srcThemeDir = projectRoot('src/theme')
   const colors = require(projectRoot('src/theme/colors'))
   let defaultStringsObject = {}
-
-  // reset file
-  createFile(outputFile, '')
-
+  const totalObjectSrc = {}
   let cssString = `module.exports = ${'`'}
   <style type="text/css">
   `
-  // loop theme folder
-  const directoriesDefault = await filehound
-    .create()
-    .path(defaultDir)
-    .ext('js')
-    .find()
-
   const directoriesSrc = await filehound
     .create()
     .path(srcThemeDir)
     .ext('js')
     .find()
 
-  // merge default objects
-  const totalObjectDefault = {}
-
-  directoriesDefault.map((path) => {
-    const itemContent = require(path)
-    const itemType = typeof itemContent
-    const itemName = path
-      .split('\\')
-      .pop()
-      .split('.')
-      .shift()
-
-    if (itemType === 'object') {
-      Object.assign(totalObjectDefault, { [itemName]: itemContent })
-    }
-    if (itemType === 'string') {
-      defaultStringsObject[itemName] = itemContent
-    }
-  })
-
-  // merge src objects
-  const totalObjectSrc = {}
+  // reset file
+  createFile(outputFile, '')
+  // copy default files to src without overwriting
+  await fs.copySync(defaultDir, srcThemeDir, { overwrite: false })
 
   directoriesSrc.map((path) => {
     const itemContent = require(path)
@@ -80,7 +53,6 @@ module.exports = async ({ wappManifest }) => {
 
   // merge default and src and defaultStringsObject
   srcDefaultMerge = {
-    ...totalObjectDefault,
     ...totalObjectSrc,
     ...defaultStringsObject,
   }
