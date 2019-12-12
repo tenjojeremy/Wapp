@@ -20,19 +20,20 @@ module.exports = async ({ wappManifest }) => {
   const colors = require(projectRoot('src/theme/colors'))
   let defaultStringsObject = {}
   const totalObjectSrc = {}
+  let directoriesSrc = []
   let cssString = `module.exports = ${'`'}
   <style type="text/css">
   `
-  const directoriesSrc = await filehound
-    .create()
-    .path(srcThemeDir)
-    .ext('js')
-    .find()
-
   // reset file
   createFile(outputFile, '')
   // copy default files to src without overwriting
   await fs.copySync(defaultDir, srcThemeDir, { overwrite: false })
+
+  directoriesSrc = await filehound
+    .create()
+    .path(srcThemeDir)
+    .ext('js')
+    .find()
 
   directoriesSrc.map((path) => {
     const itemContent = require(path)
