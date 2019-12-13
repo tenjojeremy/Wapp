@@ -6,7 +6,7 @@ const { projectRoot, wappDir } = require('../utils/getModulePath')
 const addToIndex = require('../utils/addToIndex')
 const createFile = require('../utils/createFile')
 
-exports.generateStoreAndListen = async () => {
+exports.generateStoreAndListen = async ({ wappManifest: { authentication } }) => {
   const srcDirPath = projectRoot('src')
   const glob = `${srcDirPath}/**/*.state.js`
   const options = {
@@ -15,16 +15,16 @@ exports.generateStoreAndListen = async () => {
   const watcher = watch(glob, options)
 
   watcher.on('add', async () => {
-    await generateStore()
+    await generateStore(authentication)
   })
   watcher.on('unlink', async () => {
-    await generateStore()
+    await generateStore(authentication)
   })
 
-  await generateStore()
+  await generateStore(authentication)
 }
 
-const generateStore = async () => {
+const generateStore = async (authentication) => {
   const successMessage = `${emoji.get('white_check_mark')}  Store generated`
   let masterString = ''
   let stringImports = ''
@@ -49,10 +49,12 @@ const generateStore = async () => {
       const providerName = `${fileNameUppercase}Provider`
       const srcIndex = pathSplit.findIndex((item) => item === 'src') + 1
       const statePath = `../${pathSplit.slice(srcIndex).join('/')}/${fileNameFull}`
+      const props =
+        fileName === 'auth' && authentication ? `service='${authentication}'` : ''
 
       stringImports += `\nimport { ${providerName} } from '${statePath}'`
 
-      stringProviders += `<${providerName} key={${index}} />,`
+      stringProviders += `<${providerName} key={${index}} ${props} />,`
     })
 
     masterString = `import React, { cloneElement } from 'react'
