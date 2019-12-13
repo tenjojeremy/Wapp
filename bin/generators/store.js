@@ -6,7 +6,7 @@ const { projectRoot, wappDir } = require('../utils/getModulePath')
 const addToIndex = require('../utils/addToIndex')
 const createFile = require('../utils/createFile')
 
-exports.generateStoreAndListen = async ({ wappManifest: { authentication } }) => {
+exports.generateStoreAndListen = async ({ wappManifest }) => {
   const srcDirPath = projectRoot('src')
   const glob = `${srcDirPath}/**/*.state.js`
   const options = {
@@ -15,16 +15,16 @@ exports.generateStoreAndListen = async ({ wappManifest: { authentication } }) =>
   const watcher = watch(glob, options)
 
   watcher.on('add', async () => {
-    await generateStore(authentication)
+    await generateStore(wappManifest)
   })
   watcher.on('unlink', async () => {
-    await generateStore(authentication)
+    await generateStore(wappManifest)
   })
 
-  await generateStore(authentication)
+  await generateStore(wappManifest)
 }
 
-const generateStore = async (authentication) => {
+const generateStore = async (wappManifest) => {
   const successMessage = `${emoji.get('white_check_mark')}  Store generated`
   let masterString = ''
   let stringImports = ''
@@ -49,8 +49,7 @@ const generateStore = async (authentication) => {
       const providerName = `${fileNameUppercase}Provider`
       const srcIndex = pathSplit.findIndex((item) => item === 'src') + 1
       const statePath = `../${pathSplit.slice(srcIndex).join('/')}/${fileNameFull}`
-      const props =
-        fileName === 'auth' && authentication ? `service='${authentication}'` : ''
+      const props = getProviderProps({ wappManifest, fileName })
 
       stringImports += `\nimport { ${providerName} } from '${statePath}'`
 
@@ -85,4 +84,14 @@ const generateStore = async (authentication) => {
   } catch (err) {
     throw err
   }
+}
+
+const getProviderProps = ({ wappManifest, fileName }) => {
+  let retString = ''
+
+  if (fileName === 'auth' && wappManifest.authentication) {
+    retString = `service='${wappManifest.authentication}'`
+  }
+
+  return retString
 }
