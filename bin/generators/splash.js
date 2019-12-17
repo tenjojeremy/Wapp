@@ -14,10 +14,10 @@ module.exports = async ({
 }) => {
   const svgFile = projectRoot(`${path}/logo.svg`)
   const pngFile = projectRoot(`${path}/logo.png`)
-  const svgExists = existsSync(pngFile)
+  const pngExists = existsSync(pngFile)
   const createdSVGMessage = `${emoji.get('white_check_mark')}  logo.png created`
 
-  if (!svgExists) {
+  if (!pngExists) {
     await convertToPNG(svgFile)
     console.log(createdSVGMessage)
   }
