@@ -6,7 +6,7 @@
 
 <div align="center">
 
-Definitive React framework 
+The definitive React framework 
 
 </div>
 
