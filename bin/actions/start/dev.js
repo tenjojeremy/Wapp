@@ -1,6 +1,7 @@
 const concurrently = require('concurrently')
 
 const { wappRoot, projectRoot } = require('../../utils/getModulePath')
+const generateSplash = require('../../generators/splash')
 const generateBabel = require('../../generators/babel')
 const generateAppIndex = require('../../generators/appIndex')
 const generateFirebase = require('../../generators/firebase')
@@ -19,6 +20,7 @@ module.exports = async (additionalScripts) => {
   if (additionalScripts) scripts.push(additionalScripts)
 
   try {
+    await generateSplash({ wappManifest })
     await generateBabel({ wappManifest })
     await generateFirebase({ wappManifest })
     await generateTheme({ wappManifest })
@@ -30,7 +32,7 @@ module.exports = async (additionalScripts) => {
 
     console.log()
 
-    await concurrently(scripts)
+    // await concurrently(scripts)
   } catch (err) {
     throw err
   }

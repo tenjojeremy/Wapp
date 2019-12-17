@@ -9,7 +9,7 @@ module.exports = {
     startUrl: '/',
     colors,
     logo: {
-      path: 'defaults/images/Logo/logo.png',
+      path: 'defaults/images/logo',
     },
   },
   typogrpahy: {
@@ -21,6 +21,11 @@ module.exports = {
     config: firebaseConfig,
   },
   docs: {
-    config: { port: 6006, panelPosition: 'right', theme: { base: 'dark' }, showPanel: false },
+    config: {
+      port: 6006,
+      panelPosition: 'right',
+      theme: { base: 'dark' },
+      showPanel: false,
+    },
   },
 }

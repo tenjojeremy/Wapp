@@ -7,7 +7,11 @@ module.exports = async () => {
   const {
     projectInfo: { name },
     docs: {
-      config: { port = 6006, configPath = projectRoot('./src/.wapp/storybook'), ...restConfig },
+      config: {
+        port = 6006,
+        configPath = projectRoot('./src/.wapp/storybook'),
+        ...restConfig
+      },
     },
   } = require(wappRoot('.webpack.manifest.js'))
   const command = `yarn start-storybook --quiet -p ${port} -c ${configPath}`
