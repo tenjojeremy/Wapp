@@ -1,7 +1,7 @@
 const localIp = require('get-my-local-ip')
 
 const colors = require('./defaults/theme/colors')
-const { projectRoot } = require('./bin/utils/getModulePath')
+const { projectRoot, wappDir } = require('./bin/utils/getModulePath')
 
 const fonts = require(projectRoot('src/.wapp/_fonts'))
 const splashScreen = require(projectRoot('src/.wapp/splashScreen/splashScreen'))
