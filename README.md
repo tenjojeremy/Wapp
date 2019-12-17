@@ -8,6 +8,8 @@
 
 Definitive React framework 
 
+</div>
+
 ## Installation
 
 ```
