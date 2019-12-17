@@ -33,7 +33,7 @@ ensure name of exported provider is the same name of the file ei: `export { Movi
 
 ## .wapp.manifest.js
 
-### authentication
+##### authentication
 
 Options: `firebase`
 
@@ -41,7 +41,7 @@ Options: `firebase`
 authentication: 'firebase',
 ```
 
-### Firebase
+##### Firebase
 
 ```md
 firebase: {
@@ -49,7 +49,7 @@ config: firebaseConfig,
 },
 ```
 
-### Fonts
+##### Fonts
 
 defaults: source: 'google'
 
