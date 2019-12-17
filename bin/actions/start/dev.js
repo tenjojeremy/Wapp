@@ -32,7 +32,7 @@ module.exports = async (additionalScripts) => {
 
     console.log()
 
-    // await concurrently(scripts)
+    await concurrently(scripts)
   } catch (err) {
     throw err
   }

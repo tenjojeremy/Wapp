@@ -4,6 +4,7 @@ import { hot } from 'react-hot-loader/root'
 import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 import { catchAddToHomeScreenPrompt } from '@tenjojeremy/web-toolkit/build/Misc-Utils/AddToHomeScreen/addToHomeScreen.index'
 
+import hideSplashScreen from './.wapp/splashScreen/hideSplashScreen'
 import './.wapp/_firebase'
 import Router from './pages/router'
 import Store from './.wapp/_store'
@@ -20,6 +21,7 @@ const App = hot(() => (
 ))
 
 // Load asynchronous
+hideSplashScreen()
 catchAddToHomeScreenPrompt()
 
 ReactDOM.render(<App />, document.getElementById('root'))

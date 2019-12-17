@@ -4,9 +4,10 @@ const colors = require('./defaults/theme/colors')
 const { projectRoot } = require('./bin/utils/getModulePath')
 
 const fonts = require(projectRoot('src/.wapp/_fonts'))
+const splashScreen = require(projectRoot('src/.wapp/splashScreen/splashScreen'))
 const headCss = require(projectRoot('src/.wapp/_theme'))
 const wappManifest = require(projectRoot('.wapp.manifest.js'))
-const headTags = `${fonts}`
+const headTags = `${fonts}${splashScreen}`
 
 const defaultManifest = {
   projectInfo: {
