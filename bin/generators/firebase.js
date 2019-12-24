@@ -6,7 +6,7 @@ const { wappDir } = require('../utils/getModulePath')
 
 module.exports = async ({ wappManifest: { firebase, authentication = {} } }) => {
   const successMessage = `${emoji.get('white_check_mark')}  Firebase generated`
-  const appImport = `import 'firebase/app'`
+  const appImport = `import firebase from 'firebase/app'`
   const authImport = authentication === 'firebase' ? `import 'firebase/auth'` : ''
 
   const firebaseImports = `
