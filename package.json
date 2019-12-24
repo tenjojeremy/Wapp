@@ -11,7 +11,9 @@
     "docs": "node ./bin/index docs",
     "docs:build": "node ./bin/index docs build",
     "deploy": "yarn publish --minor && gpush",
-    "pretty": "prettier \"**/*.js\" --write"
+    "pretty": "prettier \"**/*.js\" --write",
+    "lint:fix": "eslint ./src --fix",
+    "check-staged": "lint-staged"
   },
   "main": "./bin/index.js",
   "bin": {
