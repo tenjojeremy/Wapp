@@ -8,7 +8,7 @@ const successMessage = `${emoji.get('white_check_mark')}  Account generated`
 module.exports = async ({ wappManifest: { authentication } }) => {
   if (authentication) {
     const providerName = `AuthProvider`
-    const authImport = `'@tenjojeremy/web-toolkit/build/Authentication/UseAuth/useAuth.index.js`
+    const authImport = `@tenjojeremy/web-toolkit/build/Authentication/UseAuth/useAuth.index.js`
     const outputFileProvider = projectRoot('src/user/auth.state.js')
     const fileContentProvider = `
     import state, { ${providerName} } from '${authImport}'    
