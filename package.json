@@ -21,6 +21,18 @@
   "eslintConfig": {
     "extends": "@tenjojeremy/eslint-config"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "yarn lint:fix",
+      "yarn pretty",
+      "prettier --list-different"
+    ]
+  },
   "dependencies": {
     "@babel/core": "^7.7.5",
     "@storybook/addon-docs": "^5.2.8",
@@ -34,6 +46,8 @@
     "firebase": "^7.3.0",
     "fs-extra": "^8.1.0",
     "get-my-local-ip": "^0.1.16",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
     "node-emoji": "^1.10.0",
     "pluralize": "^8.0.0",
     "shelljs": "^0.8.3",
