@@ -1,5 +1,3 @@
-const localIp = require('get-my-local-ip')
-
 const colors = require('./defaults/theme/colors')
 const { projectRoot, wappDir } = require('./bin/utils/getModulePath')
 
@@ -23,7 +21,6 @@ const defaultManifest = {
   webpack: {
     devServer: {
       port: 3001,
-      host: localIp.address,
     },
     entry: projectRoot('src/_index.js'),
     plugins: {
