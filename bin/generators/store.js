@@ -30,6 +30,7 @@ const generateStore = async (wappManifest) => {
   let stringImports = ''
   let stringProviders = ''
   let files = []
+  let orderedFiles = null
   const srcPath = projectRoot('/src')
   const outputFile = wappDir('_store.js')
 
@@ -40,7 +41,9 @@ const generateStore = async (wappManifest) => {
       .glob(['*state*'])
       .find()
 
-    files.map(async (path, i) => {
+    orderedFiles = handleAuthProviderArrayLoaction({ files })
+
+    orderedFiles.map(async (path, i) => {
       const index = i + 1
       const pathSplit = path.split('\\')
       const fileNameFull = pathSplit[pathSplit.length - 1]
@@ -94,4 +97,24 @@ const getProviderProps = ({ wappManifest, fileName }) => {
   }
 
   return retString
+}
+
+const handleAuthProviderArrayLoaction = ({ files }) => {
+  let authFileName = false
+  files.map((file) => {
+    const isAuth = file
+      .split('\\')
+      .pop()
+      .includes('auth.state.js')
+    if (isAuth) authFileName = file
+    else return file
+  })
+
+  if (authFileName) {
+    let authFileIndex = files.findIndex((file) => file === authFileName)
+    files.splice(authFileIndex, 1)
+    files.unshift(authFileName)
+  }
+
+  return files
 }
