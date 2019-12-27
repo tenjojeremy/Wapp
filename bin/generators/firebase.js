@@ -4,14 +4,18 @@ const addToIndex = require('../utils/addToIndex')
 const createFile = require('../utils/createFile')
 const { wappDir } = require('../utils/getModulePath')
 
-module.exports = async ({ wappManifest: { firebase, authentication = {} } }) => {
+module.exports = async ({
+  wappManifest: { firebase, authentication = {}, database = {} },
+}) => {
   const successMessage = `${emoji.get('white_check_mark')}  Firebase generated`
   const appImport = `import firebase from 'firebase/app'`
   const authImport = authentication === 'firebase' ? `import 'firebase/auth'` : ''
+  const firestoreImport = database === 'firestore' ? `import 'firebase/firestore'` : ''
 
   const firebaseImports = `
   ${appImport}
   ${authImport}
+  ${firestoreImport}
   `
 
   if (firebase) {

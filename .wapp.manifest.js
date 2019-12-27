@@ -17,6 +17,7 @@ module.exports = {
   },
   theme: { vendors: 'materialui' },
   authentication: 'firebase',
+  database: 'firestore',
   firebase: {
     config: firebaseConfig,
   },
