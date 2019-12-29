@@ -17,9 +17,7 @@ module.exports = async ({ wappManifest: { authentication } }) => {
     `
 
     try {
-      // 1. create provider file
       await createFile(outputFileProvider, fileContentProvider)
-
       logSuccessMessage(successMessage)
     } catch (err) {
       throw err
