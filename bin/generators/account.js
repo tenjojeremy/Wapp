@@ -16,21 +16,10 @@ module.exports = async ({ wappManifest: { authentication } }) => {
     export { ${providerName} }
     `
 
-    const outputFileRouter = projectRoot('src/components/routing/_route.js')
-    const fileContentRouter = `
-    import React from 'react'
-    import useAuth from '${authImport}'
-    import Route from '@tenjojeremy/web-toolkit/build/Authentication/Router/Route/route.index.js'
-
-    export default (props) => <Route authState={useAuth} {...props}/>
-    `
-
     try {
       // 1. create provider file
       await createFile(outputFileProvider, fileContentProvider)
 
-      // 2. create Route component with private ability
-      await createFile(outputFileRouter, fileContentRouter)
       logSuccessMessage(successMessage)
     } catch (err) {
       throw err
