@@ -6,7 +6,7 @@ const { logSuccessMessage } = require('../../utils/logMessage')
 module.exports = async ({
   wappManifest: { firebase, authentication, database, pushNotifications },
 }) => {
-  const usePushNotifications = pushNotifications === 'firebase'
+  const isPushNotificationsEnabled = pushNotifications === 'firebase'
   const successMessage = `Firebase generated`
   const appImport = `import firebase from 'firebase/app'`
   const authImport = authentication === 'firebase' ? `import 'firebase/auth'` : ''
@@ -33,7 +33,7 @@ enablePerfMonitoring(firebase)
 enablePersistance(firebase)    
     `
     try {
-      if (usePushNotifications) await require('./pushNotifications')()
+      if (isPushNotificationsEnabled) await require('./pushNotifications')()
       await createFile(outputFile, fileContent)
       addToIndex({ name: 'Firebase/index', onlyImport: true })
       logSuccessMessage(successMessage)
