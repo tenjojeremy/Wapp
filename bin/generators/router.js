@@ -1,11 +1,11 @@
 const fs = require('fs-extra')
 const filehound = require('filehound')
-const emoji = require('node-emoji')
 
 const { wappRoot, projectRoot } = require('../utils/getModulePath')
+const { logSuccessMessage } = require('../utils/logMessage')
 
 module.exports = async () => {
-  const successMessage = `${emoji.get('white_check_mark')}  Router generated `
+  const successMessage = `Router generated`
   const defaultRouter = wappRoot('/router/router.js')
   const outputFile = projectRoot('src/pages/router.js')
   const pagesSrc = projectRoot('src/pages')
@@ -24,6 +24,6 @@ module.exports = async () => {
 
   if (!hasRouter) {
     await fs.copy(defaultRouter, outputFile)
-    console.log(successMessage)
+    logSuccessMessage(successMessage)
   }
 }

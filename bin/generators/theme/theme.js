@@ -1,10 +1,10 @@
 const filehound = require('filehound')
-const emoji = require('node-emoji')
 const fs = require('fs-extra')
 
 const { wappRoot, projectRoot, wappDir } = require('../../utils/getModulePath')
 const toCSSVariable = require('../../converters/cssVariables')
 const createFile = require('../../utils/createFile')
+const { logSuccessMessage } = require('../../utils/logMessage')
 
 const genDoc = require('./story')
 
@@ -12,9 +12,9 @@ module.exports = async ({ wappManifest }) => {
   const {
     theme: { vendors },
   } = wappManifest
-  const successMessage = `${emoji.get('white_check_mark')}  Theme generated `
+  const successMessage = `Theme generated `
   let srcDefaultMerge = {}
-  const outputFile = wappDir('_theme.js')
+  const outputFile = wappDir('theme.js')
   const defaultDir = wappRoot('defaults/theme')
   const srcThemeDir = projectRoot('src/theme')
   const colors = require(projectRoot('src/theme/colors'))
@@ -81,7 +81,7 @@ module.exports = async ({ wappManifest }) => {
 
   // write to  file
   await createFile(outputFile, cssString)
-  console.log(successMessage)
+  logSuccessMessage(successMessage)
 
   // handle vendors
   if (vendors) {

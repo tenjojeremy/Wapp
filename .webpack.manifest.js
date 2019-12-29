@@ -1,9 +1,9 @@
 const colors = require('./defaults/theme/colors')
 const { projectRoot, wappDir } = require('./bin/utils/getModulePath')
 
-const fonts = require(projectRoot('src/.wapp/_fonts'))
-const splashScreen = require(projectRoot('src/.wapp/splashScreen/splashScreen'))
-const headCss = require(projectRoot('src/.wapp/_theme'))
+const fonts = require(wappDir('fonts'))
+const splashScreen = require(wappDir('splashScreen/splashScreen'))
+const headCss = require(wappDir('theme'))
 const wappManifest = require(projectRoot('.wapp.manifest.js'))
 const headTags = `${fonts}${splashScreen}`
 

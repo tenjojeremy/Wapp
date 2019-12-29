@@ -1,11 +1,10 @@
-const emoji = require('node-emoji')
-
 const createFile = require('../utils/createFile')
 const { wappDir } = require('../utils/getModulePath')
+const { logSuccessMessage } = require('../utils/logMessage')
 
 module.exports = async ({ wappManifest: { typogrpahy } }) => {
-  const successMessage = `${emoji.get('white_check_mark')}  Fonts generated `
-  const outputFile = wappDir('_fonts.js')
+  const successMessage = `Fonts generated`
+  const outputFile = wappDir('fonts.js')
 
   if (typogrpahy) {
     const { fonts, source = 'googleFonts' } = typogrpahy
@@ -18,7 +17,7 @@ module.exports = async ({ wappManifest: { typogrpahy } }) => {
       const masterString = `module.exports = ${'`'}${stringJoin}${'`'}`
 
       createFile(outputFile, masterString)
-      console.log(successMessage)
+      logSuccessMessage(successMessage)
     }
   }
 }

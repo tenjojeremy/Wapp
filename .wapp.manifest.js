@@ -16,6 +16,7 @@ module.exports = {
     fonts: ['roboto', { name: 'montserrat', weights: [500] }],
   },
   theme: { vendors: 'materialui' },
+  pushNotifications: 'firebase',
   authentication: 'firebase',
   database: 'firestore',
   firebase: {

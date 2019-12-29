@@ -1,9 +1,8 @@
-const emoji = require('node-emoji')
-
 const { projectRoot } = require('../utils/getModulePath')
 const createFile = require('../utils/createFile')
+const { logSuccessMessage } = require('../utils/logMessage')
 
-const successMessage = `${emoji.get('white_check_mark')}  Account generated`
+const successMessage = `Account generated`
 
 module.exports = async ({ wappManifest: { authentication } }) => {
   if (authentication) {
@@ -33,7 +32,7 @@ module.exports = async ({ wappManifest: { authentication } }) => {
 
       // 2. create Route component with private ability
       await createFile(outputFileRouter, fileContentRouter)
-      console.log(successMessage)
+      logSuccessMessage(successMessage)
     } catch (err) {
       throw err
     }

@@ -1,7 +1,6 @@
-const emoji = require('node-emoji')
-
 const createFile = require('../utils/createFile')
 const { projectRoot } = require('../utils/getModulePath')
+const { logSuccessMessage } = require('../utils/logMessage')
 
 module.exports = async () => {
   const outputFile = projectRoot('src/_index.js')
@@ -12,7 +11,7 @@ module.exports = async () => {
     const bPosition = b.position || 999
     return aPosition - bPosition
   })
-  const successMessage = `${emoji.get('white_check_mark')}  Index generated`
+  const successMessage = `Index generated`
   let masterString = ''
   let onlyImportsString = []
   let importsString = []
@@ -42,7 +41,7 @@ import { hot } from 'react-hot-loader/root'
 import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 import { catchAddToHomeScreenPrompt } from '@tenjojeremy/web-toolkit/build/Misc-Utils/AddToHomeScreen/addToHomeScreen.index'
 
-import hideSplashScreen from './.wapp/splashScreen/hideSplashScreen'
+import hideSplashScreen from './.wapp/_splashScreen/hideSplashScreen'
 ${onlyImportsString}
 import Router from './pages/router'
 ${importsString}
@@ -64,5 +63,5 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
   createFile(outputFile, masterString)
 
-  console.log(successMessage)
+  logSuccessMessage(successMessage)
 }

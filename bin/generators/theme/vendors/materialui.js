@@ -1,12 +1,11 @@
-const emoji = require('node-emoji')
-
 const addToIndex = require('../../../utils/addToIndex')
 const createFile = require('../../../utils/createFile')
 const { wappDir } = require('../../../utils/getModulePath')
+const { logSuccessMessage } = require('../../../utils/logMessage')
 
 module.exports = () => {
-  const successMessage = `${emoji.get('white_check_mark')}  Material Ui generated `
-  const outputFile = wappDir('_materialui.js')
+  const successMessage = `Material Ui generated`
+  const outputFile = wappDir('materialui.js')
   const string = `import React from 'react'
   import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
@@ -32,5 +31,5 @@ module.exports = () => {
   addToIndex({ name: 'materialui' })
 
   createFile(outputFile, string)
-  console.log(successMessage)
+  logSuccessMessage(successMessage)
 }

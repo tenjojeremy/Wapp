@@ -4,4 +4,4 @@ exports.wappRoot = (folder = 'defaults') => __dirname.replace('bin\\utils', fold
 
 exports.projectRoot = (path = '') => `${getProjectRoot()}/${path}`
 
-exports.wappDir = (path = '') => `${getProjectRoot()}/src/.wapp/${path}`
+exports.wappDir = (path = '') => `${getProjectRoot()}/src/.wapp/_${path}`

@@ -1,13 +1,13 @@
-const emoji = require('node-emoji')
-
-const addToIndex = require('../utils/addToIndex')
-const createFile = require('../utils/createFile')
-const { wappDir } = require('../utils/getModulePath')
+const addToIndex = require('../../utils/addToIndex')
+const createFile = require('../../utils/createFile')
+const { wappDir } = require('../../utils/getModulePath')
+const { logSuccessMessage } = require('../../utils/logMessage')
 
 module.exports = async ({
-  wappManifest: { firebase, authentication = {}, database = {} },
+  wappManifest: { firebase, authentication, database, pushNotifications },
 }) => {
-  const successMessage = `${emoji.get('white_check_mark')}  Firebase generated`
+  const usePushNotifications = pushNotifications === 'firebase'
+  const successMessage = `Firebase generated`
   const appImport = `import firebase from 'firebase/app'`
   const authImport = authentication === 'firebase' ? `import 'firebase/auth'` : ''
   const firestoreImport = database === 'firestore' ? `import 'firebase/firestore'` : ''
@@ -21,7 +21,7 @@ module.exports = async ({
   if (firebase) {
     const { config } = firebase
     const configString = JSON.stringify(config)
-    const outputFile = wappDir('_firebase.js')
+    const outputFile = wappDir('firebase/index.js')
     const fileContent = `
 ${firebaseImports}
 import enablePersistance from '@tenjojeremy/web-toolkit/build/Database/Firestore/Utils/firestore.persistance'
@@ -33,9 +33,10 @@ enablePerfMonitoring(firebase)
 enablePersistance(firebase)    
     `
     try {
+      if (usePushNotifications) await require('./pushNotifications')()
       await createFile(outputFile, fileContent)
-      addToIndex({ name: 'Firebase', onlyImport: true })
-      console.log(successMessage)
+      addToIndex({ name: 'Firebase/index', onlyImport: true })
+      logSuccessMessage(successMessage)
     } catch (err) {
       throw err
     }

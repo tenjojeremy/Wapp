@@ -1,10 +1,10 @@
 const filehound = require('filehound')
-const emoji = require('node-emoji')
 const { watch } = require('chokidar')
 
 const { projectRoot, wappDir } = require('../utils/getModulePath')
 const addToIndex = require('../utils/addToIndex')
 const createFile = require('../utils/createFile')
+const { logSuccessMessage } = require('../utils/logMessage')
 
 exports.generateStoreAndListen = async ({ wappManifest }) => {
   const srcDirPath = projectRoot('src')
@@ -14,25 +14,21 @@ exports.generateStoreAndListen = async ({ wappManifest }) => {
   }
   const watcher = watch(glob, options)
 
-  watcher.on('add', async () => {
-    await generateStore(wappManifest)
-  })
-  watcher.on('unlink', async () => {
-    await generateStore(wappManifest)
-  })
+  watcher.on('add', async () => await generateStore(wappManifest, true))
+  watcher.on('unlink', async () => await generateStore(wappManifest, true))
 
   await generateStore(wappManifest)
 }
 
-const generateStore = async (wappManifest) => {
-  const successMessage = `${emoji.get('white_check_mark')}  Store generated`
+const generateStore = async (wappManifest, hydrate) => {
+  const successMessage = `Store ${hydrate ? 'hydrated' : 'generated'}`
   let masterString = ''
   let stringImports = ''
   let stringProviders = ''
   let files = []
   let orderedFiles = null
   const srcPath = projectRoot('/src')
-  const outputFile = wappDir('_store.js')
+  const outputFile = wappDir('store.js')
 
   try {
     files = await filehound
@@ -83,7 +79,7 @@ const generateStore = async (wappManifest) => {
 
     await createFile(outputFile, masterString)
     addToIndex({ name: 'Store', position: 1 })
-    console.log(successMessage)
+    logSuccessMessage(successMessage)
   } catch (err) {
     throw err
   }

@@ -9,7 +9,7 @@ module.exports = async () => {
     docs: {
       config: {
         port = 6006,
-        configPath = projectRoot('./src/.wapp/storybook'),
+        configPath = projectRoot('./src/.wapp/_storybook'),
         ...restConfig
       },
     },
