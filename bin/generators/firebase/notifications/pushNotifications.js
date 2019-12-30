@@ -2,6 +2,7 @@ const { wappDir, buildDir } = require('../../../utils/getModulePath')
 const createFile = require('../../../utils/createFile')
 const { logSuccessMessage } = require('../../../utils/logMessage')
 const { addExtraBuildFile } = require('../../extraBuildFiles')
+const { addToBodyTag } = require('../../bodyTag')
 
 const getServiceWorkerString = require('./getServiceWorkerString')
 
@@ -19,7 +20,20 @@ export { NotificationsProvider } from '@tenjojeremy/web-toolkit/build/Engagement
     from: source,
     to: destination,
   }
+  const swRegistrationString = `
+  <script type="text/javascript">
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/firebase-messaging-sw.js')
+    .then(function(registration) {
+      console.log('Registration successful, scope is:', registration.scope);
+    })
+    .catch(function(error) {
+      console.log('Service worker registration failed, error:', error);
+    });
+  }
+  </script>`
 
+  addToBodyTag(swRegistrationString)
   addExtraBuildFile(extraBuildFiles)
   await createFile(stateOutput, stateContent)
   await createFile(serviceWorkerOutput, serviceWorkerContent)

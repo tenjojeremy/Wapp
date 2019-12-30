@@ -5,6 +5,7 @@ const fonts = require(wappDir('fonts'))
 const splashScreen = require(wappDir('splashScreen/splashScreen'))
 const headCss = require(wappDir('theme'))
 const extraBuildFiles = require(wappDir('extraBuildFiles'))
+const bodyTag = require(wappDir('bodyTag'))
 const wappManifest = require(projectDir('.wapp.manifest.js'))
 const headTags = `${fonts}${splashScreen}`
 
@@ -16,7 +17,7 @@ const defaultManifest = {
     startUrl: '/',
     colors,
     logo: {
-      path: './defaults/images/logo/logo.png',
+      path: './defaults/images/logo/',
     },
   },
   webpack: {
@@ -26,7 +27,7 @@ const defaultManifest = {
     entry: projectDir('src/_index.js'),
     plugins: {
       html: {
-        bodyHtmlSnippet: '',
+        bodyHtmlSnippet: bodyTag,
         headTags,
         headCss,
       },
