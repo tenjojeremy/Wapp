@@ -1,13 +1,13 @@
 const filehound = require('filehound')
 const { watch } = require('chokidar')
 
-const { projectRoot, wappDir } = require('../utils/getModulePath')
+const { projectDir, wappDir } = require('../utils/getModulePath')
 const addToIndex = require('../utils/addToIndex')
 const createFile = require('../utils/createFile')
 const { logSuccessMessage } = require('../utils/logMessage')
 
 exports.generateStoreAndListen = async ({ wappManifest }) => {
-  const srcDirPath = projectRoot('src')
+  const srcDirPath = projectDir('src')
   const glob = `${srcDirPath}/**/*.state.js`
   const options = {
     ignoreInitial: true,
@@ -27,7 +27,7 @@ const generateStore = async (wappManifest, hydrate) => {
   let stringProviders = ''
   let files = []
   let orderedFiles = null
-  const srcPath = projectRoot('/src')
+  const srcPath = projectDir('/src')
   const outputFile = wappDir('store.js')
 
   try {

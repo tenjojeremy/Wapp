@@ -1,8 +1,8 @@
-const { projectRoot } = require('../../utils/getModulePath')
+const { projectDir } = require('../../utils/getModulePath')
 const createFile = require('../../utils/createFile')
 
 module.exports = async (string) => {
-  const outputFileStory = projectRoot('src/theme/_theme.stories.mdx')
+  const outputFileStory = projectDir('src/theme/_theme.stories.mdx')
   const masterString = `import { Meta } from '@storybook/addon-docs/blocks'
 
 <Meta title='Theme|Variables' />

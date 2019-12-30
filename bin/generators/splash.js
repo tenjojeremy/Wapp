@@ -2,7 +2,7 @@ const { existsSync, readFile } = require('fs-extra')
 const svgo = require('svgo')
 const { convertFile: convertToPNG } = require('convert-svg-to-png')
 
-const { projectRoot, wappDir } = require('../utils/getModulePath')
+const { projectDir, wappDir } = require('../utils/getModulePath')
 const createFile = require('../utils/createFile')
 const { logSuccessMessage } = require('../utils/logMessage')
 
@@ -13,8 +13,8 @@ module.exports = async ({
     },
   },
 }) => {
-  const svgFile = projectRoot(`${path}/logo.svg`)
-  const pngFile = projectRoot(`${path}/logo.png`)
+  const svgFile = projectDir(`${path}/logo.svg`)
+  const pngFile = projectDir(`${path}/logo.png`)
   const pngExists = existsSync(pngFile)
   const createdToPNGMessage = `logo.png created`
   const createdSplashMessage = `Splash Screen created`

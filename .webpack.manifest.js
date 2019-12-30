@@ -1,10 +1,11 @@
 const colors = require('./defaults/theme/colors')
-const { projectRoot, wappDir } = require('./bin/utils/getModulePath')
+const { projectDir, wappDir } = require('./bin/utils/getModulePath')
 
 const fonts = require(wappDir('fonts'))
 const splashScreen = require(wappDir('splashScreen/splashScreen'))
 const headCss = require(wappDir('theme'))
-const wappManifest = require(projectRoot('.wapp.manifest.js'))
+const extraBuildFiles = require(wappDir('extraBuildFiles'))
+const wappManifest = require(projectDir('.wapp.manifest.js'))
 const headTags = `${fonts}${splashScreen}`
 
 const defaultManifest = {
@@ -22,13 +23,14 @@ const defaultManifest = {
     devServer: {
       port: 3001,
     },
-    entry: projectRoot('src/_index.js'),
+    entry: projectDir('src/_index.js'),
     plugins: {
       html: {
         bodyHtmlSnippet: '',
         headTags,
         headCss,
       },
+      copy_webpack_plugin: extraBuildFiles,
     },
   },
 }

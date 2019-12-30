@@ -1,9 +1,11 @@
 const createFile = require('../utils/createFile')
-const { projectRoot } = require('../utils/getModulePath')
+const { projectDir } = require('../utils/getModulePath')
 const { logSuccessMessage } = require('../utils/logMessage')
 
-module.exports = async () => {
-  const outputFile = projectRoot('src/_index.js')
+exports.initGenerateAppIndex = () => (global.indexModules = [])
+
+exports.generateAppIndex = async () => {
+  const outputFile = projectDir('src/_index.js')
 
   const { indexModules } = global
   indexModules.sort((a, b) => {

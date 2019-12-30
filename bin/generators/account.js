@@ -1,4 +1,4 @@
-const { projectRoot } = require('../utils/getModulePath')
+const { wappDir } = require('../utils/getModulePath')
 const createFile = require('../utils/createFile')
 const { logSuccessMessage } = require('../utils/logMessage')
 
@@ -7,7 +7,7 @@ module.exports = async ({ wappManifest: { authentication } }) => {
     const successMessage = `Account generated`
     const providerName = `AuthProvider`
     const authImport = `@tenjojeremy/web-toolkit/build/Authentication/UseAuth/useAuth.index.js`
-    const outputFileProvider = projectRoot('src/user/auth.state.js')
+    const outputFileProvider = wappDir('user/auth.state.js')
     const fileContentProvider = `
     import state, { ${providerName} } from '${authImport}'    
 

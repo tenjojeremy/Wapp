@@ -1,6 +1,6 @@
 const shell = require('shelljs')
 
-const { wappRoot, projectRoot } = require('../../utils/getModulePath')
+const { wappRootDir, projectDir } = require('../../utils/getModulePath')
 const generateConfig = require('../../generators/docs/config')
 
 module.exports = async () => {
@@ -9,11 +9,11 @@ module.exports = async () => {
     docs: {
       config: {
         port = 6006,
-        configPath = projectRoot('./src/.wapp/_storybook'),
+        configPath = projectDir('./src/.wapp/_storybook'),
         ...restConfig
       },
     },
-  } = require(wappRoot('.webpack.manifest.js'))
+  } = require(wappRootDir('.webpack.manifest.js'))
   const command = `yarn start-storybook --quiet -p ${port} -c ${configPath}`
 
   try {

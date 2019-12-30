@@ -1,7 +1,7 @@
 const filehound = require('filehound')
 const fs = require('fs-extra')
 
-const { wappRoot, projectRoot, wappDir } = require('../../utils/getModulePath')
+const { wappRootDir, projectDir, wappDir } = require('../../utils/getModulePath')
 const toCSSVariable = require('../../converters/cssVariables')
 const createFile = require('../../utils/createFile')
 const { logSuccessMessage } = require('../../utils/logMessage')
@@ -15,9 +15,9 @@ module.exports = async ({ wappManifest }) => {
   const successMessage = `Theme generated `
   let srcDefaultMerge = {}
   const outputFile = wappDir('theme.js')
-  const defaultDir = wappRoot('defaults/theme')
-  const srcThemeDir = projectRoot('src/theme')
-  const colors = require(projectRoot('src/theme/colors'))
+  const defaultDir = wappRootDir('defaults/theme')
+  const srcThemeDir = projectDir('src/theme')
+  const colors = require(projectDir('src/theme/colors'))
   let defaultStringsObject = {}
   const totalObjectSrc = {}
   let directoriesSrc = []

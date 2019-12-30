@@ -1,9 +1,9 @@
 const shell = require('shelljs')
 
-const { wappRoot } = require('../utils/getModulePath')
+const { wappRootDir } = require('../utils/getModulePath')
 
 module.exports = async () => {
-  const wappWebpackManifest = wappRoot('.webpack.manifest.js')
+  const wappWebpackManifest = wappRootDir('.webpack.manifest.js')
 
   shell.exec(`yarn webpack-scripts build ${wappWebpackManifest}`)
 }
