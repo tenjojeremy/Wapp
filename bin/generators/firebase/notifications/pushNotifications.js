@@ -2,7 +2,6 @@ const { wappDir, buildDir } = require('../../../utils/getModulePath')
 const createFile = require('../../../utils/createFile')
 const { logSuccessMessage } = require('../../../utils/logMessage')
 const { addExtraBuildFile } = require('../../extraBuildFiles')
-const { addToBodyTag } = require('../../bodyTag')
 
 const getServiceWorkerString = require('./getServiceWorkerString')
 
