@@ -33,7 +33,7 @@ export { NotificationsProvider } from '@tenjojeremy/web-toolkit/build/Engagement
   }
   </script>`
 
-  addToBodyTag(swRegistrationString)
+  // addToBodyTag(swRegistrationString)
   addExtraBuildFile(extraBuildFiles)
   await createFile(stateOutput, stateContent)
   await createFile(serviceWorkerOutput, serviceWorkerContent)
