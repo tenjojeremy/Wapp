@@ -25,7 +25,7 @@ export { NotificationsProvider } from '@tenjojeremy/web-toolkit/build/Engagement
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/firebase-messaging-sw.js')
     .then(function(registration) {
-      console.log('Registration successful, scope is:', registration.scope);
+      window.firebaseMessagingSWRegistration = registration
     })
     .catch(function(error) {
       console.log('Service worker registration failed, error:', error);
