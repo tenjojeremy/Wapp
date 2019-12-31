@@ -1,4 +1,5 @@
 const firebaseConfig = require(`./src/firebase/firebase.config`)
+const serviceWorkerReceiverFunction = require(`./src/firebase/serviceWorkerReceiverFunction`)
 const colors = require('./defaults/theme/colors')
 
 module.exports = {
@@ -16,11 +17,11 @@ module.exports = {
     fonts: ['roboto', { name: 'montserrat', weights: [500] }],
   },
   theme: { vendors: 'materialui' },
-  pushNotifications: 'firebase',
   authentication: 'firebase',
   database: 'firestore',
   firebase: {
     config: firebaseConfig,
+    pushNotifications: serviceWorkerReceiverFunction,
   },
   docs: {
     config: {

@@ -5,9 +5,14 @@ const { addExtraBuildFile } = require('../../extraBuildFiles')
 
 const getServiceWorkerString = require('./getServiceWorkerString')
 
-module.exports = async (config) => {
+module.exports = async ({ config, serviceWorkerReceiverFunction }) => {
+  if (!config || !serviceWorkerReceiverFunction) return
+
   const serviceWorkerOutput = wappDir('firebase/notifications/firebase-messaging-sw.js')
-  const serviceWorkerContent = getServiceWorkerString(config)
+  const serviceWorkerContent = getServiceWorkerString({
+    config,
+    serviceWorkerReceiverFunction,
+  })
   const successMessage = 'Firebase Push Notifications generated'
   const stateOutput = wappDir('firebase/notifications/notifications.state.js')
   const stateContent = `
