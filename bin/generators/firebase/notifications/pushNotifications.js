@@ -20,20 +20,7 @@ export { NotificationsProvider } from '@tenjojeremy/web-toolkit/build/Engagement
     from: source,
     to: destination,
   }
-  const swRegistrationString = `
-  <script type="text/javascript">
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/firebase-messaging-sw.js')
-    .then(function(registration) {
-      window.firebaseMessagingSWRegistration = registration
-    })
-    .catch(function(error) {
-      console.log('Service worker registration failed, error:', error);
-    });
-  }
-  </script>`
 
-  // addToBodyTag(swRegistrationString)
   addExtraBuildFile(extraBuildFiles)
   await createFile(stateOutput, stateContent)
   await createFile(serviceWorkerOutput, serviceWorkerContent)
