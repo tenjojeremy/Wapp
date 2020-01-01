@@ -15,6 +15,7 @@ const {
   generateAddExtraBuildFiles,
 } = require('../../generators/extraBuildFiles')
 const { initBodyTag, generateAddBodyTag } = require('../../generators/bodyTag')
+const offlineSupport = require('../../generators/offlineSupport')
 
 module.exports = async (additionalScripts) => {
   const webpackManifest = wappRootDir('.webpack.manifest.js')
@@ -35,9 +36,10 @@ module.exports = async (additionalScripts) => {
     await generateAccount({ wappManifest })
     await generateStoreAndListen({ wappManifest })
     await generateFonts({ wappManifest })
-    await generateAppIndex({ wappManifest })
     await generateAddExtraBuildFiles({ wappManifest })
     await generateAddBodyTag({ wappManifest })
+    await offlineSupport({ wappManifest })
+    await generateAppIndex({ wappManifest })
 
     console.log()
 

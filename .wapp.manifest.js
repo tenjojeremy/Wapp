@@ -16,6 +16,7 @@ module.exports = {
   typogrpahy: {
     fonts: ['roboto', { name: 'montserrat', weights: [500] }],
   },
+  offlineSupport: true,
   theme: { vendors: 'materialui' },
   authentication: 'firebase',
   database: 'firestore',

@@ -40,15 +40,12 @@ exports.generateAppIndex = async () => {
   masterString = `import React from 'react'
 import ReactDOM from 'react-dom'
 import { hot } from 'react-hot-loader/root'
-import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 import { catchAddToHomeScreenPrompt } from '@tenjojeremy/web-toolkit/build/Misc-Utils/AddToHomeScreen/addToHomeScreen.index'
 
 import hideSplashScreen from './.wapp/_splashScreen/hideSplashScreen'
 ${onlyImportsString}
 import Router from './pages/router'
 ${importsString}
-
-OfflinePluginRuntime.install()
 
 const App = hot(() => (
   ${openingTags}
@@ -62,7 +59,6 @@ catchAddToHomeScreenPrompt()
 
 ReactDOM.render(<App />, document.getElementById('root'))
 `
-
   createFile(outputFile, masterString)
 
   logSuccessMessage(successMessage)
