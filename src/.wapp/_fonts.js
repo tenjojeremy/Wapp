@@ -1,0 +1,1 @@
+module.exports = `<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">`
