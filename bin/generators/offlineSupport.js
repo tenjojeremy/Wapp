@@ -10,7 +10,9 @@ module.exports = async ({ wappManifest: { offlineSupport = true } }) => {
   const registerSWDir = wappDir('offlineSupport.js')
   const registerSWContent = `
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
+    window.addEventListener('load', function() {
+     navigator.serviceWorker.register('/service-worker.js')
+    })
   }
 `
   await createFile(registerSWDir, registerSWContent)
