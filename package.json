@@ -1,6 +1,6 @@
 {
   "name": "@tenjojeremy/wapp",
-  "version": "0.75.0",
+  "version": "0.76.0",
   "description": "Wapp - React Framework",
   "author": "Jeremy Tenjo <tenjojeremy@gmail.com>",
   "license": "MIT",
@@ -59,7 +59,7 @@
     "@material-ui/core": "^4.7.0",
     "@tenjojeremy/eslint-config": "^1.7.0",
     "@tenjojeremy/prettier-config": "^0.4.0",
-    "@tenjojeremy/web-toolkit": "^4.167.0",
+    "@tenjojeremy/web-toolkit": "^4.187.0",
     "babel-loader": "^8.0.6",
     "prettier": "1.19.1",
     "react-router-dom": "^5.1.2"
