@@ -59,7 +59,7 @@
     "@material-ui/core": "^4.7.0",
     "@tenjojeremy/eslint-config": "latest",
     "@tenjojeremy/prettier-config": "latest",
-    "@tenjojeremy/web-toolkit": "^5.4.0",
+    "@tenjojeremy/web-toolkit": "^5.5.0",
     "babel-loader": "^8.0.6",
     "prettier": "1.19.1",
     "react-router-dom": "^5.1.2"

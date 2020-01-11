@@ -23,7 +23,7 @@ module.exports = async ({ wappManifest: { firebase, authentication, database } }
     const fileContent = `
 ${firebaseImports}
 import enablePersistance from '@tenjojeremy/web-toolkit/database/firestore/utils/firestore.persistance'
-import enablePerfMonitoring from '@tenjojeremy/web-toolkit/analytics/firebase/analytics.index'
+import enablePerfMonitoring from '@tenjojeremy/web-toolkit/analytics/firebase'
     
 firebase.initializeApp(${configString})
     
