@@ -22,8 +22,8 @@ module.exports = async ({ wappManifest: { firebase, authentication, database } }
     const outputFile = wappDir('firebase/index.js')
     const fileContent = `
 ${firebaseImports}
-import enablePersistance from '@tenjojeremy/web-toolkit/build/Database/Firestore/Utils/firestore.persistance'
-import enablePerfMonitoring from '@tenjojeremy/web-toolkit/build/Analytics/Firebase/analytics.index'
+import enablePersistance from '@tenjojeremy/web-toolkit/build/database/firestore/utils/firestore.persistance'
+import enablePerfMonitoring from '@tenjojeremy/web-toolkit/build/analytics/firebase/analytics.index'
     
 firebase.initializeApp(${configString})
     

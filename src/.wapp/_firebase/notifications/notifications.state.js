@@ -1,1 +1,1 @@
-export { NotificationsProvider } from '@tenjojeremy/web-toolkit/build/Engagement/Push-Notifications/client/Firebase/React/useNotifications.index'
+export { NotificationsProvider } from '@tenjojeremy/web-toolkit/build/engagement/pushNotifications/client/firebase/useNotifications.index'

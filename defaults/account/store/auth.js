@@ -1,3 +1,3 @@
-import state from '@tenjojeremy/web-toolkit/build/Authentication/useAuth'
+import state from '@tenjojeremy/web-toolkit/build/authentication/useAuth'
 
 export default state

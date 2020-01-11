@@ -16,7 +16,7 @@ module.exports = async ({ config, serviceWorkerReceiverFunction }) => {
   const successMessage = 'Firebase Push Notifications generated'
   const stateOutput = wappDir('firebase/notifications/notifications.state.js')
   const stateContent = `
-export { NotificationsProvider } from '@tenjojeremy/web-toolkit/build/Engagement/Push-Notifications/client/Firebase/React/useNotifications.index'
+export { NotificationsProvider } from '@tenjojeremy/web-toolkit/build/engagement/pushNotifications/client/firebase/useNotifications.index'
   `
   const source = serviceWorkerOutput
   const destination = buildDir()

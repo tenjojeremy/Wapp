@@ -2,8 +2,8 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
 
-import enablePersistance from '@tenjojeremy/web-toolkit/build/Database/Firestore/Utils/firestore.persistance'
-import enablePerfMonitoring from '@tenjojeremy/web-toolkit/build/Analytics/Firebase/analytics.index'
+import enablePersistance from '@tenjojeremy/web-toolkit/build/database/firestore/utils/firestore.persistance'
+import enablePerfMonitoring from '@tenjojeremy/web-toolkit/build/analytics/firebase/analytics.index'
 
 firebase.initializeApp({
   apiKey: 'AIzaSyD9rNdySsFa1fqymv7pW77L-upW2zfV9t8',
