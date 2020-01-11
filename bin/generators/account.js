@@ -6,7 +6,7 @@ module.exports = async ({ wappManifest: { authentication } }) => {
   if (authentication) {
     const successMessage = `Account generated`
     const providerName = `AuthProvider`
-    const authImport = `@tenjojeremy/web-toolkit/build/authentication/useAuth`
+    const authImport = `@tenjojeremy/web-toolkit/authentication/useAuth`
     const outputFileProvider = wappDir('user/auth.state.js')
     const fileContentProvider = `
     import state, { ${providerName} } from '${authImport}'    

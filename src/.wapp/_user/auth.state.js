@@ -1,6 +1,6 @@
 import state, {
   AuthProvider,
-} from '@tenjojeremy/web-toolkit/build/authentication/useAuth'
+} from '@tenjojeremy/web-toolkit/authentication/useAuth'
 
 export default state
 
