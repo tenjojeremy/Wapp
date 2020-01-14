@@ -13,9 +13,6 @@ module.exports = {
       path: 'defaults/images/logo',
     },
   },
-  typogrpahy: {
-    fonts: ['roboto', { name: 'montserrat', weights: [500] }],
-  },
   offlineSupport: true,
   theme: { vendors: 'materialui' },
   authentication: 'firebase',

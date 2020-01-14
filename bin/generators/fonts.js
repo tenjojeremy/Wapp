@@ -1,42 +1,49 @@
+const glob = require('glob')
+
 const createFile = require('../utils/createFile')
-const { wappDir } = require('../utils/getModulePath')
+const { wappDir, projectDir, buildDir } = require('../utils/getModulePath')
 const { logSuccessMessage } = require('../utils/logMessage')
+const capitalize = require('../utils/capitalize')
+const removeFromArray = require('../utils/removeFromArray')
 
-module.exports = async ({ wappManifest: { typogrpahy } }) => {
-  const successMessage = `Fonts generated`
-  const outputFile = wappDir('fonts.js')
+const { addExtraBuildFile } = require('./extraBuildFiles')
 
-  if (typogrpahy) {
-    const { fonts, source = 'googleFonts' } = typogrpahy
-    if (fonts) {
-      const stringArray = fonts.map((font) => {
-        return functions[source]({ font })
+module.exports = () =>
+  new Promise((resolve) => {
+    glob(projectDir('src/fonts/**/*'), async (err, files = []) => {
+      const successMessage = `Fonts generated`
+      const outputFile = wappDir('fonts.js')
+      const source = projectDir('src/fonts')
+      const destination = buildDir('fonts')
+      const extraBuildFiles = {
+        from: source,
+        to: destination,
+      }
+      let fontFaceString = 'module.exports = `<style>'
+
+      files.map((file) => {
+        const path = removeFromArray(file, 'fonts')
+        const fileName = file.split('/').pop()
+        const fontName = fileName.split('-')[0]
+        const fontNameCapitalized = capitalize(fontName)
+        const fontWeight = fileName.split('-')[1].split('.')[0]
+        const fontFormat = fileName.split('.')[1]
+
+        fontFaceString += `
+      @font-face {
+        font-family: '${fontNameCapitalized}';
+        font-display: swap;
+        font-style: normal;
+        font-weight: ${fontWeight};
+        src: url('./fonts/${path}') format('${fontFormat}');
+      }   
+      `
       })
+      fontFaceString += '</style>`'
 
-      const stringJoin = stringArray.join(' ')
-      const masterString = `module.exports = ${'`'}${stringJoin}${'`'}`
-
-      createFile(outputFile, masterString)
+      addExtraBuildFile(extraBuildFiles)
+      createFile(outputFile, fontFaceString)
       logSuccessMessage(successMessage)
-    }
-  }
-}
-
-const functions = {
-  googleFonts: ({ font }) => {
-    let fontInfo = ''
-    const type = typeof font
-
-    if (type === 'string') {
-      const nameUpper = font.charAt(0).toUpperCase() + font.slice(1)
-      fontInfo = nameUpper
-    } else {
-      const { name, weights } = font
-      const nameUpper = name.charAt(0).toUpperCase() + name.slice(1)
-      const weightsString = weights.join(',')
-      fontInfo = `${nameUpper}:${weightsString}`
-    }
-
-    return `<link href="https://fonts.googleapis.com/css?family=${fontInfo}&display=swap" rel="stylesheet">`
-  },
-}
+      resolve()
+    })
+  })

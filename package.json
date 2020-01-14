@@ -48,6 +48,7 @@
     "firebase": "^7.3.0",
     "fs-extra": "^8.1.0",
     "get-my-local-ip": "^0.1.16",
+    "glob": "^7.1.6",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "node-emoji": "^1.10.0",
