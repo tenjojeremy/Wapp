@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 const RouterWrapper = ({ children }) => {
   return (
     <BrowserRouter>
-      Add pages in ./src/pages
+      <h1 style={{ fontFamily: 'Montserrat' }}>Add pages in ./src/pages</h1>
       <div style={{ backgroundColor: 'var(--color-primary)' }}>as</div>
       {children}
     </BrowserRouter>

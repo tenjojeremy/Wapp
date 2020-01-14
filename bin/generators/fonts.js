@@ -5,6 +5,7 @@ const { wappDir, projectDir, buildDir } = require('../utils/getModulePath')
 const { logSuccessMessage } = require('../utils/logMessage')
 const capitalize = require('../utils/capitalize')
 const removeFromArray = require('../utils/removeFromArray')
+const isProduction = require('../utils/isProduction')
 
 const { addExtraBuildFile } = require('./extraBuildFiles')
 
@@ -13,6 +14,7 @@ module.exports = () =>
     glob(projectDir('src/fonts/**/*'), async (err, files = []) => {
       const successMessage = `Fonts generated`
       const outputFile = wappDir('fonts.js')
+      const srcFontsDir = isProduction() ? './fonts/' : './src/fonts/'
       const source = projectDir('src/fonts')
       const destination = buildDir('fonts')
       const extraBuildFiles = {
@@ -35,7 +37,7 @@ module.exports = () =>
         font-display: swap;
         font-style: normal;
         font-weight: ${fontWeight};
-        src: url('./fonts/${path}') format('${fontFormat}');
+        src: url('${srcFontsDir}${path}') format('${fontFormat}');
       }   
       `
       })

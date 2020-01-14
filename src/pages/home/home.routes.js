@@ -5,14 +5,13 @@ const Explore = lazy(() => import(/* webpackChunkName: 'Explore' */ './home.inde
 
 export default () => (
   <Switch>
-    <Route exact path='/' render={() => <Redirect to='/explore' />} />
     <Route
-      path='/explore'
+      path='/'
       render={() => (
         <>
           <Suspense fallback={null}>
             <Switch>
-              <Route exact path='/explore' render={() => <Explore />} />
+              <Route exact path='/' render={() => <Explore />} />
             </Switch>
           </Suspense>
         </>
