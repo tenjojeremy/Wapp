@@ -1,5 +1,5 @@
-const dev = require('./dev')
+const start = require('./start')
 
 module.exports = async () => {
-  dev('firebase serve --only functions')
+  start('firebase serve --only functions')
 }

@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 const Explore = lazy(() => import(/* webpackChunkName: 'Explore' */ './home.index'))
 

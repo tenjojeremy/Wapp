@@ -1,4 +1,4 @@
-const dev = require('./dev')
+const start = require('./start')
 const withFirebaseFunctions = require('./withFirebaseFunctions')
 
 const action = process.argv[3]
@@ -10,7 +10,7 @@ module.exports = () => {
       break
 
     default:
-      dev()
+      start()
       break
   }
 }
