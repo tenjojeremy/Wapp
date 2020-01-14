@@ -1,4 +1,3 @@
-const shell = require('shelljs')
 const concurrently = require('concurrently')
 
 const { wappRootDir } = require('../utils/getModulePath')
