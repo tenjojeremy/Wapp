@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch } from '@tenjojeremy/web-toolkit/navigation/router'
 
-const Explore = lazy(() => import(/* webpackChunkName: 'Explore' */ './home.index'))
+const Home = lazy(() => import(/* webpackChunkName: 'Home' */ './index'))
 
 export default () => (
   <Switch>
@@ -11,7 +11,7 @@ export default () => (
         <>
           <Suspense fallback={null}>
             <Switch>
-              <Route exact path='/' render={() => <Explore />} />
+              <Route exact path='/' render={() => <Home />} />
             </Switch>
           </Suspense>
         </>

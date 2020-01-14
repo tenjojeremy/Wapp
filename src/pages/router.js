@@ -1,12 +1,18 @@
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from '@tenjojeremy/web-toolkit/navigation/router'
 
-const RouterWrapper = ({ children }) => {
+import Core from '../templates/core/core.index'
+
+import HomeRoutes from './home/routes'
+import ProfileRoutes from './profile/routes'
+
+const RouterWrapper = () => {
   return (
     <BrowserRouter>
-      <h1 style={{ fontFamily: 'Montserrat' }}>Add pages in ./src/pages</h1>
-      <div style={{ backgroundColor: 'var(--color-primary)' }}>as</div>
-      {children}
+      <Core>
+        <HomeRoutes />
+        <ProfileRoutes />
+      </Core>
     </BrowserRouter>
   )
 }
