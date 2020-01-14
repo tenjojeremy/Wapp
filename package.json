@@ -1,6 +1,6 @@
 {
   "name": "@tenjojeremy/wapp",
-  "version": "0.86.0",
+  "version": "0.87.0",
   "description": "Wapp - React Framework",
   "author": "Jeremy Tenjo <tenjojeremy@gmail.com>",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "analyze": "node ./bin/index analyze",
     "start:docs": "node ./bin/index docs",
     "build:docs": "node ./bin/index docs build",
-    "deploy": "yarn publish --minor && gpush",
+    "deploy": "yarn publish --minor && npm run build && firebase deploy && gpush",
     "pretty": "prettier \"**/*.js\" --write",
     "lint:fix": "eslint ./src --fix",
     "check-staged": "lint-staged"
@@ -60,9 +60,8 @@
     "@material-ui/core": "^4.7.0",
     "@tenjojeremy/eslint-config": "latest",
     "@tenjojeremy/prettier-config": "latest",
-    "@tenjojeremy/web-toolkit": "^5.5.0",
+    "@tenjojeremy/web-toolkit": "^5.9.0",
     "babel-loader": "^8.0.6",
-    "prettier": "1.19.1",
-    "react-router-dom": "^5.1.2"
+    "prettier": "1.19.1"
   }
 }
