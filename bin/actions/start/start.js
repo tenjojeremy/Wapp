@@ -5,12 +5,13 @@ const createWappBuild = require('../createWappBuild')
 
 module.exports = async (additionalScripts) => {
   const webpackManifest = wappRootDir('.webpack.manifest.js')
+  const env = 'dev'
   const scripts = [`yarn webpack-scripts start ${webpackManifest}`]
 
   if (additionalScripts) scripts.push(additionalScripts)
 
   try {
-    await createWappBuild('dev')
+    await createWappBuild(env)
     await concurrently(scripts)
   } catch (err) {
     throw err
