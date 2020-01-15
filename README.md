@@ -49,7 +49,7 @@ config: firebaseConfig,
 },
 ```
 
-##### Fonts
+## Fonts
 
 adding font files to `src/fonts` will automatically add them to the page
 
