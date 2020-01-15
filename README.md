@@ -51,7 +51,7 @@ config: firebaseConfig,
 
 ## Fonts
 
-adding font files to `src/fonts` will automatically add them to the page
+Adding font files to `src/fonts` will automatically add them to the page
 
 ## License
 
