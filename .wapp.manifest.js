@@ -1,6 +1,6 @@
 const firebaseConfig = require(`./src/firebase/firebase.config`)
 const serviceWorkerReceiverFunction = require(`./src/firebase/serviceWorkerReceiverFunction`)
-const colors = require('./defaults/theme/colors')
+const colors = require('./bin/defaults/theme/colors')
 
 module.exports = {
   projectInfo: {
@@ -10,7 +10,7 @@ module.exports = {
     startUrl: '/',
     colors,
     logo: {
-      path: 'defaults/images/logo',
+      path: 'bin/defaults/images/logo',
     },
   },
   offlineSupport: true,

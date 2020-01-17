@@ -1,6 +1,6 @@
 const getProjectRoot = () => process.cwd()
 
-exports.wappRootDir = (folder = 'defaults') => __dirname.replace('bin\\utils', folder)
+exports.wappRootDir = (folder = 'bin/defaults') => __dirname.replace('bin\\utils', folder)
 
 exports.projectDir = (path = '') => `${getProjectRoot()}/${path}`
 

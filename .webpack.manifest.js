@@ -1,4 +1,4 @@
-const colors = require('./defaults/theme/colors')
+const colors = require('./bin/defaults/theme/colors')
 const { projectDir, wappDir } = require('./bin/utils/getModulePath')
 
 const fonts = require(wappDir('fonts'))
@@ -17,7 +17,7 @@ const defaultManifest = {
     startUrl: '/',
     colors,
     logo: {
-      path: './defaults/images/logo/',
+      path: './bin/defaults/images/logo/',
     },
   },
   webpack: {
