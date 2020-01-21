@@ -16,4 +16,3 @@ firebase.initializeApp({
 })
 
 enablePerfMonitoring(firebase)
-enablePersistance(firebase)
