@@ -27,7 +27,6 @@ import enablePerfMonitoring from '@tenjojeremy/web-toolkit/analytics/firebase'
 firebase.initializeApp(${configString})
     
 enablePerfMonitoring(firebase)
-enablePersistance(firebase)    
     `
     try {
       if (pushNotifications)
