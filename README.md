@@ -13,7 +13,7 @@ The definitive web app framework
 #### Installation
 
 ```
-npx add @tenjojeremy/wapp
+npm i @tenjojeremy/wapp
 ```
 
 Add scripts to package json
