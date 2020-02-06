@@ -1,6 +1,6 @@
 {
   "name": "@tenjojeremy/wapp",
-  "version": "0.93.0",
+  "version": "1.0.0",
   "description": "Wapp - React Framework",
   "author": "Jeremy Tenjo <tenjojeremy@gmail.com>",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "analyze": "node ./bin/index analyze",
     "start:docs": "node ./bin/index docs",
     "build:docs": "node ./bin/index docs build",
-    "deploy": "yarn publish --minor && npm run build && firebase deploy && gpush",
+    "deploy": "npm publish --minor && npm run build && firebase deploy && gpush",
     "pretty": "prettier \"**/*.js\" --write",
     "lint:fix": "eslint ./src --fix",
     "check-staged": "lint-staged"
@@ -30,8 +30,8 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "yarn lint:fix",
-      "yarn pretty",
+      "npm run lint:fix",
+      "npm run pretty",
       "prettier --list-different"
     ]
   },

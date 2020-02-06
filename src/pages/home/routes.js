@@ -8,13 +8,11 @@ export default () => (
     <Route
       path='/'
       render={() => (
-        <>
-          <Suspense fallback={null}>
-            <Switch>
-              <Route exact path='/' render={() => <Home />} />
-            </Switch>
-          </Suspense>
-        </>
+        <Suspense fallback={null}>
+          <Switch>
+            <Route exact path='/' render={() => <Home />} />
+          </Switch>
+        </Suspense>
       )}
     />
   </Switch>

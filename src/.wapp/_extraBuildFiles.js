@@ -1,11 +1,11 @@
 module.exports = [
   {
     from:
-      'C:\\Dev\\Personal_Projects\\Wapp/src/.wapp/_firebase/notifications/firebase-messaging-sw.js',
-    to: 'C:\\Dev\\Personal_Projects\\Wapp/build/',
+      'C:\\Dev\\Personal_Projects\\devtools\\wapp/src/.wapp/_firebase/notifications/firebase-messaging-sw.js',
+    to: 'C:\\Dev\\Personal_Projects\\devtools\\wapp/build/',
   },
   {
-    from: 'C:\\Dev\\Personal_Projects\\Wapp/src/fonts',
-    to: 'C:\\Dev\\Personal_Projects\\Wapp/build/fonts',
+    from: 'C:\\Dev\\Personal_Projects\\devtools\\wapp/src/fonts',
+    to: 'C:\\Dev\\Personal_Projects\\devtools\\wapp/build/fonts',
   },
 ]

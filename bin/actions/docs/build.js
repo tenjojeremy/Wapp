@@ -5,5 +5,5 @@ const { wappRootDir } = require('../../utils/getModulePath')
 module.exports = async () => {
   const wappWebpackManifest = wappRootDir('.webpack.manifest.js')
 
-  shell.exec(`yarn build-storybook`)
+  shell.exec(`npx build-storybook`)
 }
