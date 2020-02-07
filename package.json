@@ -11,7 +11,7 @@
     "start:docs": "node ./bin/index docs",
     "build:docs": "node ./bin/index docs build",
     "deploy": "npm publish --minor && npm run build && firebase deploy && gpush",
-    "pretty": "prettier \"**/*.js\" --write",
+    "prettify": "prettier \"**/*.js\" --write",
     "lint:fix": "eslint ./src --fix",
     "check-staged": "lint-staged"
   },

@@ -6,7 +6,7 @@
 
 <div align="center">
 
-The definitive web app framework 
+The definitive web app framework
 
 </div>
 
@@ -14,6 +14,14 @@ The definitive web app framework
 
 ```
 npx add @tenjojeremy/wapp
+```
+
+Create `.babelrc.js` and add
+
+```js
+module.exports = {
+  extends: './node_modules/@tenjojeremy/wapp/.babelrc',
+}
 ```
 
 Add scripts to package json
