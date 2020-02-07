@@ -16,12 +16,6 @@ The definitive web app framework
 npm i @tenjojeremy/wapp
 ```
 
-Create `.babelrc.js` and add
-
-```js
-module.exports = {
-  extends: './node_modules/@tenjojeremy/wapp/.babelrc',
-}
 ```
 
 Add scripts to package json
