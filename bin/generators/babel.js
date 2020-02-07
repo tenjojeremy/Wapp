@@ -7,7 +7,7 @@ module.exports = async () => {
   const outputFile = projectDir('.babelrc.js')
 
   let cssString = `module.exports = {
-    extends: './node_modules/@tenjojeremy/wapp/.babelrc'
+    extends: './node_modules/@tenjojeremy/webpack-config/.babelrc'
 }`
 
   // write to  file
