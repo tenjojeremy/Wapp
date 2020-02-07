@@ -1,3 +1,3 @@
 module.exports = {
-  extends: './node_modules/@tenjojeremy/webpack-config/.babelrc',
+  extends: './node_modules/@tenjojeremy/wapp/.babelrc',
 }
