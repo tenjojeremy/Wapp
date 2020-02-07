@@ -22,7 +22,7 @@ Add scripts to package json
   "scripts": {
     "start": "wapp",
     "build": "wapp build",
-    "build:analyze": "wapp build && wapp analyze",
+    "build:analyze": "npm run build && wapp analyze",
   }
 ```
 
