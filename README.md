@@ -16,8 +16,6 @@ The definitive web app framework
 npm i @tenjojeremy/wapp
 ```
 
-```
-
 Add scripts to package json
 
 ```json
