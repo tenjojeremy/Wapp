@@ -1,6 +1,6 @@
 {
   "name": "@tenjojeremy/wapp",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Wapp - React Framework",
   "author": "Jeremy Tenjo <tenjojeremy@gmail.com>",
   "license": "MIT",
@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@material-ui/core": "^4.7.0",
-    "@tenjojeremy/eslint-config": "latest",
+    "@tenjojeremy/eslint-config": "^2.8.0",
     "@tenjojeremy/prettier-config": "latest",
     "@tenjojeremy/web-toolkit": "^5.9.0",
     "babel-loader": "^8.0.6",
