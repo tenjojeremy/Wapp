@@ -10,7 +10,7 @@
     "analyze": "node ./bin/index analyze",
     "start:docs": "node ./bin/index docs",
     "build:docs": "node ./bin/index docs build",
-    "deploy": "npm publish --minor && npm run build && firebase deploy && gpush",
+    "deploy": "npm version minor && npm publish && npm run build && firebase deploy && gpush",
     "prettify": "prettier \"**/*.js\" --write",
     "lint:fix": "eslint ./src --fix",
     "lint:check": "eslint ./src",
@@ -59,9 +59,9 @@
   },
   "devDependencies": {
     "@material-ui/core": "^4.9.1",
-    "@tenjojeremy/eslint-config": "^2.14.0",
-    "@tenjojeremy/prettier-config": "latest",
-    "@tenjojeremy/web-toolkit": "^5.17.0",
+    "@tenjojeremy/eslint-config": "^3.1.0",
+    "@tenjojeremy/prettier-config": "0.5.0",
+    "@tenjojeremy/web-toolkit": "^6.4.0",
     "babel-loader": "^8.0.6",
     "prettier": "1.19.1"
   }
