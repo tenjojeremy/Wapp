@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@material-ui/core": "^4.7.0",
-    "@tenjojeremy/eslint-config": "^2.8.0",
+    "@tenjojeremy/eslint-config": "latest",
     "@tenjojeremy/prettier-config": "latest",
     "@tenjojeremy/web-toolkit": "^5.9.0",
     "babel-loader": "^8.0.6",
