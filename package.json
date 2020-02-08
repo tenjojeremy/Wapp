@@ -13,6 +13,7 @@
     "deploy": "npm publish --minor && npm run build && firebase deploy && gpush",
     "prettify": "prettier \"**/*.js\" --write",
     "lint:fix": "eslint ./src --fix",
+    "lint:check": "eslint ./src",
     "check-staged": "lint-staged"
   },
   "main": "./bin/index.js",
