@@ -10,7 +10,7 @@
     "analyze": "node ./bin/index analyze",
     "start:docs": "node ./bin/index docs",
     "build:docs": "node ./bin/index docs build",
-    "deploy": "npm version minor && npm publish && npm run build && firebase deploy && gpush",
+    "deploy": "npm run build && npm version minor && npm publish && firebase deploy && gpush",
     "prettify": "prettier \"**/*.js\" --write",
     "lint:fix": "eslint ./src --fix",
     "lint:check": "eslint ./src",
