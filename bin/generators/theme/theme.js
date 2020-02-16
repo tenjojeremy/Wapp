@@ -9,9 +9,7 @@ const { logSuccessMessage } = require('../../utils/logMessage')
 const genDoc = require('./story')
 
 module.exports = async ({ wappManifest }) => {
-  const {
-    theme: { vendors },
-  } = wappManifest
+  const { theme: { vendors } = {} } = wappManifest
   const successMessage = `Theme generated `
   let srcDefaultMerge = {}
   const outputFile = wappDir('theme.js')
