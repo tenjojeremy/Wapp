@@ -18,7 +18,8 @@ module.exports = `
  /* spacing */
 
   :root {
-  --spacing-unit: 16px;
+  --spacing-none: 0;
+--spacing-unit: 16px;
 --spacing-xxs: calc(0.25 * var(--spacing-unit));
 --spacing-xs: calc(0.5 * var(--spacing-unit));
 --spacing-s: calc(0.75 * var(--spacing-unit));
