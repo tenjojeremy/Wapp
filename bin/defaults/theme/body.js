@@ -12,10 +12,4 @@ body {
 * * {
   box-sizing: border-box;
 }
-
-@media only screen and (min-width: 900px) {
-  body {
-    background-color: var(--color-lightgrey);
-  }
-}
 `
