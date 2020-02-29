@@ -24,7 +24,6 @@ module.exports = {
   font-style: normal;
   font-weight: normal;
   font-size: 48px;
-  color: var(--color-black)
   }
   .typography-h4 {
     font-family:  var(--font-primary);
@@ -63,7 +62,6 @@ module.exports = {
   font-weight: normal;
   font-size: 14px;
   letter-spacing: 0.25px;
-  color: var(--color-black)
   }
   
   .typography-subtitle1 {
@@ -72,7 +70,6 @@ module.exports = {
   font-weight: normal;
   font-size: 16px;
   letter-spacing: 0.15px;
-  color: var(--color-black)
   }
   
   .typography-subtitle2 {
@@ -95,7 +92,6 @@ module.exports = {
   font-weight: normal;
   font-size: 12px;
   letter-spacing: 0.4px;
-  color: var(--color-black)
   }
   .typography-navbar {
     font-family:  var(--font-primary);
