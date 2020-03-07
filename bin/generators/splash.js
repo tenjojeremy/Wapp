@@ -35,7 +35,12 @@ module.exports = async ({
   const { data: editedSVG } = await editSVG.optimize(svgContent, { path: svgFile })
   const splashScreenEl = `module.exports = ${'`'}${editedSVG}${'`'}`
   const hideFunctionFileDir = wappDir('splashScreen/hideSplashScreen.js')
-  const hideFunctionFile = `export default () => document.getElementById('splashScreen').remove()`
+  const hideFunctionFile = `
+  export default () => {
+    const splashScreen = document.getElementById('splashScreen')
+    splashScreen && splashScreen.remove()
+  }
+  `
   const convertToPngOptions = { width: 512, height: 512 }
 
   if (!pngExists) {
