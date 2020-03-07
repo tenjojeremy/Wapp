@@ -63,6 +63,7 @@
     "@tenjojeremy/prettier-config": "0.5.0",
     "@tenjojeremy/web-toolkit": "^6.4.0",
     "babel-loader": "^8.0.6",
-    "prettier": "1.19.1"
+    "prettier": "1.19.1",
+    "styled-components": "^5.0.1"
   }
 }

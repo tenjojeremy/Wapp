@@ -8,13 +8,16 @@ import './.wapp/_firebase/index'
 import './.wapp/_offlineSupport'
 import Router from './pages/router'
 import Store from './.wapp/_store'
+import StyledComponents from './.wapp/_styledComponents'
 import Materialui from './.wapp/_materialui'
 
 const App = hot(() => (
   <Store>
-    <Materialui>
-      <Router />
-    </Materialui>
+    <StyledComponents>
+      <Materialui>
+        <Router />
+      </Materialui>
+    </StyledComponents>
   </Store>
 ))
 

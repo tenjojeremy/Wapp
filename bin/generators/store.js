@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-catch */
 const filehound = require('filehound')
 const { watch } = require('chokidar')
 

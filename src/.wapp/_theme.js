@@ -8,13 +8,6 @@ module.exports = `
 --color-secondary: #FF6F00;
   }
 
- /* mediaQueries */
-
-  :root {
-  --mediaQuery-m: 900;
---mediaQuery-l: 1200;
-  }
-
  /* spacing */
 
   :root {

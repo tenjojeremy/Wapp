@@ -1,4 +1,1 @@
-module.exports = {
-  m: 900,
-  l: 1200,
-}
+module.exports = { mediaQueries: { minWidth: [400, 700, 1200], minHeight: [400, 700] } }
