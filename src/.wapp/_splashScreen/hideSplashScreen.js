@@ -1,1 +1,4 @@
-export default () => document.getElementById('splashScreen').remove()
+export default () => {
+  const splashScreen = document.getElementById('splashScreen')
+  splashScreen && splashScreen.remove()
+}
