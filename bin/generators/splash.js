@@ -41,13 +41,15 @@ module.exports = async ({
 
     if (splashScreen) {
       const animationApiIsSupported = splashScreen.animate
+      const removeSplashScreen = () => splashScreen.remove()
   
       if (animationApiIsSupported) {
         const animationId = splashScreen.animate([{ opacity: 1 }, { opacity: 0 }], {
           duration: 100,
           fill: 'forwards',
         })
-      } else splashScreen.remove()
+        animationId.onfinish = () => removeSplashScreen()
+      } else removeSplashScreen()
     }
   }
   `
