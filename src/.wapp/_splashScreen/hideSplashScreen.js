@@ -2,6 +2,7 @@ export default () => {
   const splashScreen = document.getElementById('splashScreen')
 
   if (splashScreen) {
+    splashScreen.style.zIndex = 9999999999999
     const animationApiIsSupported = splashScreen.animate
     const removeSplashScreen = () => splashScreen.remove()
 
