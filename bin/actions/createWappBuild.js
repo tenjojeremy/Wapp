@@ -1,5 +1,6 @@
 const { logSuccessMessage } = require('../utils/logMessage')
 const { projectDir } = require('../utils/getModulePath')
+const generateAnimateOnSiteLoad = require('../generators/animateOnSiteLoad')
 const generateSplash = require('../generators/splash')
 const generateBabel = require('../generators/babel')
 const { initGenerateAppIndex, generateAppIndex } = require('../generators/appIndex')
@@ -20,25 +21,22 @@ module.exports = async (env) => {
   const wappManifest = require(projectDir('.wapp.manifest.js'))
   const payload = { wappManifest, env }
 
-  try {
-    initGenerateAppIndex()
-    initExtraBuildFiles()
-    initBodyTag()
-    await generateSplash(payload)
-    await generateBabel(payload)
-    await generateFirebase(payload)
-    await generateTheme(payload)
-    await generateRouter(payload)
-    await generateAccount(payload)
-    await generateStoreAndListen(payload)
-    await generateFonts(payload)
-    await generateAddExtraBuildFiles(payload)
-    await generateAddBodyTag(payload)
-    await offlineSupport(payload)
-    await generateAppIndex(payload)
+  initGenerateAppIndex()
+  initExtraBuildFiles()
+  initBodyTag()
+  await generateSplash(payload)
+  await generateAnimateOnSiteLoad(payload)
+  await generateBabel(payload)
+  await generateFirebase(payload)
+  await generateTheme(payload)
+  await generateRouter(payload)
+  await generateAccount(payload)
+  await generateStoreAndListen(payload)
+  await generateFonts(payload)
+  await generateAddExtraBuildFiles(payload)
+  await generateAddBodyTag(payload)
+  await offlineSupport(payload)
+  await generateAppIndex(payload)
 
-    logSuccessMessage('Wapp Build Created', 'star2')
-  } catch (err) {
-    throw err
-  }
+  logSuccessMessage('Wapp Build Created', 'star2')
 }

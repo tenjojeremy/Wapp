@@ -10,10 +10,6 @@ module.exports = async (additionalScripts) => {
 
   if (additionalScripts) scripts.push(additionalScripts)
 
-  try {
-    await createWappBuild(env)
-    await concurrently(scripts)
-  } catch (err) {
-    throw err
-  }
+  await createWappBuild(env)
+  await concurrently(scripts)
 }

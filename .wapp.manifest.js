@@ -13,6 +13,7 @@ module.exports = {
       path: 'bin/defaults/images/logo',
     },
   },
+  animateOnSiteLoad: 500,
   offlineSupport: true,
   theme: { vendors: 'materialui' },
   authentication: 'firebase',
