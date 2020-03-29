@@ -5,9 +5,10 @@ const fonts = require(wappDir('fonts'))
 const splashScreen = require(wappDir('splashScreen/splashScreen'))
 const headCss = require(wappDir('theme'))
 const extraBuildFiles = require(wappDir('extraBuildFiles'))
-const bodyTag = require(wappDir('bodyTag'))
+let bodyTag = require(wappDir('bodyTag'))
 const wappManifest = require(projectDir('.wapp.manifest.js'))
-const headTags = `${fonts}${splashScreen}`
+const headTags = fonts
+bodyTag = `${bodyTag}${splashScreen}`
 
 const defaultManifest = {
   projectInfo: {

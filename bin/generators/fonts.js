@@ -12,7 +12,7 @@ const { addExtraBuildFile } = require('./extraBuildFiles')
 module.exports = ({ env }) =>
   new Promise((resolve) => {
     const hasFonts = existsSync(projectDir('src/fonts'))
-    if (!hasFonts) return resolve()
+    if (!hasFonts) resolve()
 
     glob(projectDir('src/fonts/**/*'), async (err, files = []) => {
       const successMessage = `Fonts generated`
