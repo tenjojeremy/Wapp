@@ -1,4 +1,5 @@
 const glob = require('glob')
+const { existsSync } = require('fs-extra')
 
 const createFile = require('../utils/createFile')
 const { wappDir, projectDir, buildDir } = require('../utils/getModulePath')
@@ -10,6 +11,9 @@ const { addExtraBuildFile } = require('./extraBuildFiles')
 
 module.exports = ({ env }) =>
   new Promise((resolve) => {
+    const hasFonts = existsSync(projectDir('src/fonts'))
+    if (!hasFonts) return resolve()
+
     glob(projectDir('src/fonts/**/*'), async (err, files = []) => {
       const successMessage = `Fonts generated`
       const outputFile = wappDir('fonts.js')
