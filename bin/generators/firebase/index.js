@@ -3,13 +3,15 @@ const createFile = require('../../utils/createFile')
 const { wappDir } = require('../../utils/getModulePath')
 const { logSuccessMessage } = require('../../utils/logMessage')
 
+const analyticsReqs = require('./analytics/requirements')
+
 module.exports = async ({ wappManifest: { firebase } }) => {
   if (firebase) {
-    const { pushNotifications, authentication, database, analytics } = firebase
+    const { pushNotifications, authentication, database, analytics, config } = firebase
     const successMessage = `Firebase generated`
     const appImport = `import firebase from 'firebase/app'`
     const authImport = authentication ? `import 'firebase/auth'` : ''
-    const analyticsImport = analytics ? `import 'firebase/analytics'` : ''
+    const analyticsImport = analytics && analyticsReqs(config) ? `import 'firebase/analytics'` : ''
     const firestoreImport = database === 'firestore' ? `import 'firebase/firestore'` : ''
 
     const firebaseImports = `
@@ -18,8 +20,6 @@ module.exports = async ({ wappManifest: { firebase } }) => {
   ${analyticsImport}
   ${firestoreImport}
   `
-
-    const { config } = firebase
     const configString = JSON.stringify(config)
     const outputFile = wappDir('firebase/index.js')
     const fileContent = `
