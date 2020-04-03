@@ -2,8 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/analytics'
 import 'firebase/firestore'
-
-import enablePerfMonitoring from '@tenjojeremy/web-toolkit/analytics/firebase'
+import 'firebase/performance'
 
 firebase.initializeApp({
   apiKey: 'AIzaSyD9rNdySsFa1fqymv7pW77L-upW2zfV9t8',
@@ -16,4 +15,4 @@ firebase.initializeApp({
   measurementId: 'G-LDXY4PWWVL',
 })
 
-enablePerfMonitoring(firebase)
+window.firebasePerformance = firebase.performance()
