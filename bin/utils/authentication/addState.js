@@ -1,9 +1,8 @@
-const { wappDir } = require('../utils/getModulePath')
-const createFile = require('../utils/createFile')
-const { logSuccessMessage } = require('../utils/logMessage')
+const { wappDir } = require('../getModulePath')
+const createFile = require('../createFile')
+const { logSuccessMessage } = require('../logMessage')
 
-module.exports = async ({ wappManifest: { authentication } }) => {
-  if (authentication) {
+module.exports = async () => {
     const successMessage = `Account generated`
     const providerName = `AuthProvider`
     const authImport = `@tenjojeremy/web-toolkit/authentication/useAuth`
@@ -16,11 +15,8 @@ module.exports = async ({ wappManifest: { authentication } }) => {
     export { ${providerName} }
     `
 
-    try {
       await createFile(outputFileProvider, fileContentProvider)
       logSuccessMessage(successMessage)
-    } catch (err) {
-      throw err
-    }
-  }
+    
+  
 }

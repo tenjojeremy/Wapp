@@ -3,12 +3,12 @@ const createFile = require('../../utils/createFile')
 const { wappDir } = require('../../utils/getModulePath')
 const { logSuccessMessage } = require('../../utils/logMessage')
 
-module.exports = async ({ wappManifest: { firebase, authentication, database } }) => {
+module.exports = async ({ wappManifest: { firebase } }) => {
   if (firebase) {
-    const { pushNotifications } = firebase
+    const { pushNotifications, authentication, database } = firebase
     const successMessage = `Firebase generated`
     const appImport = `import firebase from 'firebase/app'`
-    const authImport = authentication === 'firebase' ? `import 'firebase/auth'` : ''
+    const authImport = authentication ? `import 'firebase/auth'` : ''
     const firestoreImport = database === 'firestore' ? `import 'firebase/firestore'` : ''
 
     const firebaseImports = `
@@ -28,17 +28,17 @@ firebase.initializeApp(${configString})
     
 enablePerfMonitoring(firebase)
     `
-    try {
-      if (pushNotifications)
+       if (pushNotifications)
         await require('./notifications/pushNotifications')({
           config,
           serviceWorkerReceiverFunction: pushNotifications,
         })
+
+        if (authentication) await require('../../utils/authentication/addState')()
+
       await createFile(outputFile, fileContent)
       addToIndex({ name: 'Firebase/index', onlyImport: true })
       logSuccessMessage(successMessage)
-    } catch (err) {
-      throw err
-    }
-  }
+   
+  } else return null
 }

@@ -5,7 +5,7 @@ import { NotificationsProvider } from '../.wapp/_firebase/notifications/notifica
 import { ExampleProvider } from '../general/example.state.js'
 
 const providers = [
-  <AuthProvider key={1} service='firebase' />,
+  <AuthProvider key={1} />,
   <NotificationsProvider key={2} />,
   <ExampleProvider key={3} />,
 ]

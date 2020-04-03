@@ -16,11 +16,11 @@ module.exports = {
   animateOnSiteLoad: 500,
   offlineSupport: true,
   theme: { vendors: 'materialui' },
-  authentication: 'firebase',
-  database: 'firestore',
   firebase: {
     config: firebaseConfig,
     pushNotifications: serviceWorkerReceiverFunction,
+    database: 'firestore',
+    authentication: true
   },
   docs: {
     config: {

@@ -8,7 +8,6 @@ const generateFirebase = require('../generators/firebase')
 const generateTheme = require('../generators/theme/theme')
 const generateRouter = require('../generators/router')
 const { generateStoreAndListen } = require('../generators/store')
-const generateAccount = require('../generators/account')
 const generateFonts = require('../generators/fonts')
 const {
   initExtraBuildFiles,
@@ -30,7 +29,6 @@ module.exports = async (env) => {
   await generateFirebase(payload)
   await generateTheme(payload)
   await generateRouter(payload)
-  await generateAccount(payload)
   await generateStoreAndListen(payload)
   await generateFonts(payload)
   await generateAddExtraBuildFiles(payload)
