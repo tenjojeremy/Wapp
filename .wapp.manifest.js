@@ -20,7 +20,8 @@ module.exports = {
     config: firebaseConfig,
     pushNotifications: serviceWorkerReceiverFunction,
     database: 'firestore',
-    authentication: true
+    authentication: true,
+    analytics: true
   },
   docs: {
     config: {

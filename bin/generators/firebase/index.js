@@ -5,15 +5,17 @@ const { logSuccessMessage } = require('../../utils/logMessage')
 
 module.exports = async ({ wappManifest: { firebase } }) => {
   if (firebase) {
-    const { pushNotifications, authentication, database } = firebase
+    const { pushNotifications, authentication, database, analytics } = firebase
     const successMessage = `Firebase generated`
     const appImport = `import firebase from 'firebase/app'`
     const authImport = authentication ? `import 'firebase/auth'` : ''
+    const analyticsImport = analytics ? `import 'firebase/analytics'` : ''
     const firestoreImport = database === 'firestore' ? `import 'firebase/firestore'` : ''
 
     const firebaseImports = `
   ${appImport}
   ${authImport}
+  ${analyticsImport}
   ${firestoreImport}
   `
 
