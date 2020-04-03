@@ -37,10 +37,7 @@ module.exports = async ({
   configure(require.context('${srcPath}', true, ${filesToWatch}), module)
   `
 
-  try {
     await createFile(outputFile, fileContent)
     await createFile(outputPresetsFile, presetsContent)
-  } catch (err) {
-    throw err
-  }
+
 }
