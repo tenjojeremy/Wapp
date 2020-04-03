@@ -7,29 +7,31 @@ const analyticsReqs = require('./analytics/requirements')
 
 module.exports = async ({ wappManifest: { firebase } }) => {
   if (firebase) {
-    const { pushNotifications, authentication, database, analytics = true, config } = firebase
+    const { pushNotifications, authentication, database, analytics = true, config, perfomanceMonitoring } = firebase
     const successMessage = `Firebase generated`
     const appImport = `import firebase from 'firebase/app'`
     const authImport = authentication ? `import 'firebase/auth'` : ''
     const analyticsImport = analytics && analyticsReqs(config) ? `import 'firebase/analytics'` : ''
     const firestoreImport = database === 'firestore' ? `import 'firebase/firestore'` : ''
+    const perfomanceMonitoringImport = perfomanceMonitoring ? `import 'firebase/performance'` : ''
 
     const firebaseImports = `
   ${appImport}
   ${authImport}
   ${analyticsImport}
   ${firestoreImport}
+  ${perfomanceMonitoringImport}
   `
     const configString = JSON.stringify(config)
     const outputFile = wappDir('firebase/index.js')
     const fileContent = `
 ${firebaseImports}
-import enablePerfMonitoring from '@tenjojeremy/web-toolkit/analytics/firebase'
     
 firebase.initializeApp(${configString})
     
-enablePerfMonitoring(firebase)
+${perfomanceMonitoring && `window.firebasePerformance = firebase.performance()`}
     `
+
        if (pushNotifications)
         await require('./notifications/pushNotifications')({
           config,

@@ -21,7 +21,8 @@ module.exports = {
     pushNotifications: serviceWorkerReceiverFunction,
     database: 'firestore',
     authentication: true,
-    analytics: true
+    analytics: true,
+    perfomanceMonitoring: true
   },
   docs: {
     config: {
