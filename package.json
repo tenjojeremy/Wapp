@@ -14,7 +14,6 @@
     "prettify": "prettier \"**/*.js\" --write",
     "lint:fix": "eslint ./src --fix",
     "lint:check": "eslint ./src",
-    "check-staged": "lint-staged"
   },
   "main": "./bin/index.js",
   "bin": {
@@ -23,18 +22,6 @@
   "prettier": "@tenjojeremy/prettier-config",
   "eslintConfig": {
     "extends": "@tenjojeremy/eslint-config"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "npm run lint:fix",
-      "npm run pretty",
-      "prettier --list-different"
-    ]
   },
   "dependencies": {
     "@babel/core": "^7.8.4",
