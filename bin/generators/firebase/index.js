@@ -14,6 +14,7 @@ module.exports = async ({ wappManifest: { firebase } }) => {
     const analyticsImport = analytics && analyticsReqs(config) ? `import 'firebase/analytics'` : ''
     const firestoreImport = database === 'firestore' ? `import 'firebase/firestore'` : ''
     const perfomanceMonitoringImport = perfomanceMonitoring ? `import 'firebase/performance'` : ''
+    const perfomanceMonitoringInit = perfomanceMonitoring ? 'window.firebasePerformance = firebase.performance()':''
 
     const firebaseImports = `
   ${appImport}
@@ -29,7 +30,7 @@ ${firebaseImports}
     
 firebase.initializeApp(${configString})
     
-${perfomanceMonitoring && `window.firebasePerformance = firebase.performance()`}
+${perfomanceMonitoringInit}
     `
 
        if (pushNotifications)
