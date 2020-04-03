@@ -7,7 +7,7 @@ const analyticsReqs = require('./analytics/requirements')
 
 module.exports = async ({ wappManifest: { firebase } }) => {
   if (firebase) {
-    const { pushNotifications, authentication, database, analytics, config } = firebase
+    const { pushNotifications, authentication, database, analytics = true, config } = firebase
     const successMessage = `Firebase generated`
     const appImport = `import firebase from 'firebase/app'`
     const authImport = authentication ? `import 'firebase/auth'` : ''
