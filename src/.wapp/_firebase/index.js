@@ -1,6 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
-
+import 'firebase/analytics'
 import 'firebase/firestore'
 
 import enablePerfMonitoring from '@tenjojeremy/web-toolkit/analytics/firebase'
@@ -13,6 +13,7 @@ firebase.initializeApp({
   storageBucket: 'wapp-framework.appspot.com',
   messagingSenderId: '1046696464098',
   appId: '1:1046696464098:web:d90c6921a06582bec7d8bb',
+  measurementId: 'G-LDXY4PWWVL',
 })
 
 enablePerfMonitoring(firebase)
