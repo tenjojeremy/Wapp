@@ -15,6 +15,7 @@ const {
 } = require('../generators/extraBuildFiles')
 const { initBodyTag, generateAddBodyTag } = require('../generators/bodyTag')
 const offlineSupport = require('../generators/offlineSupport')
+const addNetworkFiles = require('../utils/network/addIsOnlineState')
 
 module.exports = async (env) => {
   const wappManifest = require(projectDir('.wapp.manifest.js'))
@@ -23,6 +24,7 @@ module.exports = async (env) => {
   initGenerateAppIndex()
   initExtraBuildFiles()
   initBodyTag()
+  await addNetworkFiles()
   await generateSplash(payload)
   await generateAnimateOnSiteLoad(payload)
   await generateBabel(payload)
