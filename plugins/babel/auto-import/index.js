@@ -1,5 +1,5 @@
 module.exports = () => {
-  console.log('generate declarations automatically !')
+  console.log('generate declarations  and eslint globals here automatically !')
   const declarations = [
     {
       default: 'React',
