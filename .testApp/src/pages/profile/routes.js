@@ -1,4 +1,3 @@
-import React, { Suspense } from 'react'
 import { Route, Switch } from '@tenjojeremy/wapp-build/navigation/router'
 
 import ProfileTemplate from '../profile'

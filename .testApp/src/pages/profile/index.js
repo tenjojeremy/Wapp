@@ -1,9 +1,9 @@
-import React, { memo } from 'react'
-
 const MyProfile = ({ children }) => {
+  const [title] = useState('Profile page')
+
   return (
     <div>
-      <span>Profile page</span>
+      <span>{title}</span>
       <br />
       {children}
     </div>

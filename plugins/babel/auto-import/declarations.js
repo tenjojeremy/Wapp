@@ -1,7 +1,7 @@
 module.exports = [
   {
     default: 'React',
-    members: ['useEffect', 'useState', 'useRef', 'memo', 'Fragment'],
+    members: ['useEffect', 'useState', 'useRef', 'memo', 'Fragment', 'Suspense'],
     path: 'react',
   },
   {

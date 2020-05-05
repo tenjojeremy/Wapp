@@ -2,5 +2,9 @@
 module.exports = {
   useState: 'readonly',
   useEffect: 'readonly',
+  useRef: 'readonly',
+  memo: 'readonly',
+  Fragment: 'readonly',
+  Suspense: 'readonly',
   Icon: 'readonly',
 }
