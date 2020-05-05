@@ -36,4 +36,5 @@ module.exports = async (env, wappManifest) => {
   await generateAppIndex(payload)
 
   logSuccessMessage('Wapp Build Created', 'star2', 'star2')
+  console.log()
 }

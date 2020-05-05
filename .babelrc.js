@@ -11,6 +11,22 @@ module.exports = {
   ],
   plugins: [
     require('react-hot-loader/babel'),
+    [
+      require('babel-plugin-auto-import'),
+      {
+        declarations: [
+          {
+            default: 'React',
+            members: ['useEffect', 'useState', 'useRef', 'memo', 'Fragment'],
+            path: 'react',
+          },
+          {
+            default: 'Icon',
+            path: '@tenjojeremy/wapp/dataDisplay/icon',
+          },
+        ],
+      },
+    ],
     require('@babel/plugin-syntax-dynamic-import'),
     require('@babel/plugin-syntax-throw-expressions'),
     require('@babel/plugin-transform-runtime'),
