@@ -1,13 +1,16 @@
-const { wappDir, buildDir } = require('../../../utils/getModulePath')
+const { wappDir, buildDir, componentImportPath } = require('../../../utils/getModulePath')
 const createFile = require('../../../utils/createFile')
 const { logSuccessMessage } = require('../../../utils/logMessage')
 const { addExtraBuildFile } = require('../../extraBuildFiles')
 
 const getServiceWorkerString = require('./getServiceWorkerString')
 
-module.exports = async ({ config, serviceWorkerReceiverFunction }) => {
+module.exports = async ({ config, serviceWorkerReceiverFunction, isTest }) => {
   if (!config || !serviceWorkerReceiverFunction) return
 
+  const importName = `${componentImportPath(
+    isTest,
+  )}/engagement/pushNotifications/client/firebase/useNotification`
   const serviceWorkerOutput = wappDir('firebase/notifications/firebase-messaging-sw.js')
   const serviceWorkerContent = getServiceWorkerString({
     config,
@@ -16,7 +19,7 @@ module.exports = async ({ config, serviceWorkerReceiverFunction }) => {
   const successMessage = 'Firebase Push Notifications generated'
   const stateOutput = wappDir('firebase/notifications/notifications.state.js')
   const stateContent = `
-export { NotificationsProvider } from '@tenjojeremy/wapp/engagement/pushNotifications/client/firebase/useNotification'
+export { NotificationsProvider } from '${importName}'
   `
   const source = serviceWorkerOutput
   const destination = buildDir()

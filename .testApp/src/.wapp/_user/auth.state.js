@@ -1,4 +1,4 @@
-import state, { AuthProvider } from '@tenjojeremy/wapp/authentication/useAuth'
+import state, { AuthProvider } from '@tenjojeremy/wapp-build/authentication/useAuth'
 
 export default state
 

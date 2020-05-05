@@ -1,11 +1,11 @@
-const { wappDir } = require('../getModulePath')
+const { wappDir, componentImportPath } = require('../getModulePath')
 const createFile = require('../createFile')
 const { logSuccessMessage } = require('../logMessage')
 
-module.exports = async () => {
+module.exports = async (isTest) => {
   const successMessage = `Account generated`
   const providerName = `AuthProvider`
-  const authImport = `@tenjojeremy/wapp/authentication/useAuth`
+  const authImport = `${componentImportPath(isTest)}/authentication/useAuth`
   const outputFileProvider = wappDir('user/auth.state.js')
   const fileContentProvider = `
     import state, { ${providerName} } from '${authImport}'    

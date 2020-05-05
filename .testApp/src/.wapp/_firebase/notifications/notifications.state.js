@@ -1,1 +1,1 @@
-export { NotificationsProvider } from '@tenjojeremy/wapp/engagement/pushNotifications/client/firebase/useNotification'
+export { NotificationsProvider } from '@tenjojeremy/wapp-build/engagement/pushNotifications/client/firebase/useNotification'

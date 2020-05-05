@@ -5,16 +5,28 @@ const { logSuccessMessage } = require('../../utils/logMessage')
 
 const analyticsReqs = require('./analytics/requirements')
 
-module.exports = async ({ wappManifest: { firebase } }) => {
+module.exports = async ({ wappManifest: { firebase }, isTest }) => {
   if (firebase) {
-    const { pushNotifications, authentication, database, analytics = true, config, perfomanceMonitoring } = firebase
+    const {
+      pushNotifications,
+      authentication,
+      database,
+      analytics = true,
+      config,
+      perfomanceMonitoring,
+    } = firebase
     const successMessage = `Firebase generated`
     const appImport = `import firebase from 'firebase/app'`
     const authImport = authentication ? `import 'firebase/auth'` : ''
-    const analyticsImport = analytics && analyticsReqs(config) ? `import 'firebase/analytics'` : ''
+    const analyticsImport =
+      analytics && analyticsReqs(config) ? `import 'firebase/analytics'` : ''
     const firestoreImport = database === 'firestore' ? `import 'firebase/firestore'` : ''
-    const perfomanceMonitoringImport = perfomanceMonitoring ? `import 'firebase/performance'` : ''
-    const perfomanceMonitoringInit = perfomanceMonitoring ? 'window.firebasePerformance = firebase.performance()':''
+    const perfomanceMonitoringImport = perfomanceMonitoring
+      ? `import 'firebase/performance'`
+      : ''
+    const perfomanceMonitoringInit = perfomanceMonitoring
+      ? 'window.firebasePerformance = firebase.performance()'
+      : ''
 
     const firebaseImports = `
   ${appImport}
@@ -33,17 +45,17 @@ firebase.initializeApp(${configString})
 ${perfomanceMonitoringInit}
     `
 
-       if (pushNotifications)
-        await require('./notifications/pushNotifications')({
-          config,
-          serviceWorkerReceiverFunction: pushNotifications,
-        })
+    if (pushNotifications)
+      await require('./notifications/pushNotifications')({
+        config,
+        serviceWorkerReceiverFunction: pushNotifications,
+        isTest,
+      })
 
-        if (authentication) await require('../../utils/authentication/addState')()
+    if (authentication) await require('../../utils/authentication/addState')(isTest)
 
-      await createFile(outputFile, fileContent)
-      addToIndex({ name: 'Firebase/index', onlyImport: true })
-      logSuccessMessage(successMessage)
-   
+    await createFile(outputFile, fileContent)
+    addToIndex({ name: 'Firebase/index', onlyImport: true })
+    logSuccessMessage(successMessage)
   } else return null
 }
