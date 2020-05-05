@@ -1,4 +1,4 @@
-const declarations = require('./plugins/babel/auto-import/declarations')
+const autoImport = require('./plugins/babel/auto-import')
 
 module.exports = {
   presets: [
@@ -13,12 +13,7 @@ module.exports = {
   ],
   plugins: [
     require('react-hot-loader/babel'),
-    [
-      require('babel-plugin-auto-import'),
-      {
-        declarations,
-      },
-    ],
+    autoImport(),
     require('@babel/plugin-syntax-dynamic-import'),
     require('@babel/plugin-syntax-throw-expressions'),
     require('@babel/plugin-transform-runtime'),
