@@ -6,6 +6,6 @@ module.exports = [
   },
   {
     default: 'Icon',
-    path: '@tenjojeremy/web-toolkit/dataDisplay/icon',
+    path: '@tenjojeremy/wapp/dataDisplay/icon',
   },
 ]

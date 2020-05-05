@@ -8,7 +8,7 @@ node_modules/
 
 # production
 .storybook/storybook-build
-tenjo-web-toolkit-snippets/snippets/snippets.json
+tenjo-wapp-snippets/snippets/snippets.json
 
 # Firebase 
 .firebase

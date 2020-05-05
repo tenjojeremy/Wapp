@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
-import Box from '@tenjojeremy/web-toolkit/dataDisplay/box'
-import Typography from '@tenjojeremy/web-toolkit/dataDisplay/typography'
+import Box from '@tenjojeremy/wapp/dataDisplay/box'
+import Typography from '@tenjojeremy/wapp/dataDisplay/typography'
 
 const Home = () => {
   return (

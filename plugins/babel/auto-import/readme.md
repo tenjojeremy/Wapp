@@ -21,7 +21,7 @@ npm i babel-plugin-auto-import
 _.babelrc.js_
 
 ```js
-const webToolkitDeclarations  = require('@tenjojeremy/web-toolkit/plugins/autoImport/declarations.js')
+const webToolkitDeclarations  = require('@tenjojeremy/wapp/plugins/autoImport/declarations.js')
 
 {
   "plugins": [[

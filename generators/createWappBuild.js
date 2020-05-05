@@ -15,8 +15,8 @@ const offlineSupport = require('./offlineSupport')
 const addNetworkFiles = require('../utils/network/addIsOnlineState')
 
 module.exports = async (env, wappManifest) => {
-  const payload = { wappManifest, env }
   const { isTest } = global
+  const payload = { wappManifest, env, isTest }
 
   initGenerateAppIndex()
   initExtraBuildFiles()
@@ -24,7 +24,7 @@ module.exports = async (env, wappManifest) => {
   await addNetworkFiles()
   await generateSplash(payload)
   await generateAnimateOnSiteLoad(payload)
-  await generateBabel(isTest)
+  await generateBabel(payload)
   await generateFirebase(payload)
   await generateTheme(payload)
   await generateRouter(payload)

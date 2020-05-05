@@ -1,7 +1,7 @@
 #### Usage
 
 ```js
-import Dialog from '@tenjojeremy/web-toolkit/Feedback/Dialog/Style1'
+import Dialog from '@tenjojeremy/wapp/Feedback/Dialog/Style1'
 ```
 
 ```js

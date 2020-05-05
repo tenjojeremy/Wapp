@@ -1,12 +1,12 @@
 const createFile = require('../utils/createFile')
-const { projectDir } = require('../utils/getModulePath')
+const { projectDir, componentImportPath } = require('../utils/getModulePath')
 const { logSuccessMessage } = require('../utils/logMessage')
 
 exports.initGenerateAppIndex = () => (global.indexModules = [])
 
-exports.generateAppIndex = async () => {
+exports.generateAppIndex = async ({ isTest }) => {
+  const importName = `${componentImportPath(isTest)}/utils/addToHomeScreen`
   const outputFile = projectDir('src/_index.js')
-
   const { indexModules } = global
   indexModules.sort((a, b) => {
     const aPosition = a.position || 999
@@ -40,7 +40,7 @@ exports.generateAppIndex = async () => {
   masterString = `import React from 'react'
 import ReactDOM from 'react-dom'
 import { hot } from 'react-hot-loader/root'
-import { catchAddToHomeScreenPrompt } from '@tenjojeremy/web-toolkit/utils/addToHomeScreen'
+import { catchAddToHomeScreenPrompt } from '${importName}'
 
 import animateOnSiteLoad from './.wapp/_animateOnSiteLoad/animateOnSiteLoad'
 import hideSplashScreen from './.wapp/_splashScreen/hideSplashScreen'

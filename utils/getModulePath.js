@@ -1,6 +1,7 @@
 const getProjectRoot = () => process.cwd()
 
-exports.wappRootDir = (folder = 'defaults') => __dirname.replace('utils', folder)
+const wappRootDir = (folder = 'defaults') => __dirname.replace('utils', folder)
+exports.wappRootDir = wappRootDir
 
 exports.projectDir = (path = '', _isTest) => {
   const { isTest } = global
@@ -17,3 +18,15 @@ exports.wappDir = (path = '', _isTest) => {
 }
 
 exports.buildDir = (path = '') => `${getProjectRoot()}/build/${path}`
+
+exports.componentImportPath = (isTrue) => {
+  const { name } = require(wappRootDir('package.json'))
+  let packageName = name
+  const extention = '-build'
+
+  if (isTrue) {
+    packageName = `${packageName}${extention}`
+  }
+
+  return packageName
+}

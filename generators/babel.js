@@ -2,7 +2,7 @@ const createFile = require('../utils/createFile')
 const { projectDir } = require('../utils/getModulePath')
 const { logSuccessMessage } = require('../utils/logMessage')
 
-module.exports = async (isTest) => {
+module.exports = async ({ isTest }) => {
   const importPath = isTest
     ? '../.babelrc.js'
     : './node_modules/@tenjojeremy/wapp/.babelrc.js'

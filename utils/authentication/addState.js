@@ -3,11 +3,11 @@ const createFile = require('../createFile')
 const { logSuccessMessage } = require('../logMessage')
 
 module.exports = async () => {
-    const successMessage = `Account generated`
-    const providerName = `AuthProvider`
-    const authImport = `@tenjojeremy/web-toolkit/authentication/useAuth`
-    const outputFileProvider = wappDir('user/auth.state.js')
-    const fileContentProvider = `
+  const successMessage = `Account generated`
+  const providerName = `AuthProvider`
+  const authImport = `@tenjojeremy/wapp/authentication/useAuth`
+  const outputFileProvider = wappDir('user/auth.state.js')
+  const fileContentProvider = `
     import state, { ${providerName} } from '${authImport}'    
 
     export default state
@@ -15,8 +15,6 @@ module.exports = async () => {
     export { ${providerName} }
     `
 
-      await createFile(outputFileProvider, fileContentProvider)
-      logSuccessMessage(successMessage)
-    
-  
+  await createFile(outputFileProvider, fileContentProvider)
+  logSuccessMessage(successMessage)
 }

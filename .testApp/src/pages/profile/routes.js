@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import { Route, Switch } from '@tenjojeremy/web-toolkit/navigation/router'
+import { Route, Switch } from '@tenjojeremy/wapp/navigation/router'
 
 import ProfileTemplate from '../profile'
 

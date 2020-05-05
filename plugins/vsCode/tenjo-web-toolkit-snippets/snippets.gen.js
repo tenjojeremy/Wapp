@@ -6,7 +6,7 @@ var emoji = require('node-emoji')
 const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1)
 
 let fileString = '{ '
-const packageName = '@tenjojeremy/web-toolkit'
+const packageName = '@tenjojeremy/wapp'
 
 glob(`components/.build/**/index.js`, function(err, files) {
   if (err) throw err
@@ -69,7 +69,7 @@ glob(`components/.build/**/index.js`, function(err, files) {
   const successEmogi = emoji.get('white_check_mark')
 
   // 2. create snipet file and attach created snippets
-  fs.writeFile('tenjo-web-toolkit-snippets/snippets/snippets.json', fileString, function(
+  fs.writeFile('tenjo-wapp-snippets/snippets/snippets.json', fileString, function(
     err,
   ) {
     if (err) throw err
@@ -77,7 +77,7 @@ glob(`components/.build/**/index.js`, function(err, files) {
   })
 
   // 3. Add snippets to README
-  fs.writeFile('tenjo-web-toolkit-snippets/README.md', fileString, function(err) {
+  fs.writeFile('tenjo-wapp-snippets/README.md', fileString, function(err) {
     if (err) throw err
     console.log(`${successEmogi}  README.md created`)
   })

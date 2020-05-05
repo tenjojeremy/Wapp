@@ -1,8 +1,8 @@
 {
-  "name": "tenjo-web-toolkit-snippets",
-  "displayName": "Tenjo-Web-Toolkit-Snippets",
-  "repository": "git://github.com/tenjojeremy/Web-Toolkit.git",
-  "description": "Library repo: https://github.com/tenjojeremy/web-toolkit",
+  "name": "tenjo-wapp-snippets",
+  "displayName": "Tenjo-wapp-Snippets",
+  "repository": "git://github.com/tenjojeremy/wapp.git",
+  "description": "Library repo: https://github.com/tenjojeremy/wapp",
   "icon": "logo-snippets.png",
   "publisher": "tenjojeremy",
   "version": "1.90.0",

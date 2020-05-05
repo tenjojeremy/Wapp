@@ -1,6 +1,6 @@
 // External Usage:
 
-// import { array } from '@tenjojeremy/web-toolkit'
+// import { array } from '@tenjojeremy/wapp'
 // const result = array('some', { params})
 
 // Available params: post, array, condition, value

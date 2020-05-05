@@ -5,7 +5,7 @@ const { logSuccessMessage } = require('../logMessage')
 module.exports = async () => {
   const successMessage = `IsOnline Provider generated`
   const providerName = `IsOnlineProvider`
-  const authImport = `@tenjojeremy/web-toolkit/utils/network/useIsOnline`
+  const authImport = `@tenjojeremy/wapp/utils/network/useIsOnline`
   const outputFileProvider = wappDir('network/isOnline.state.js')
   const fileContentProvider = `
     import state, { ${providerName} } from '${authImport}'    
