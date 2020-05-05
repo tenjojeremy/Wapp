@@ -1,11 +1,11 @@
-const { wappDir } = require('../getModulePath')
+const { wappDir, componentImportPath } = require('../getModulePath')
 const createFile = require('../createFile')
 const { logSuccessMessage } = require('../logMessage')
 
-module.exports = async () => {
+module.exports = async ({ isTest }) => {
   const successMessage = `IsOnline Provider generated`
   const providerName = `IsOnlineProvider`
-  const authImport = `@tenjojeremy/wapp/utils/network/useIsOnline`
+  const authImport = `${componentImportPath(isTest)}/utils/network/useIsOnline`
   const outputFileProvider = wappDir('network/isOnline.state.js')
   const fileContentProvider = `
     import state, { ${providerName} } from '${authImport}'    

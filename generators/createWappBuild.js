@@ -21,7 +21,7 @@ module.exports = async (env, wappManifest) => {
   initGenerateAppIndex()
   initExtraBuildFiles()
   initBodyTag()
-  await addNetworkFiles()
+  await addNetworkFiles(payload)
   await generateSplash(payload)
   await generateAnimateOnSiteLoad(payload)
   await generateBabel(payload)

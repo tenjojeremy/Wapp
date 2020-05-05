@@ -1,4 +1,6 @@
-import state, { IsOnlineProvider } from '@tenjojeremy/wapp/utils/network/useIsOnline'
+import state, {
+  IsOnlineProvider,
+} from '@tenjojeremy/wapp-build/utils/network/useIsOnline'
 
 export default state
 
