@@ -1,18 +1,14 @@
 import React, { Suspense } from 'react'
-import { Route, Switch } from '@tenjojeremy/wapp/navigation/router'
+import { Route, Switch } from '@tenjojeremy/wapp-build/navigation/router'
 
 import ProfileTemplate from '../profile'
 
 export default () => (
   <Route
-    path='/profile'
+    path='/'
     render={() => (
       <ProfileTemplate>
-        <Suspense fallback={null}>
-          <Switch>
-            <Route exact path='/' render={() => <div>Profile</div>} />
-          </Switch>
-        </Suspense>
+        <Route exact path='/' render={() => <div>this is content</div>} />
       </ProfileTemplate>
     )}
   />
