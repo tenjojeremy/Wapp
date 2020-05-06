@@ -18,7 +18,6 @@ module.exports = async () => {
 
   await createWappBuild(env, wappManifest)
 
-  console.log()
   logSuccessMessage('Starting dev server...', '', '', '2/2')
   console.log()
   webpack('start')
