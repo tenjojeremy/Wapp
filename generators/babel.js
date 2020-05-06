@@ -7,7 +7,7 @@ module.exports = async ({ isTest }) => {
   if (packageJson.babel && !isTest) return null
 
   const successMessage = `Babel generated `
-  const importPathPackageJson = 'node_modules/@tenjojeremy/wapp/babel.config.js'
+  const importPathPackageJson = './node_modules/@tenjojeremy/wapp/babel.config.js'
   const outputFile = wappDir('babelrc.js', isTest)
 
   editPackageJson({
