@@ -1,4 +1,4 @@
-const { projectDir, wappDir } = require('../utils/getModulePath')
+const { projectDir } = require('../utils/getModulePath')
 const { logSuccessMessage } = require('../utils/logMessage')
 const editPackageJson = require('../utils/files/editPackageJson')
 
