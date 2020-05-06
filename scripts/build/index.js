@@ -1,7 +1,6 @@
 const concurrently = require('concurrently')
 
 const { wappRootDir } = require('../../utils/getModulePath')
-
 const createWappBuild = require('../createWappBuild')
 
 module.exports = async () => {

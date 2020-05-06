@@ -55,7 +55,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 2,
     'react/react-in-jsx-scope': 0,
     'react/jsx-no-undef': [
-      true,
+      2,
       {
         allowGlobals: true,
       },

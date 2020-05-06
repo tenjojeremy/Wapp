@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 
-import generateStubs from "./data/users/stubs";
+import generateStubs from './data/users/stubs'
 
 export default () => {
   const [stubs, setStubs] = useState('')
-  useEffect(()=>{
+  useEffect(() => {
     gen()
-  },[])
+  }, [])
 
   const gen = async () => {
-    const newStubs = await generateStubs;
+    const newStubs = await generateStubs
 
-    console.log({ newStubs });
-    setStubs(JSON.stringify(newStubs,null,2))
-  };
- 
-  return <code style={{color:'white'}}>{stubs}</code>;
+    console.log({ newStubs })
+    setStubs(JSON.stringify(newStubs, null, 2))
+  }
+
+  return <code style={{ color: 'white' }}>{stubs}</code>
 }

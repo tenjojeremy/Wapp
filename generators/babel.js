@@ -8,7 +8,6 @@ module.exports = async ({ isTest }) => {
 
   const successMessage = `Babel generated `
   const importPathPackageJson = './node_modules/@tenjojeremy/wapp/babel.config.js'
-  const outputFile = wappDir('babelrc.js', isTest)
 
   editPackageJson({
     method: 'set',

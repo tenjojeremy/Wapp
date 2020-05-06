@@ -9,9 +9,7 @@ const Typography = lazy(() =>
   import(/* webpackChunkName: 'Typography' */ '../../../../typography'),
 )
 const Animation = lazy(() =>
-  import(
-    /* webpackChunkName: 'Animation' */ '../../../../../utils/animations/wap'
-  ),
+  import(/* webpackChunkName: 'Animation' */ '../../../../../utils/animations/wap'),
 )
 
 const Poster1 = ({

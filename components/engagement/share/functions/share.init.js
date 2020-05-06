@@ -1,4 +1,3 @@
- 
 const shareFunction = async (data) => {
   let dataIsValid = null
   let errorMessage_Not_Supported = 'Fail: Web Share is not supported'
@@ -9,7 +8,7 @@ const shareFunction = async (data) => {
 
   if (!navigator.share) return { errorMessage: errorMessage_Not_Supported }
 
-   if (!dataIsValid) return { errorMessage: errorMessage_Schema_Fail }
+  if (!dataIsValid) return { errorMessage: errorMessage_Schema_Fail }
 
   try {
     await navigator.share(data)

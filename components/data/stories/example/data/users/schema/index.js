@@ -1,4 +1,4 @@
-import validator from "../../../../../validator";
+import validator from '../../../../../validator'
 
 export default validator.object({
   name: validator
@@ -8,10 +8,10 @@ export default validator.object({
     .required(),
   email: validator
     .string()
-    .email({ tlds: { allow: ["com", "net"] } })
+    .email({ tlds: { allow: ['com', 'net'] } })
     .required(),
   teamId: validator.string(),
   leagueId: validator.string(),
   position: validator.string().required(),
-  avatar: validator.string()
-});
+  avatar: validator.string(),
+})
