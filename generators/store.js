@@ -5,7 +5,7 @@ const { watch } = require('chokidar')
 const isMac = require('../utils/isMac')
 const { projectDir, wappDir } = require('../utils/getModulePath')
 const addToIndex = require('../utils/addToIndex')
-const createFile = require('../utils/createFile')
+const createFile = require('../utils/files/createFile')
 const { logSuccessMessage } = require('../utils/logMessage')
 
 exports.generateStoreAndListen = async ({ wappManifest }) => {

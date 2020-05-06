@@ -1,7 +1,7 @@
 const glob = require('glob')
 const { existsSync } = require('fs-extra')
 
-const createFile = require('../utils/createFile')
+const createFile = require('../utils/files/createFile')
 const { wappDir, projectDir, buildDir } = require('../utils/getModulePath')
 const { logSuccessMessage } = require('../utils/logMessage')
 const capitalize = require('../utils/capitalize')

@@ -1,4 +1,4 @@
-const createFile = require('../utils/createFile')
+const createFile = require('../utils/files/createFile')
 const { projectDir, componentImportPath } = require('../utils/getModulePath')
 const { logSuccessMessage } = require('../utils/logMessage')
 

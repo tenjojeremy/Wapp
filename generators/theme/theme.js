@@ -3,7 +3,7 @@ const fs = require('fs-extra')
 
 const { wappRootDir, projectDir, wappDir } = require('../../utils/getModulePath')
 const toCSSVariable = require('../../utils/converters/cssVariables')
-const createFile = require('../../utils/createFile')
+const createFile = require('../../utils/files/createFile')
 const addToIndex = require('../../utils/addToIndex')
 const { logSuccessMessage } = require('../../utils/logMessage')
 

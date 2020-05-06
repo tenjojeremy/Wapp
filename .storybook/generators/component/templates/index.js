@@ -1,4 +1,4 @@
-const createFile = require('../utils/createFile')
+const createFile = require('../utils/files/createFile')
 
 module.exports = ({ name, nameUppercase, outputPathBase }) => {
   const outputPath = outputPathBase('index.js')

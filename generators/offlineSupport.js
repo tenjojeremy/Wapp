@@ -1,4 +1,4 @@
-const createFile = require('../utils/createFile')
+const createFile = require('../utils/files/createFile')
 const { wappDir } = require('../utils/getModulePath')
 const { logSuccessMessage } = require('../utils/logMessage')
 const addToIndex = require('../utils/addToIndex')

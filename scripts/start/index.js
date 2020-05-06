@@ -16,7 +16,7 @@ module.exports = async () => {
   logSuccessMessage('Building wapp...', '', '', '1/2')
   console.log()
 
-  // await createWappBuild(env, wappManifest)
+  await createWappBuild(env, wappManifest)
 
   logSuccessMessage('Starting dev server...', '', '', '2/2')
   console.log()

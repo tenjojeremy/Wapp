@@ -1,5 +1,5 @@
 const { projectDir } = require('../../utils/getModulePath')
-const createFile = require('../../utils/createFile')
+const createFile = require('../../utils/files/createFile')
 
 module.exports = async (string) => {
   const outputFileStory = projectDir('src/theme/_theme.stories.mdx')

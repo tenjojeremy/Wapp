@@ -1,5 +1,5 @@
 const { wappDir, componentImportPath } = require('../getModulePath')
-const createFile = require('../createFile')
+const createFile = require('../files/createFile')
 const { logSuccessMessage } = require('../logMessage')
 
 module.exports = async (isTest) => {

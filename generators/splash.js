@@ -3,7 +3,7 @@ const svgo = require('svgo')
 const { convertFile: convertToPNG } = require('convert-svg-to-png')
 
 const { projectDir, wappDir } = require('../utils/getModulePath')
-const createFile = require('../utils/createFile')
+const createFile = require('../utils/files/createFile')
 const { logSuccessMessage } = require('../utils/logMessage')
 
 module.exports = async ({

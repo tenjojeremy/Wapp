@@ -1,5 +1,5 @@
 const { wappDir, buildDir, componentImportPath } = require('../../../utils/getModulePath')
-const createFile = require('../../../utils/createFile')
+const createFile = require('../../../utils/files/createFile')
 const { logSuccessMessage } = require('../../../utils/logMessage')
 const { addExtraBuildFile } = require('../../extraBuildFiles')
 

@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 const { wappDir } = require('../../utils/getModulePath')
-const createFile = require('../../utils/createFile')
+const createFile = require('../../utils/files/createFile')
 
 module.exports = async ({
   theme = { base: 'dark' },
@@ -37,7 +37,6 @@ module.exports = async ({
   configure(require.context('${srcPath}', true, ${filesToWatch}), module)
   `
 
-    await createFile(outputFile, fileContent)
-    await createFile(outputPresetsFile, presetsContent)
-
+  await createFile(outputFile, fileContent)
+  await createFile(outputPresetsFile, presetsContent)
 }

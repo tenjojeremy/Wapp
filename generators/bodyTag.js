@@ -1,6 +1,6 @@
 const { wappDir } = require('../utils/getModulePath')
 const { logSuccessMessage } = require('../utils/logMessage')
-const createFile = require('../utils/createFile')
+const createFile = require('../utils/files/createFile')
 
 exports.initBodyTag = () => (global.addToBodyTag = '')
 

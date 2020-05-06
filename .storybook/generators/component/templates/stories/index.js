@@ -1,4 +1,4 @@
-const createFile = require('../../utils/createFile')
+const createFile = require('../../utils/files/createFile')
 const createTitle = require('./utils/createTitle')
 const createImportString = require('./utils/createImportString')
 const getRelativePath = require('./utils/getRelativePath')

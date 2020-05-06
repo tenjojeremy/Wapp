@@ -4,7 +4,7 @@ const editPackageJson = require('../utils/files/editPackageJson')
 
 module.exports = async ({ isTest }) => {
   const packageJson = require(projectDir('package.json', isTest))
-  if (packageJson.babel && !isTest) return null
+  if (isTest || packageJson.babel) return null
 
   const successMessage = `Babel generated `
   const importPathPackageJson = './node_modules/@tenjojeremy/wapp/babel.config.js'
