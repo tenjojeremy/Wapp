@@ -1,0 +1,23 @@
+{
+  "name": "tenjo-wapp-snippets",
+  "displayName": "Tenjo-wapp-Snippets",
+  "repository": "git://github.com/tenjojeremy/wapp.git",
+  "description": "Library repo: https://github.com/tenjojeremy/wapp",
+  "icon": "logo-snippets.png",
+  "publisher": "tenjojeremy",
+  "version": "1.90.0",
+  "engines": {
+    "vscode": "^1.36.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  }
+}

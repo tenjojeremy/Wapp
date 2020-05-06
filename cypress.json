@@ -1,0 +1,5 @@
+{
+  "integrationFolder": "components",
+  "testFiles": "**/spec.cy.js",
+  "video": false
+}

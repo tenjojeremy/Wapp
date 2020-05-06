@@ -1,15 +1,14 @@
-helpers
-
 # dependencies
 node_modules/
+
+.build
 
 # testing
 /coverage
 
 # production
-build
 .storybook/storybook-build
-tenjo-web-toolkit-snippets/snippets/snippets.json
+tenjo-wapp-snippets/snippets/snippets.json
 
 # Firebase 
 .firebase
