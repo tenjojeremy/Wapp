@@ -1,6 +1,6 @@
 {
-  "short_name": "Web Toolkit",
-  "name": "Web Toolkit",
+  "short_name": "wapp",
+  "name": "wapp",
   "icons": [
     {
       "src": "logo-192.png",
