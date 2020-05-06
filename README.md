@@ -1,14 +1,12 @@
 <p align="center">
-  <a href="https://tenjo-wapp.web.app/" rel="noopener" target="_blank"><img width="110" src="https://firebasestorage.googleapis.com/v0/b/tenjo-wapp.appspot.com/o/logo.svg?alt=media&token=0991f39a-0e64-46a5-a097-7ad433798434" alt="wapp logo"></a></p>
+  <a href="https://tenjo-wapp.web.app/" rel="noopener" target="_blank"><img width="110" src="https://firebasestorage.googleapis.com/v0/b/wapp-framework.appspot.com/o/logo%20copy.svg?alt=media&token=eb8543af-3829-45ae-96e4-9e31be95d636" alt="wapp logo"></a></p>
 </p>
 
 <h2 align="center">wapp</h2>
 
 <div align="center">
 
-Library of reusable UI and utilities
-
-<!-- [![CircleCI](https://circleci.com/gh/tenjojeremy/wapp/tree/master.svg?style=svg)](https://circleci.com/gh/tenjojeremy/wapp/tree/master) -->
+Web app framework
 
 </div>
 
@@ -23,15 +21,9 @@ Library of reusable UI and utilities
 npm i @tenjojeremy/wapp
 ```
 
-#### Snippet Extension
-
-Download the VS Code snippet extension to save yourself time importing UI and utils 😎
-
-https://marketplace.visualstudio.com/items?itemName=tenjojeremy.tenjo-wapp-snippets
-
 ### testApp
 
-palages are lnked from components/.build '@tenjojeremy/wapp-build'
+components are lnked from components/.build '@tenjojeremy/wapp-build'
 
 #### License
 
