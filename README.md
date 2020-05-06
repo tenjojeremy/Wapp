@@ -10,11 +10,6 @@ Web app framework built on React
 
 </div>
 
-#### Contents
-
-:white_check_mark: React Components
-:white_check_mark: Firebase Helpers
-
 #### Installation
 
 ```
@@ -24,8 +19,3 @@ npm i @tenjojeremy/wapp
 ### testApp
 
 components are lnked from components/.build '@tenjojeremy/wapp-build'
-
-#### License
-
-This project is licensed under the terms of the
-[MIT license](/LICENSE).
