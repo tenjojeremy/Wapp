@@ -1,6 +1,7 @@
 const concurrently = require('concurrently')
 
 const createWappBuild = require('../../generators/createWappBuild')
+const { logSuccessMessage } = require('../../utils/logMessage')
 const webpack = require('../../webpack')
 
 module.exports = async () => {
@@ -11,7 +12,15 @@ module.exports = async () => {
     : projectDir('.wapp.manifest.js')
   const wappManifest = require(wappManifestPath)
 
+  console.log()
+  logSuccessMessage('Building wapp...', '', '', '1/2')
+  console.log()
+
   await createWappBuild(env, wappManifest)
+
+  console.log()
+  logSuccessMessage('Starting dev server...', '', '', '2/2')
+  console.log()
   webpack('start')
   // await concurrently(scripts)
 }

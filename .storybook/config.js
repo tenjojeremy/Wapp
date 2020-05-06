@@ -8,7 +8,7 @@ import ViewportOptions from './addons/viewport'
 
 addParameters({
   options: {
-    name: 'Web Toolkit',
+    name: 'wapp',
     theme: theme(),
     panelPosition: 'right',
     showPanel: false,
