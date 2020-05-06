@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-import B from '../../../../.storybook/customComponents/variationBlock'
 import { useVariants } from '../../../../.storybook/utils/useVariants'
 import Logo from '../../../../.storybook/images/logo.svg'
 

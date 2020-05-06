@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import B from '../../../../.storybook/customComponents/variationBlock'
 import Button from '../../../input/button/styles/base'
-
 import Overlay from '..'
 
 export default () => {

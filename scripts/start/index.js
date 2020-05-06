@@ -1,5 +1,6 @@
 const concurrently = require('concurrently')
 
+const { projectDir } = require('../../utils/getModulePath')
 const createWappBuild = require('../../generators/createWappBuild')
 const { logSuccessMessage } = require('../../utils/logMessage')
 const webpack = require('../../webpack')

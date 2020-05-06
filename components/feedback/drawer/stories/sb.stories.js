@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 import B from '../../../../.storybook/customComponents/variationBlock'
-
 import Drawer from '..'
 
 export default {

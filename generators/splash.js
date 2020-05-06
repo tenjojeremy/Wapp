@@ -6,13 +6,7 @@ const { projectDir, wappDir } = require('../utils/getModulePath')
 const createFile = require('../utils/files/createFile')
 const { logSuccessMessage } = require('../utils/logMessage')
 
-module.exports = async ({
-  wappManifest: {
-    projectInfo: {
-      logo: { path },
-    },
-  },
-}) => {
+module.exports = async () => {
   const svgFile = projectDir(`src/images/logo/logo.svg`)
   const pngFile = projectDir(`src/images/logo/logo.png`)
   const pngExists = existsSync(pngFile)

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import B from '../../../../.storybook/customComponents/variationBlock'
 import Dialog from '../../dialog/styles/1'
-
 import Modal from '..'
 
 export default () => {

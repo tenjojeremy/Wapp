@@ -1,4 +1,5 @@
 const editPackageJson = require('edit-json-file')
+
 const { projectDir } = require('../getModulePath')
 
 module.exports = ({ method, value, isTest }) => {

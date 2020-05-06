@@ -1,6 +1,5 @@
 import React, { memo, useEffect, useState } from 'react'
 
-import fileReader from '../../../../media/files/fileReader'
 import FileUpload from '../../../../media/files/fileInput'
 import Box from '../../../../dataDisplay/box/'
 import Image from '../../../../media/image/'

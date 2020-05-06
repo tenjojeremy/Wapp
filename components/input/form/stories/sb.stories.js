@@ -3,9 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import B from '../../../../.storybook/customComponents/variationBlock'
 import Button from '../../button/styles/base'
-// Inputs
 import TextField from '../textField/styles/1/index'
-
 import Form from '..'
 
 const General = () => {

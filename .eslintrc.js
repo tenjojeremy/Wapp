@@ -11,9 +11,10 @@ module.exports = {
     node: true,
     es6: true,
     jest: true,
+    'cypress/globals': true,
   },
   parser: 'babel-eslint',
-  plugins: ['react', 'babel', 'react-hooks', 'import'],
+  plugins: ['react', 'babel', 'react-hooks', 'import', 'jest', 'cypress'],
   extends: ['eslint:recommended', 'plugin:react/recommended'],
   parserOptions: {
     ecmaFeatures: {
@@ -53,6 +54,9 @@ module.exports = {
     'react/prop-types': 0,
     'react/jsx-fragments': [0, 'syntax'],
     'react-hooks/rules-of-hooks': 2,
+    'react-hooks/exhaustive-deps': 0,
+    'no-async-promise-executor': 1,
+    'no-useless-catch': 1,
     'react/react-in-jsx-scope': 0,
     'react/jsx-no-undef': [
       2,

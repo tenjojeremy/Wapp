@@ -1,5 +1,6 @@
 const { logSuccessMessage } = require('../utils/logMessage')
-const { projectDir } = require('../utils/getModulePath')
+const addNetworkFiles = require('../utils/network/addIsOnlineState')
+
 const generateAnimateOnSiteLoad = require('./animateOnSiteLoad')
 const generateSplash = require('./splash')
 const generateBabel = require('./babel')
@@ -12,7 +13,6 @@ const generateFonts = require('./fonts')
 const { initExtraBuildFiles, generateAddExtraBuildFiles } = require('./extraBuildFiles')
 const { initBodyTag, generateAddBodyTag } = require('./bodyTag')
 const offlineSupport = require('./offlineSupport')
-const addNetworkFiles = require('../utils/network/addIsOnlineState')
 
 module.exports = async (env, wappManifest) => {
   const { isTest } = global
