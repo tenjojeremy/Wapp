@@ -1,0 +1,6 @@
+{
+  "name": "@tenjojeremy/wapp-test-app",
+  "version": "1.0.0",
+  "description": "wapp test app",
+  "main": ".wapp.manifest.js"
+}

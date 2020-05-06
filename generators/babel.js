@@ -1,19 +1,20 @@
-const createFile = require('../utils/createFile')
-const { projectDir } = require('../utils/getModulePath')
+const { projectDir, wappDir } = require('../utils/getModulePath')
 const { logSuccessMessage } = require('../utils/logMessage')
+const editPackageJson = require('../utils/files/editPackageJson')
 
 module.exports = async ({ isTest }) => {
-  const importPath = isTest
-    ? '../.babelrc.js'
-    : './node_modules/@tenjojeremy/wapp/.babelrc.js'
+  const packageJson = require(projectDir('package.json', isTest))
+  if (packageJson.babel && !isTest) return null
+
   const successMessage = `Babel generated `
-  const outputFile = projectDir('.babelrc.js')
+  const importPathPackageJson = 'node_modules/@tenjojeremy/wapp/babel.config.js'
+  const outputFile = wappDir('babelrc.js', isTest)
 
-  let cssString = `module.exports = {
-    extends: '${importPath}'
-}`
+  editPackageJson({
+    method: 'set',
+    value: ['babel.extends', importPathPackageJson],
+    isTest,
+  })
 
-  // write to  file
-  createFile(outputFile, cssString)
   logSuccessMessage(successMessage)
 }
