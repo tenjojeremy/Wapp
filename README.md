@@ -6,7 +6,7 @@
 
 <div align="center">
 
-Web app framework
+Web app framework built on React
 
 </div>
 
