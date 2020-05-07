@@ -7,7 +7,6 @@ module.exports = ({ action, step = '2/2' }) => {
   const envTest = process.env.TEST === 'true' ? '--env.test' : ''
   const configFilePath = wappRootDir('webpack/config.js')
   const wappManifestPath = wappRootDir('final.wapp.manifest.js')
-
   const actions = {
     start: {
       command: `webpack-dev-server  --config ${configFilePath} --mode development --color --hot --inline --wappManifestPath ${wappManifestPath} ${envTest}}`,
@@ -22,7 +21,6 @@ module.exports = ({ action, step = '2/2' }) => {
       log: 'Analyzing bundle...',
     },
   }
-
   const log = actions[action].log
   const command = actions[action].command
 
