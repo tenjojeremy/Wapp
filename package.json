@@ -5,12 +5,12 @@
   "description": "Web app framework",
   "publisher": "Jeremy Tenjo",
   "license": "MIT",
-  "main": "index.js",
+  "main": "bin/index.js",
   "bin": {
-    "wapp": "index.js"
+    "wapp": "bin/index.js"
   },
   "scripts": {
-    "wapp:test": "WAPP_MODE=test node index.js start test",
+    "wapp:test": "WAPP_MODE=test node bin/index.js start test",
     "start": "start-storybook -p 9002 -c .storybook -s .storybook/public --quiet",
     "deploy": "npm run lint:check && npm run cy:run-ci && npm run deploy:firebase && npm run publish:library && git push",
     "deploy:quick": "npm run deploy:firebase && npm run publish:library && git push",
