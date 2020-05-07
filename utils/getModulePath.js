@@ -14,7 +14,7 @@ const wappDir = (path = '') => {
   return `${getProjectRoot()}${dir}/src/.wapp/_${path}`
 }
 
-const buildDir = (path = '') => `${getProjectRoot()}/build/${path}`
+const buildDir = (path = '') => `${projectDir()}/.build/${path}`
 
 const componentImportPath = (isTrue) => {
   const { name } = require(wappRootDir('package.json'))
