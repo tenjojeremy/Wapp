@@ -14,9 +14,9 @@ bodyTag = `${bodyTag}${splashScreen}`
 
 const defaultWappManifest = {
   projectInfo: {
-    name: 'App',
-    shortName: 'App',
-    description: 'App',
+    name: 'Wapp',
+    shortName: 'Wapp',
+    description: 'Wapp',
     startUrl: '/',
     colors,
     logo: {
