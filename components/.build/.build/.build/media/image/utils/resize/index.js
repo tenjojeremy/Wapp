@@ -1,0 +1,17 @@
+import ImageCompressor from 'image-compressor.js';
+export default ((file, width = 300) => {
+  return new Promise((resolve, reject) => {
+    new ImageCompressor(file, {
+      width,
+
+      success(result) {
+        resolve(result);
+      },
+
+      error(e) {
+        reject('Resize Failed '.concat(e.message));
+      }
+
+    });
+  });
+});
