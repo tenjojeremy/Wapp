@@ -6,7 +6,7 @@ const { logSuccessMessage } = require('../../utils/logMessage')
 const webpack = require('../../webpack')
 
 module.exports = async () => {
-  const { isTest } = global
+  const isTest = process.env.TEST === 'true'
   const env = 'dev'
   const wappManifestPath = isTest
     ? '../../.testApp/.wapp.manifest'
@@ -21,6 +21,10 @@ module.exports = async () => {
 
   logSuccessMessage('Starting dev server...', '', '', '2/2')
   console.log()
-  webpack('start')
-  // await concurrently(scripts)
+  try {
+    webpack('start')
+    // await concurrently(scripts)
+  } catch (error) {
+    console.log('HERE!')
+  }
 }

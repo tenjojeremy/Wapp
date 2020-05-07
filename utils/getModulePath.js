@@ -1,18 +1,18 @@
+const isTest = () => process.env.TEST === 'true'
+
 const getProjectRoot = () => process.cwd()
 
 const wappRootDir = (folder = 'defaults') => __dirname.replace('utils', folder)
 exports.wappRootDir = wappRootDir
 
-exports.projectDir = (path = '', _isTest) => {
-  const { isTest } = global
-  const dir = isTest || _isTest ? `${getProjectRoot()}/.testApp` : getProjectRoot()
+exports.projectDir = (path = '') => {
+  const dir = isTest() ? `${getProjectRoot()}/.testApp` : getProjectRoot()
 
   return `${dir}/${path}`
 }
 
-exports.wappDir = (path = '', _isTest) => {
-  const { isTest } = global
-  const dir = isTest || _isTest ? `/.testApp` : ''
+exports.wappDir = (path = '') => {
+  const dir = isTest() ? `/.testApp` : ''
 
   return `${getProjectRoot()}${dir}/src/.wapp/_${path}`
 }

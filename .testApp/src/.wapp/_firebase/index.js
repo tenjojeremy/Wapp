@@ -11,8 +11,8 @@ firebase.initializeApp({
   projectId: 'wapp-framework',
   storageBucket: 'wapp-framework.appspot.com',
   messagingSenderId: '1046696464098',
-  appId: '1:1046696464098:web:d90c6921a06582bec7d8bb',
-  measurementId: 'G-LDXY4PWWVL',
+  appId: '1:1046696464098:web:9a9c21ad8c19320ac7d8bb',
+  measurementId: 'G-0HVSXHW2H2',
 })
 
 window.firebasePerformance = firebase.performance()

@@ -1,0 +1,6 @@
+{
+  "hosting": {
+    "site": "wapp-testapp",
+    "public": ".build"
+  }
+}

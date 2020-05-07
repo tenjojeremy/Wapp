@@ -3,7 +3,7 @@ const { logSuccessMessage } = require('../utils/logMessage')
 const editPackageJson = require('../utils/files/editPackageJson')
 
 module.exports = async ({ isTest }) => {
-  const packageJson = require(projectDir('package.json', isTest))
+  const packageJson = require(projectDir('package.json'))
   if (isTest || packageJson.babel) return null
 
   const successMessage = `Babel generated `

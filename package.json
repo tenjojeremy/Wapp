@@ -4,13 +4,13 @@
   "repository": "git://github.com/tenjojeremy/wapp.git",
   "description": "Web app framework",
   "publisher": "Jeremy Tenjo",
-  "license": "MIT",
   "main": "bin/index.js",
   "bin": {
     "wapp": "bin/index.js"
   },
   "scripts": {
-    "wapp:test": "WAPP_MODE=test node bin/index.js start test",
+    "testapp:start": "TEST=true node bin/index.js start",
+    "testapp:build": "TEST=true node bin/index.js build",
     "start": "start-storybook -p 9002 -c .storybook -s .storybook/public --quiet",
     "deploy": "npm run lint:check && npm run cy:run-ci && npm run deploy:firebase && npm run publish:library && git push",
     "deploy:quick": "npm run deploy:firebase && npm run publish:library && git push",

@@ -2,5 +2,8 @@
   "name": "@tenjojeremy/wapp-test-app",
   "version": "1.0.0",
   "description": "wapp test app",
-  "main": ".wapp.manifest.js"
+  "main": ".wapp.manifest.js",
+  "babel": {
+    "extends": "./node_modules/@tenjojeremy/wapp/babel.config.js"
+  }
 }

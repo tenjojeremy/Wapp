@@ -1,16 +1,14 @@
-const isTest = process.argv[2] === '--test'
-
 const colors = require('./defaults/theme/colors')
-const { projectDir, wappDir, wappRootDir } = require('./utils/getModulePath')
+const { projectDir, wappDir } = require('./utils/getModulePath')
 
-const fonts = require(wappDir(`fonts`, isTest))
-const splashScreen = require(wappDir('splashScreen/splashScreen', isTest))
-const headCss = require(wappDir('theme', isTest))
-const extraBuildFiles = require(wappDir('extraBuildFiles', isTest))
-let bodyTag = require(wappDir('bodyTag', isTest))
-const userWappManifest = require(projectDir('.wapp.manifest.js', isTest))
-const entry = projectDir('src/_index.js', isTest)
-const outputPath = projectDir('.build', isTest)
+const fonts = require(wappDir(`fonts`))
+const splashScreen = require(wappDir('splashScreen/splashScreen'))
+const headCss = require(wappDir('theme'))
+const extraBuildFiles = require(wappDir('extraBuildFiles'))
+let bodyTag = require(wappDir('bodyTag'))
+const userWappManifest = require(projectDir('.wapp.manifest.js'))
+const entry = projectDir('src/_index.js')
+const outputPath = projectDir('.build')
 const headTags = fonts
 bodyTag = `${bodyTag}${splashScreen}`
 

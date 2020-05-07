@@ -15,12 +15,12 @@ const { initBodyTag, generateAddBodyTag } = require('./bodyTag')
 const offlineSupport = require('./offlineSupport')
 
 module.exports = async (env, wappManifest) => {
-  const { isTest } = global
+  const isTest = process.env.TEST === 'true'
   const payload = { wappManifest, env, isTest }
 
-  initGenerateAppIndex()
-  initExtraBuildFiles()
-  initBodyTag()
+  initGenerateAppIndex(payload)
+  initExtraBuildFiles(payload)
+  initBodyTag(payload)
   await addNetworkFiles(payload)
   await generateSplash(payload)
   await generateAnimateOnSiteLoad(payload)
