@@ -1,23 +1,19 @@
 const concurrently = require('concurrently')
 
-const { projectDir } = require('../../utils/getModulePath')
+const { wappManifest } = require('../../utils/getModulePath')
 const createWappBuild = require('../../generators/createWappBuild')
 const { logSuccessMessage } = require('../../utils/logMessage')
 const webpack = require('../../webpack')
 
 module.exports = async () => {
-  const isTest = process.env.TEST === 'true'
   const env = 'dev'
-  const wappManifestPath = isTest
-    ? '../../.testApp/.wapp.manifest'
-    : projectDir('.wapp.manifest.js')
-  const wappManifest = require(wappManifestPath)
+  const manifest = wappManifest()
 
   console.log()
   logSuccessMessage('Building wapp...', '', '', '1/2')
   console.log()
 
-  await createWappBuild(env, wappManifest)
+  await createWappBuild(env, manifest)
 
   logSuccessMessage('Starting dev server...', '', '', '2/2')
   console.log()
