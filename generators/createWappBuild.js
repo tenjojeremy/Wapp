@@ -14,7 +14,10 @@ const { initExtraBuildFiles, generateAddExtraBuildFiles } = require('./extraBuil
 const { initBodyTag, generateAddBodyTag } = require('./bodyTag')
 const offlineSupport = require('./offlineSupport')
 
-module.exports = async (env, wappManifest) => {
+module.exports = async ({ env, wappManifest, step = '1/2' }) => {
+  console.log()
+  logSuccessMessage('Building wapp...', '', '', step)
+  console.log()
   const isTest = process.env.TEST === 'true'
   const payload = { wappManifest, env, isTest }
 

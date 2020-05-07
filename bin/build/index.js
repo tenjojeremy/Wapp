@@ -1,12 +1,14 @@
 const createWappBuild = require('../../generators/createWappBuild')
-const { wappManifest } = require('../../utils/getModulePath')
+const { wappManifest: getWappManifest } = require('../../utils/getModulePath')
 const webpack = require('../../webpack')
 
 module.exports = async () => {
   const env = 'prod'
-  const manifest = wappManifest()
+  const wappManifest = getWappManifest()
+  const action = 'build'
 
-  await createWappBuild(env, manifest)
-  webpack('build')
+  await createWappBuild({ env, wappManifest })
+  webpack({ action })
+
   process.exit()
 }
