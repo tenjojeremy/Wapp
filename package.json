@@ -11,7 +11,7 @@
   "scripts": {
     "testapp:start": "TEST=true node bin/index.js start",
     "testapp:build": "TEST=true node bin/index.js build",
-    "testapp:deploy": "cd .testApp && firebase deploy && cd ..",
+    "testapp:deploy": "npm run testapp:build && cd .testApp && firebase deploy && cd ..",
     "storybook:start": "start-storybook -p 9002 -c .storybook -s .storybook/public --quiet",
     "storybook:build": "build-storybook -c .storybook -o .storybook/.build -s .storybook/public",
     "storybook:deploy": "npm run storybook:build && firebase deploy",
