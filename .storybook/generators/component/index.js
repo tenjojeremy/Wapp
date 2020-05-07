@@ -14,7 +14,9 @@ const createTests = require('./templates/tests.js')
 const path = process.argv[2]
 const splitPath = path.split('/')
 const name = splitPath[splitPath.length - 1]
-const newComponentFullPath = `${process.cwd().replace(/\\/g, '/')}/src/${path}/index.js`
+const newComponentFullPath = `${process
+  .cwd()
+  .replace(/\\/g, '/')}/components/${path}/index.js`
 const successMessage = `${emoji.get('white_check_mark')}  ${chalk.yellow(
   newComponentFullPath,
 )} ${chalk.green('created!')}`

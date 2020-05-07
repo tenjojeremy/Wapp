@@ -3,9 +3,9 @@ const serviceWorkerReceiverFunction = require(`./src/firebase/serviceWorkerRecei
 
 module.exports = {
   projectInfo: {
-    name: 'Wapp',
-    shortName: 'Wapp',
-    description: 'Wapp',
+    name: 'Wapp - test app',
+    shortName: 'Wapp - test app',
+    description: 'Wapp - test app',
     startUrl: '/',
     colors: { primary: '#24c3a9' },
     logo: {
