@@ -1,15 +1,14 @@
 {
-  "name": "@tenjojeremy/wapp",
-  "repository": "git://github.com/tenjojeremy/wapp.git",
-  "description": "Tenjo apps",
+  "name": "tenjo-apps",
+  "version": "1.0.0",
   "scripts": {
-    "testapp:start": "PROJECT=portfolio node scripts/index.js start",
-    "testapp:build": "PROJECT=portfolio node scripts/index.js build",
-    "testapp:deploy": "npm run testapp:build && cd projects/portfolio && firebase deploy && cd ..",
-    "storybook:start": "start-storybook -p 9002 -c .storybook -s .storybook/public --quiet",
-    "storybook:build": "build-storybook -c .storybook -o .storybook/_build -s .storybook/public",
+    "portfolio:start": "PROJECT=portfolio node scripts/index.js start",
+    "portfolio:build": "PROJECT=portfolio node scripts/index.js build",
+    "portfolio:deploy": "npm run portfolio:build && cd projects/portfolio && firebase deploy && cd ..",
+    "storybook:start": "start-storybook -p 9002 -c components/.storybook -s components/.storybook/public --quiet",
+    "storybook:build": "build-storybook -c components/.storybook -o components/.storybook/_build -s components/.storybook/public",
     "storybook:deploy": "npm run storybook:build && firebase deploy",
-    "components:new": "node .storybook/generators/component/index.js",
+    "components:new": "node components/.storybook/generators/component/index.js",
     "components:compile": "cd components && rm -rf _build && cd .. && cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ./babel.config ./components --out-dir ./components/_build/ --ignore 'components/**/specs','components/**/stories' && node ./utils/babel/addPackageJson",
     "deploy": "npm run test && npm run deploy:only",
     "deploy:only": "npm run components:compile && npm run storybook:deploy && npm publish --minor && git push",
@@ -92,12 +91,7 @@
     "webpack-pwa-manifest": "^4.2.0",
     "node-emoji": "^1.10.0",
     "workbox-webpack-plugin": "^5.0.0",
-    "filehound": "^1.17.4"
-  },
-  "peerDependencies": {
-    "styled-components": "^5.0.1"
-  },
-  "devDependencies": {
+    "filehound": "^1.17.4",
     "@babel/cli": "^7.8.4",
     "@storybook/addon-actions": "^5.3.12",
     "@storybook/addon-docs": "^5.3.12",
@@ -107,7 +101,6 @@
     "date-fns": "^2.9.0",
     "eslint-plugin-cypress": "^2.10.3",
     "firebase": "^7.14.2",
-    "jest": "^25.1.0",
     "lint-staged": "^10.0.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
