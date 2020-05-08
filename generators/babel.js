@@ -9,11 +9,11 @@ module.exports = async ({ isTest }) => {
   const successMessage = `Babel added to package.json `
   const importPathPackageJson = './node_modules/@tenjojeremy/wapp/babel.config.js'
 
-  editPackageJson({
-    method: 'set',
-    value: ['babel.extends', importPathPackageJson],
-    isTest,
-  })
+  // editPackageJson({
+  //   method: 'set',
+  //   value: ['babel.extends', importPathPackageJson],
+  //   isTest,
+  // })
 
-  logSuccessMessage(successMessage)
+  // logSuccessMessage(successMessage)
 }

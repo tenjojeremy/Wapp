@@ -9,7 +9,7 @@ module.exports = {
     startUrl: '/',
     colors: { primary: '#24c3a9' },
     logo: {
-      path: 'projects/jeremytenjo.com/src/images/logo',
+      path: 'projects/portfolio/src/images/logo',
     },
   },
   animateOnSiteLoad: 500,

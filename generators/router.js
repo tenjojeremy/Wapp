@@ -3,14 +3,14 @@ const filehound = require('filehound')
 
 const { wappRootDir, projectDir } = require('../utils/getModulePath')
 const { logSuccessMessage } = require('../utils/logMessage')
-const isMac = require('../utils/isMac')
+const forwardSlash = require('../utils/strings/fowardSlash')
 
 module.exports = async () => {
   const successMessage = `Router generated`
   const defaultRouter = wappRootDir('defaults/router/router.js')
   const outputFile = projectDir('src/pages/router.js')
   const pagesSrc = projectDir('src/pages')
-  const splitValue = isMac ? '/' : '\\'
+  const splitValue = forwardSlash()
   const files = await filehound
     .create()
     .path(pagesSrc)

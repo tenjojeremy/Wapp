@@ -6,6 +6,7 @@ const toCSSVariable = require('../../utils/converters/cssVariables')
 const createFile = require('../../utils/files/createFile')
 const addToIndex = require('../../utils/addToIndex')
 const { logSuccessMessage } = require('../../utils/logMessage')
+const fowardSlash = require('../../utils/strings/fowardSlash')
 
 const genDoc = require('./story')
 
@@ -58,16 +59,18 @@ module.exports = async ({ wappManifest }) => {
   }
 
   Object.entries(srcDefaultMerge).forEach(([key, value]) => {
+    const keyValueSplit = key.split(fowardSlash())
+    const keyValue = keyValueSplit[keyValueSplit.length - 1]
     const itemType = typeof value
 
-    if (key === '_theme') return null
-    else if (key === 'colors') cssString += toCSSVariable('color', value)
-    else if (key === 'typography') cssString += handleTypography(value)
-    else if (key === 'mediaQueries') handleMediaQueries(value)
+    if (keyValue === '_theme') return null
+    else if (keyValue === 'colors') cssString += toCSSVariable('color', value)
+    else if (keyValue === 'typography') cssString += handleTypography(value)
+    else if (keyValue === 'mediaQueries') handleMediaQueries(value)
     else if (itemType === 'string') {
-      cssString += `\n/* ${key} */
+      cssString += `\n/* ${keyValue} */
       ${value}`
-    } else if (itemType === 'object') cssString += toCSSVariable(key, value)
+    } else if (itemType === 'object') cssString += toCSSVariable(keyValue, value)
   })
 
   // end

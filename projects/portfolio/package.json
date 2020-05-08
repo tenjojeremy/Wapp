@@ -1,0 +1,8 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Jeremy Tenjo | Portfolio",
+  "scripts": {
+    "link:components": "npm link @tenjojeremy/wapp-build"
+  }
+}
