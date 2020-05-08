@@ -1,8 +1,10 @@
 # dependencies
 node_modules/
 
-.storybook/_build
 _testApp/_build
+
+.storybook/_build
+projects/jeremytenjo.com/_build
 
 # testing
 /coverage

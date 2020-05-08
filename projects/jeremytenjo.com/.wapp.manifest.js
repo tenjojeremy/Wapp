@@ -9,7 +9,7 @@ module.exports = {
     startUrl: '/',
     colors,
     logo: {
-      path: 'src/images/logo',
+      path: 'projects/jeremytenjo.com/src/images/logo',
     },
   },
   offlineSupport: false,

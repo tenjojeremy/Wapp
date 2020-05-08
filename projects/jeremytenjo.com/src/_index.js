@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { hot } from 'react-hot-loader/root'
-import { catchAddToHomeScreenPrompt } from '@tenjo/butler/utils/addToHomeScreen'
+import { catchAddToHomeScreenPrompt } from '@tenjojeremy/wapp-build/utils/addToHomeScreen'
 
 import animateOnSiteLoad from './.wapp/_animateOnSiteLoad/animateOnSiteLoad'
 import hideSplashScreen from './.wapp/_splashScreen/hideSplashScreen'

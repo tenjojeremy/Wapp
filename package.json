@@ -10,7 +10,7 @@
   "scripts": {
     "testapp:start": "TEST=true node bin/index.js start",
     "testapp:build": "TEST=true node bin/index.js build",
-    "testapp:deploy": "npm run testapp:build && cd _testApp && firebase deploy && cd ..",
+    "testapp:deploy": "npm run testapp:build && cd projects/jeremytenjo.com && firebase deploy && cd ..",
     "storybook:start": "start-storybook -p 9002 -c .storybook -s .storybook/public --quiet",
     "storybook:build": "build-storybook -c .storybook -o .storybook/_build -s .storybook/public",
     "storybook:deploy": "npm run storybook:build && firebase deploy",
