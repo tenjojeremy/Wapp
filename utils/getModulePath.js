@@ -5,12 +5,12 @@ const getProjectRoot = () => process.cwd()
 const wappRootDir = (folder = 'defaults') => __dirname.replace('utils', folder)
 
 const projectDir = (path = '') => {
-  const dir = isTest() ? `${getProjectRoot()}/.testApp` : getProjectRoot()
+  const dir = isTest() ? `${getProjectRoot()}/_testApp` : getProjectRoot()
   return `${dir}/${path}`
 }
 
 const wappDir = (path = '') => {
-  const dir = isTest() ? `/.testApp` : ''
+  const dir = isTest() ? `/_testApp` : ''
   return `${getProjectRoot()}${dir}/src/.wapp/_${path}`
 }
 
@@ -28,7 +28,7 @@ const componentImportPath = (isTrue) => {
 
 const wappManifest = () => {
   const wappManifestPath = isTest()
-    ? '../.testApp/.wapp.manifest.js'
+    ? '../_testApp/.wapp.manifest.js'
     : projectDir('.wapp.manifest.js')
   const wappManifest = require(wappManifestPath)
   return wappManifest

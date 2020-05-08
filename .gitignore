@@ -2,7 +2,7 @@
 node_modules/
 
 .storybook/_build
-.testApp/_build
+_testApp/_build
 
 # testing
 /coverage
