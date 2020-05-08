@@ -16,7 +16,7 @@
     "storybook:build": "build-storybook -c .storybook -o .storybook/_build -s .storybook/public",
     "storybook:deploy": "npm run storybook:build && firebase deploy",
     "components:new": "node .storybook/generators/component/index.js",
-    "components:compile": "cd components && rm -rf _build && cd .. && cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ./babel.config ./components --out-dir ./components/_build/ --ignore 'components/**/specs','components/**/stories'",
+    "components:compile": "cd components && rm -rf _build && cd .. && cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ./babel.config ./components --out-dir ./components/_build/ --ignore 'components/**/specs','components/**/stories' && node ./utils/babel/addPackageJson",
     "deploy": "npm run test && npm run deploy:only",
     "deploy:only": "npm run components:compile && npm run storybook:deploy && npm publish --minor && git push",
     "prettify": "prettier \"**/*.js\" --write",

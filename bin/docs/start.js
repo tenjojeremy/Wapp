@@ -16,11 +16,7 @@ module.exports = async () => {
   } = require(wappRootDir('.webpack.manifest.js'))
   const command = `npx start-storybook --quiet -p ${port} -c ${configPath}`
 
-  try {
-    await generateConfig({ name, restConfig })
+  await generateConfig({ name, restConfig })
 
-    shell.exec(command)
-  } catch (err) {
-    throw err
-  }
+  shell.exec(command)
 }
