@@ -3,8 +3,8 @@
   "repository": "git://github.com/tenjojeremy/wapp.git",
   "description": "Tenjo apps",
   "scripts": {
-    "testapp:start": "TEST=true PROJECT=portfolio node scripts/index.js start",
-    "testapp:build": "TEST=true PROJECT=portfolio node scripts/index.js build",
+    "testapp:start": "PROJECT=portfolio node scripts/index.js start",
+    "testapp:build": "PROJECT=portfolio node scripts/index.js build",
     "testapp:deploy": "npm run testapp:build && cd projects/portfolio && firebase deploy && cd ..",
     "storybook:start": "start-storybook -p 9002 -c .storybook -s .storybook/public --quiet",
     "storybook:build": "build-storybook -c .storybook -o .storybook/_build -s .storybook/public",
