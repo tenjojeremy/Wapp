@@ -1,5 +1,5 @@
-const shell = require('shelljs')
+const shell = require('../../utils/shell/index')
 
 module.exports = async () => {
-  shell.exec('npx webpack-scripts analyze')
+  shell('npx webpack-scripts analyze')
 }

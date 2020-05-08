@@ -1,5 +1,4 @@
-const shell = require('shelljs')
-
+const shell = require('../utils/shell/index')
 const { logSuccessMessage } = require('../utils/logMessage')
 const { projectDir, wappRootDir } = require('../utils/getModulePath')
 
@@ -27,5 +26,5 @@ module.exports = ({ action, step = '2/2' }) => {
   logSuccessMessage(log, '', '', step)
   console.log()
 
-  shell.exec(command)
+  shell(command)
 }
