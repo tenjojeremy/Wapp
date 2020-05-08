@@ -5,7 +5,7 @@ module.exports = (webpackManifest) => {
   const defaultOutput = {
     chunkFilename: 'js/[name].[chunkhash].js',
     filename: 'js/[name].[hash].js',
-    path: `${process.cwd()}/.build`,
+    path: `${process.cwd()}/_build`,
     publicPath: '/',
   }
   let merged = null

@@ -18,4 +18,4 @@ npm i @tenjojeremy/wapp
 
 #### testApp
 
-components are lnked from components/.build '@tenjojeremy/wapp-build'
+components are lnked from components/\_build '@tenjojeremy/wapp-build'

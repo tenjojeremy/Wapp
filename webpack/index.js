@@ -14,7 +14,7 @@ module.exports = ({ action, step = '2/2' }) => {
     },
     build: {
       command: `webpack --config ${configFilePath} -p --wappManifestPath ${wappManifestPath} --color ${envTest}`,
-      log: 'Building webpack .build...',
+      log: 'Building webpack _build...',
     },
     analyze: {
       command: `webpack-bundle-analyzer --port 4200 ${projectDir}/build/stats.json`,
