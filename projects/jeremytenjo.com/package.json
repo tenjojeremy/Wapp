@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Jeremy Tenjo | Portfolio",
+  "scripts": {
+    "start": "butler start",
+    "build": "butler build",
+    "build:analyze": "butler build && butler analyze",
+    "docs": "butler docs",
+    "deploy:dev": "npm run build && firebase use development && firebase deploy --only hosting ",
+    "deploy:prod": "npm run lint:fix && npm run prettify && butler build && gpush && firebase use default && firebase deploy --only hosting",
+    "start:functions": "firebase serve --only functions",
+    "prettify": "prettier \"**/*.js\" --write",
+    "lint:fix": "eslint ./src --fix",
+    "lint:check": "eslint ./src"
+  },
+  "dependencies": {
+    "firebase": "^7.8.1",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-hot-loader": "^4.12.19",
+    "styled-components": "^5.0.1"
+  }
+}

@@ -3,7 +3,6 @@
   "version": "6.95.0",
   "repository": "git://github.com/tenjojeremy/wapp.git",
   "description": "Web app framework",
-  "publisher": "Jeremy Tenjo",
   "main": "bin/index.js",
   "bin": {
     "wapp": "bin/index.js"
