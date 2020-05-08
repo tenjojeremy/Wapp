@@ -1,4 +1,4 @@
-const project = process.env.PROJECT
+const { project } = require('./getNodeEnvValue')
 
 const getProjectRoot = (path) => `${process.cwd()}/${path}`
 

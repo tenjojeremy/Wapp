@@ -1,5 +1,6 @@
 const { logSuccessMessage } = require('../utils/logMessage')
 const addNetworkFiles = require('../utils/network/addIsOnlineState')
+const { project } = require('../utils/getNodeEnvValue')
 const { name: componentsPackageName } = require('../components/constants')
 
 const generateAnimateOnSiteLoad = require('./animateOnSiteLoad')
@@ -18,7 +19,6 @@ module.exports = async ({ env, wappManifest, step = '1/2' }) => {
   console.log()
   logSuccessMessage('Building wapp...', '', '', step)
   console.log()
-  const project = process.env.PROJECT
   const payload = { wappManifest, env, project, componentsPackageName }
 
   initGenerateAppIndex(payload)
