@@ -1,6 +1,7 @@
 # dependencies
 node_modules/
 
+components/.storybook/_build
 _testApp/_build
 
 .storybook/_build

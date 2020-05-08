@@ -16,7 +16,7 @@ const defineTag = (tag, variant) => {
 
 const El = styled.span.withConfig({
   displayName: "typography__El",
-  componentId: "sc-1qan1cj-0"
+  componentId: "b0pt3z-0"
 })(["", ""], system);
 
 const Typography = ({

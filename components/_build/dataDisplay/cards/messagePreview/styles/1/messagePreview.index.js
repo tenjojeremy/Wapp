@@ -14,30 +14,30 @@ const Item = ({ ...props
 
 const Wrapper = styled.div.withConfig({
   displayName: "messagePreviewindex__Wrapper",
-  componentId: "sc-1m3452k-0"
+  componentId: "sc-187kvme-0"
 })(["display:grid;grid-template-areas:'ProfilePic Name Time' 'ProfilePic Message Time';grid-template-columns:54px 1fr 50px;grid-column-gap:10px;width:100%;cursor:pointer;user-select:none;padding:var(--spacing-s);box-sizing:border-box;border-radius:2px;"]);
 const WrapperSkeleton = styled(Wrapper).withConfig({
   displayName: "messagePreviewindex__WrapperSkeleton",
-  componentId: "sc-1m3452k-1"
+  componentId: "sc-187kvme-1"
 })(["grid-gap:var(--spacing-xs);> span{color:#eeeeee;background:#eeeeee;}"]);
 const ProfilePic = styled.img.withConfig({
   displayName: "messagePreviewindex__ProfilePic",
-  componentId: "sc-1m3452k-2"
+  componentId: "sc-187kvme-2"
 })(["grid-area:ProfilePic;border-radius:100px;width:54px;"]);
 const ProfilePicSkeleton = styled(ProfilePic).withConfig({
   displayName: "messagePreviewindex__ProfilePicSkeleton",
-  componentId: "sc-1m3452k-3"
+  componentId: "sc-187kvme-3"
 })(["height:54px;background:#eeeeee;"]);
 const Name = styled.span.withConfig({
   displayName: "messagePreviewindex__Name",
-  componentId: "sc-1m3452k-4"
+  componentId: "sc-187kvme-4"
 })(["grid-area:Name;align-self:end;font-size:16px;padding-bottom:3px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;"]);
 const Message = styled.span.withConfig({
   displayName: "messagePreviewindex__Message",
-  componentId: "sc-1m3452k-5"
+  componentId: "sc-187kvme-5"
 })(["grid-area:Message;align-self:start;font-size:14px;color:rgba(0,0,0,0.54);padding-top:3px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;"]);
 const Time = styled.span.withConfig({
   displayName: "messagePreviewindex__Time",
-  componentId: "sc-1m3452k-6"
+  componentId: "sc-187kvme-6"
 })(["grid-area:Time;font-size:13px;align-self:center;justify-self:end;"]);
 export default Item;

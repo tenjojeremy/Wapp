@@ -2,11 +2,11 @@ import styled from 'styled-components';
 const DAY_SIZE = '30px';
 export const Wrapper = styled.div.withConfig({
   displayName: "daystyles__Wrapper",
-  componentId: "sc-13qv5r1-0"
+  componentId: "sc-16gazel-0"
 })(["display:grid;grid-auto-flow:row;"]);
 export const DayCon = styled.div.withConfig({
   displayName: "daystyles__DayCon",
-  componentId: "sc-13qv5r1-1"
+  componentId: "sc-16gazel-1"
 })(["width:", ";height:", ";border-radius:50%;display:flex;justify-content:center;align-items:center;color:black;font-size:14px;font-weight:500;justify-self:center;cursor:pointer;user-select:none;font-family:var(--font-primary);transition:.2s;&:active{background-color:", ";}", " ", " ", ""], DAY_SIZE, DAY_SIZE, ({
   activeColor
 }) => activeColor ? "var(--color-".concat(activeColor, "Background)") : 'rgba(0, 0, 0, 0.1)', ({
@@ -18,7 +18,7 @@ export const DayCon = styled.div.withConfig({
 }) => isActive(props, "\n  background-color: ".concat(activeColor, ";\n  color: white;")));
 export const StatusCon = styled.div.withConfig({
   displayName: "daystyles__StatusCon",
-  componentId: "sc-13qv5r1-2"
+  componentId: "sc-16gazel-2"
 })(["display:flex;justify-content:center;flex-direction:row;width:100%;"]); // Variants
 
 const isCurrentDay = ({

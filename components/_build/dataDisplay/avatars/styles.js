@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 export const Wrapper = styled.div.withConfig({
   displayName: "styles__Wrapper",
-  componentId: "sc-16miqf8-0"
+  componentId: "hnral7-0"
 })(["background-color:", ";width:", ";height:", ";border-radius:", ";transition:0.2s ease-in-out;display:flex;justify-content:center;align-items:center;*{border-radius:", ";}", ""], ({
   color
 }) => "var(--color-".concat(color, ")"), ({

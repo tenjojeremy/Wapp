@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import system from '../../theme/system';
 export const BoxWrapper = styled.div.withConfig({
   displayName: "styles__BoxWrapper",
-  componentId: "zr2tli-0"
+  componentId: "b7p8ds-0"
 })(["", " ", " ", " ", ""], system, ({
   size
 }) => size && "\n  width: ".concat(size, ";\n  height: ").concat(size, ";\n  "), ({

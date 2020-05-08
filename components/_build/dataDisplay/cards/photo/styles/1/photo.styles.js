@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 export const Wrapper = styled.div.withConfig({
   displayName: "photostyles__Wrapper",
-  componentId: "sc-1knamjn-0"
+  componentId: "h54qz3-0"
 })(["background-color:var(--color-white);display:grid;grid-template-rows:1fr auto;position:relative;overflow:hidden;width:100%;height:100%;@media (min-width:600px){width:400px;padding-bottom:0;border-radius:10px;}"]);
 export const TopRow = {
   padding: 's',
@@ -16,11 +16,11 @@ export const TopRow = {
 };
 export const ImageCon = styled.div.withConfig({
   displayName: "photostyles__ImageCon",
-  componentId: "sc-1knamjn-1"
+  componentId: "h54qz3-1"
 })(["overflow:auto;position:relative;z-index:0;"]);
 export const LikeIconCon = styled.div.withConfig({
   displayName: "photostyles__LikeIconCon",
-  componentId: "sc-1knamjn-2"
+  componentId: "h54qz3-2"
 })(["position:absolute;bottom:20px;right:20px;"]);
 export const donutStyle = {
   position: 'fixed',

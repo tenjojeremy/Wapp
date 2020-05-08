@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 export const Wrapper = styled.div.withConfig({
   displayName: "styles__Wrapper",
-  componentId: "d9muma-0"
+  componentId: "sc-1lg7enh-0"
 })([""]);

@@ -13,7 +13,7 @@ const Donut = ({
 const donutSpin = keyframes(["0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}"]);
 const Wrapper = styled.div.withConfig({
   displayName: "donut__Wrapper",
-  componentId: "sc-1bpufzq-0"
+  componentId: "tqrwos-0"
 })(["display:inline-block;border:4px solid rgba(0,0,0,0.1);border-left-color:", ";border-radius:50%;width:30px;height:30px;animation:", " 0.7s linear infinite;"], ({
   color
 }) => "var(--color-".concat(color, ")"), donutSpin);

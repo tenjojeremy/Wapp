@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 export const Wrapper = styled.div.withConfig({
   displayName: "styles__Wrapper",
-  componentId: "tifggd-0"
+  componentId: "sc-18sp0kh-0"
 })(["text-align:center;width:fit-content;display:grid;user-select:none;cursor:pointer;align-content:space-between;", ";"], ({
   label
 }) => label && "    \n  grid-gap: var(--spacing-xxs);\n  justify-items: center;\n  ");
 export const WrapperIcon = styled.div.withConfig({
   displayName: "styles__WrapperIcon",
-  componentId: "tifggd-1"
+  componentId: "sc-18sp0kh-1"
 })(["display:flex;transition:0.3s;border-radius:100px;animation-timing-function:ease-out;padding:", ";&:active{background-color:rgba(0,0,0,0.1);}@media (hover:hover){&:hover{background-color:rgba(0,0,0,0.1);}&:active{background-color:rgba(0,0,0,0.5);}}", " ", " ", " svg{color:", ";fill:", ";align-self:center;", " ", " ", " ", " ", ""], ({
   backgroundSize
 }) => backgroundSize ? "".concat(backgroundSize) : 'var(--spacing-xs, 10px)', ({

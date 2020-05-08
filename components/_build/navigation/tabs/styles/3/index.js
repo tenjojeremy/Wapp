@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Base from '../../base/tabs.base';
 const Tab = styled.div.withConfig({
   displayName: "sc-3__Tab",
-  componentId: "sc-1la4zlo-0"
+  componentId: "eywi4p-0"
 })(["cursor:pointer;user-select:none;border-radius:100px;padding:8px;width:150px;text-align:center;", " span{transition:var(--transition-main);font-style:normal;font-weight:bold;font-size:11px;white-space:nowrap;color:var(--color-white);", " ", "}"], ({
   active
 }) => active && "\n    background-color: var(--color-white);\n    ", ({

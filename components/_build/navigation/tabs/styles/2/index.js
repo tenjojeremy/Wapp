@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Base from '../../base/tabs.base';
 const Tab = styled.div.withConfig({
   displayName: "sc-2__Tab",
-  componentId: "rs9k1r-0"
+  componentId: "sc-1222623-0"
 })(["cursor:pointer;user-select:none;span{transition:var(--transition-main);font-style:normal;font-weight:bolder;font-size:22px;line-height:27px;white-space:nowrap;", " ", "}"], ({
   font
 }) => "\n    font-family: var(--font-".concat(font, ");\n    "), ({

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 export const Wrapper = styled.div.withConfig({
   displayName: "styles__Wrapper",
-  componentId: "sc-6tncgm-0"
+  componentId: "sc-1j6kmvg-0"
 })(["position:relative;word-break:break-word;overflow-y:auto;div{border-radius:9px;}", " ", ""], ({
   src,
   backgroundColor,

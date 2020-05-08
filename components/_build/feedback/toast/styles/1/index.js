@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Icon from '../../../../dataDisplay/icon';
 export const Wrapper = styled.div.withConfig({
   displayName: "sc-1__Wrapper",
-  componentId: "sc-7avdfq-0"
+  componentId: "tvsc2i-0"
 })(["background:", ";color:", ";z-index:999;border-radius:100px;width:fit-content;min-width:150px;max-width:300px;display:grid;grid-auto-flow:column;align-items:center;justify-content:start;padding:var(--spacing-s) var(--spacing-m);grid-gap:var(--spacing-s);user-select:none;position:fixed;bottom:0;left:0;right:0;word-break:break-word;", " *{cursor:auto;}img{width:20px;height:20px;}span{font-family:", ";text-align:left;font-weight:100;font-size:14px;line-height:20px;}"], ({
   background
 }) => "var(--color-".concat(background, ")"), ({

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import TextField from '../../';
 const Wrapper = styled.div.withConfig({
   displayName: "sc-1__Wrapper",
-  componentId: "sc-1y68h99-0"
+  componentId: "bi5t54-0"
 })(["transition:.2s;background-color:", ";color:", ";border-radius:10px;padding:var(--spacing-xxs,4px) var(--spacing-s,8px);display:flex;align-items:center;text-align:center;width:", ";border:2px solid transparent;img{color:", ";cursor:pointer;}", " ", " svg{fill:", ";}", "  "], ({
   backgroundColor
 }) => "var(--color-".concat(backgroundColor, ")"), ({
@@ -25,7 +25,7 @@ const Wrapper = styled.div.withConfig({
 }) => !isValid && "border: 2px solid var(--color-red);");
 const Input = styled.input.withConfig({
   displayName: "sc-1__Input",
-  componentId: "sc-1y68h99-1"
+  componentId: "bi5t54-1"
 })(["::placeholder{opacity:0.5;color:", ";}color:", ";font-family:", ";font-size:16px;width:100%;border:none;outline:none;background-color:transparent;"], ({
   color
 }) => "var(--color-".concat(color, "Darker)"), ({
@@ -35,19 +35,19 @@ const Input = styled.input.withConfig({
 }) => "var(--font-".concat(font, ")"));
 const IconLeftCon = styled.div.withConfig({
   displayName: "sc-1__IconLeftCon",
-  componentId: "sc-1y68h99-2"
+  componentId: "bi5t54-2"
 })(["margin-right:5px;"]);
 const IconRightCon = styled.div.withConfig({
   displayName: "sc-1__IconRightCon",
-  componentId: "sc-1y68h99-3"
+  componentId: "bi5t54-3"
 })(["margin-left:10px;"]);
 const InputCon = styled.div.withConfig({
   displayName: "sc-1__InputCon",
-  componentId: "sc-1y68h99-4"
+  componentId: "bi5t54-4"
 })(["display:grid;grid-auto-flow:column;grid-gap:var(--spacing-xs);position:relative;"]);
 const CloseIconCon = styled.div.withConfig({
   displayName: "sc-1__CloseIconCon",
-  componentId: "sc-1y68h99-5"
+  componentId: "bi5t54-5"
 })(["display:flex;align-items:center;svg{fill:", ";}"], ({
   textColor
 }) => "var(--color-".concat(textColor, ")"));
