@@ -2,8 +2,8 @@
   "name": "tenjo-apps",
   "version": "1.0.0",
   "scripts": {
-    "portfolio:start": "PROJECT=portfolio node scripts/index.js start",
-    "portfolio:build": "PROJECT=portfolio node scripts/index.js build",
+    "portfolio:start": "PROJECT=portfolio node butler/scripts/index.js start",
+    "portfolio:build": "PROJECT=portfolio node butler/scripts/index.js build",
     "portfolio:deploy": "npm run portfolio:build && cd projects/portfolio && firebase deploy && cd ..",
     "storybook:start": "start-storybook -p 9002 -c components/.storybook -s components/.storybook/public --quiet",
     "storybook:build": "build-storybook -c components/.storybook -o components/.storybook/_build -s components/.storybook/public",
