@@ -1,11 +1,11 @@
 const { project } = require('./getNodeEnvValue')
 
-const getProjectRoot = (path) => `${process.cwd()}/${path}`
+const getRoot = (path) => `${process.cwd()}/${path}`
 
 const wappRootDir = (folder = 'defaults') => __dirname.replace('utils', folder)
 
 const projectDir = (path = '') => {
-  const dir = getProjectRoot(`projects/${project}/${path}`)
+  const dir = getRoot(`projects/${project}/${path}`)
   return dir
 }
 
@@ -22,6 +22,7 @@ const wappManifest = () => {
 }
 
 module.exports = {
+  getRoot,
   wappRootDir,
   projectDir,
   wappManifest,

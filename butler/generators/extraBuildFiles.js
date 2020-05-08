@@ -1,6 +1,6 @@
-const { wappDir } = require('../../utils/getModulePath')
-const { logSuccessMessage } = require('../../utils/logMessage')
-const createFile = require('../../utils/files/createFile')
+const { wappDir } = require('../utils/getModulePath')
+const { logSuccessMessage } = require('../utils/logMessage')
+const createFile = require('../utils/files/createFile')
 
 exports.initExtraBuildFiles = () => (global.addExtraBuildFiles = [])
 

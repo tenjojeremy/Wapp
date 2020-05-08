@@ -1,5 +1,5 @@
-const colors = require('./defaults/theme/colors')
-const { projectDir, wappDir } = require('./utils/getModulePath')
+const colors = require('./butler/defaults/theme/colors')
+const { projectDir, wappDir } = require('./butler/utils/getModulePath')
 
 const fonts = require(wappDir(`fonts`))
 const splashScreen = require(wappDir('splashScreen/splashScreen'))

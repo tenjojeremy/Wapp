@@ -11,10 +11,6 @@ module.exports = async () => {
 
   await createWappBuild({ env, wappManifest })
 
-  try {
-    webpack({ action })
-    // await concurrently(scripts)
-  } catch (error) {
-    console.log('HERE!')
-  }
+  webpack({ action })
+  // await concurrently(scripts)
 }

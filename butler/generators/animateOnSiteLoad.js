@@ -1,6 +1,6 @@
-const { wappDir } = require('../../utils/getModulePath')
-const createFile = require('../../utils/files/createFile')
-const { logSuccessMessage } = require('../../utils/logMessage')
+const { wappDir } = require('../utils/getModulePath')
+const createFile = require('../utils/files/createFile')
+const { logSuccessMessage } = require('../utils/logMessage')
 
 module.exports = async ({ wappManifest: { animateOnSiteLoad } }) => {
   const animateOnSiteLoadSetToFalse = animateOnSiteLoad === false

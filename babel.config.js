@@ -1,4 +1,4 @@
-const autoImport = require('./plugins/babel/auto-import')
+const autoImport = require('./butler/plugins/babel/auto-import')
 
 module.exports = {
   presets: [

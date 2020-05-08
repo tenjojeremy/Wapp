@@ -1,7 +1,7 @@
-const createFile = require('../../utils/files/createFile')
-const { wappDir } = require('../../utils/getModulePath')
-const { logSuccessMessage } = require('../../utils/logMessage')
-const addToIndex = require('../../utils/addToIndex')
+const createFile = require('../utils/files/createFile')
+const { wappDir } = require('../utils/getModulePath')
+const { logSuccessMessage } = require('../utils/logMessage')
+const addToIndex = require('../utils/addToIndex')
 
 module.exports = async ({ wappManifest: { offlineSupport = true } }) => {
   if (!offlineSupport) return

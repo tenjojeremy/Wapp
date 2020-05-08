@@ -1,7 +1,7 @@
 const { logSuccessMessage } = require('../utils/logMessage')
 const addNetworkFiles = require('../utils/network/addIsOnlineState')
 const { project } = require('../utils/getNodeEnvValue')
-const { name: componentsPackageName } = require('../components/constants')
+const { name: componentsPackageName } = require('../../components/constants')
 
 const generateAnimateOnSiteLoad = require('./animateOnSiteLoad')
 const generateSplash = require('./splash')
