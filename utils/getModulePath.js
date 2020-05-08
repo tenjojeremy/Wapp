@@ -1,35 +1,22 @@
-const isTest = () => process.env.TEST === 'true'
+const project = process.env.PROJECT
 
-const getProjectRoot = () => process.cwd()
+const getProjectRoot = (path) => `${process.cwd()}/${path}`
 
 const wappRootDir = (folder = 'defaults') => __dirname.replace('utils', folder)
 
 const projectDir = (path = '') => {
-  const dir = isTest() ? `${getProjectRoot()}/projects/portfolio` : getProjectRoot()
-  return `${dir}/${path}`
+  const dir = getProjectRoot(`projects/${project}/${path}`)
+  return dir
 }
 
 const wappDir = (path = '') => {
-  const dir = isTest() ? `/projects/portfolio` : ''
-  return `${getProjectRoot()}${dir}/src/.wapp/_${path}`
+  return projectDir(`src/.wapp/_${path}`)
 }
 
 const buildDir = (path = '') => `${projectDir()}/_build/${path}`
 
-const componentImportPath = (isTrue) => {
-  const { name } = require(wappRootDir('package.json'))
-  let packageName = name
-  const extention = '-build'
-
-  if (isTrue) packageName = `${packageName}${extention}`
-
-  return packageName
-}
-
 const wappManifest = () => {
-  const wappManifestPath = isTest()
-    ? '../projects/portfolio/.wapp.manifest.js'
-    : projectDir('.wapp.manifest.js')
+  const wappManifestPath = projectDir('.wapp.manifest.js')
   const wappManifest = require(wappManifestPath)
   return wappManifest
 }
@@ -39,6 +26,5 @@ module.exports = {
   projectDir,
   wappManifest,
   buildDir,
-  componentImportPath,
   wappDir,
 }

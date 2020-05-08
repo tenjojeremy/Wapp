@@ -1,11 +1,11 @@
 const createFile = require('../utils/files/createFile')
-const { projectDir, componentImportPath } = require('../utils/getModulePath')
+const { projectDir } = require('../utils/getModulePath')
 const { logSuccessMessage } = require('../utils/logMessage')
 
 exports.initGenerateAppIndex = () => (global.indexModules = [])
 
-exports.generateAppIndex = async ({ isTest }) => {
-  const importName = `${componentImportPath(isTest)}/utils/addToHomeScreen`
+exports.generateAppIndex = async ({ componentsPackageName }) => {
+  const importName = `${componentsPackageName}/utils/addToHomeScreen`
   const outputFile = projectDir('src/_index.js')
   const { indexModules } = global
   indexModules.sort((a, b) => {
